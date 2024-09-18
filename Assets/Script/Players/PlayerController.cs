@@ -1,29 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+    //public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
     public static PlayerController Instance;
     [SerializeField] private float moveSpeed = 1f;
 
     public bool facingRight = true;
     private PlayerControls playerControls;
-    private Vector2 movement;
-    private Rigidbody2D rb2d;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
 
-    private bool facingLeft = false;
+    private Vector2 movementDirection;
+    private Vector2 lastDirection;
+
+    private Rigidbody2D rb2d;
+    [SerializeField] private Animator animator;
+
+    //private SpriteRenderer spriteRenderer;
+
+    //private bool facingLeft = false;
+
+
     private void Awake()
     {
         Instance = this;
         playerControls = new PlayerControls();
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -33,67 +41,36 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         PlayerInput();
+        Animated();
     }
     private void FixedUpdate()
-    {
-        //PlayerFacing();
+    {        
         Move();
     }
     private void PlayerInput()
     {
-        // Get movement input
-        movement = playerControls.Movement.Movement.ReadValue<Vector2>();
-
-        // Reset all directions to false
-        animator.SetBool("isWalkingUp", false);
-        animator.SetBool("isWalkingDown", false);
-        animator.SetBool("isWalkingLeft", false);
-        animator.SetBool("isWalkingRight", false);
-
-        // Check for movement direction
-        if (movement.y > 0) // Walking Up
+        //get the movement
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+        // store the last direction of the player when it stops
+        if ((moveX == 0 && moveY == 0) && (movementDirection.x != 0 || movementDirection.y != 0))
         {
-            animator.SetBool("isWalkingUp", true);
+            lastDirection = movementDirection;
         }
-        else if (movement.y < 0) // Walking Down
-        {
-            animator.SetBool("isWalkingDown", true);
-        }
-        else if (movement.x < 0) // Walking Left
-        {
-            animator.SetBool("isWalkingLeft", true);
-        }
-        else if (movement.x > 0) // Walking Right
-        {
-            animator.SetBool("isWalkingRight", true);
-        }
-
-        // Optionally, set the MoveX and MoveY values for other uses (e.g., if you want to track direction)
-        animator.SetFloat("MoveX", movement.x);
-        animator.SetFloat("MoveY", movement.y);
+        movementDirection = new Vector2(moveX, moveY).normalized;
     }
-
+    
     private void Move() 
     {
-        rb2d.MovePosition(rb2d.position+movement*(moveSpeed*Time.fixedDeltaTime));
+        rb2d.velocity = new Vector2(movementDirection.x * moveSpeed, movementDirection.y * moveSpeed);
     }
-    private void PlayerFacing()
+    private void Animated()
     {
-        if (movement.x < 0 && facingRight)
-        {
-            Flip(false);
-        }
-        // Check if moving right
-        else if (movement.x > 0 && !facingRight)
-        {
-            Flip(true);
-        }
-    }
-
-    //// Flips the sprite based on direction
-    private void Flip(bool faceRight)
-    {
-        facingRight = faceRight;
-        spriteRenderer.flipX = !faceRight; // flipX flips the sprite horizontally
+        animator.SetFloat("MoveX", movementDirection.x);
+        animator.SetFloat("MoveY", movementDirection.y);
+        //calculate the length of the moving vector, showing the the player moving or not (magnitude >0 || magnitude <0)
+        animator.SetFloat("MoveMagnitude", movementDirection.magnitude);
+        animator.SetFloat("LastMoveX", lastDirection.x);
+        animator.SetFloat("LastMoveY", lastDirection.y);
     }
 }
