@@ -1,14 +1,14 @@
 {
-    "name": "PlayerController",
+    "name": "Player Controls",
     "maps": [
         {
             "name": "Movement",
-            "id": "a477fd3c-a643-4c40-9d30-aeb938009441",
+            "id": "007272bd-a42f-413e-b694-2ffd14f5d9b0",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Movement",
                     "type": "PassThrough",
-                    "id": "3471a40a-0b60-4312-ba47-f476c9774cde",
+                    "id": "3cb42b52-130f-498e-b4e2-c503127b0b87",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -18,58 +18,86 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "a13bc45d-f800-4ba9-92fa-3d9be1a0ad36",
+                    "id": "527972c5-83de-46f2-86b2-d3553a907214",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "b63e800e-b938-47cb-9aae-502a6d812acc",
+                    "id": "e2521bb1-f371-4aec-b725-50e6bf1a0707",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "a6ef4f30-9d3d-42bd-af72-d9454a35d35f",
+                    "id": "112e62f2-22b3-48c9-a486-c4b0d175543e",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "9b56efcf-b870-4da5-ac34-2e7e84b1011c",
+                    "id": "759fe0d4-4ccd-4f17-af0a-9ce0425ab76f",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "fa9560a2-919a-434e-81bc-8a956a0ae706",
+                    "id": "04877606-12cc-402e-a6b7-2110b2149596",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Combat",
+            "id": "446cc1b7-7991-4c01-9f34-6be8a511d508",
+            "actions": [
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "e8539012-783f-421b-a9f8-5da473e811b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cd7038d5-6f4b-4eee-b114-4025324376fd",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
