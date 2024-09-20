@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-<<<<<<< Updated upstream
-=======
 using UnityEngine.UIElements;
->>>>>>> Stashed changes
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,23 +17,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movementDirection;
     private Vector2 lastDirection;
-<<<<<<< Updated upstream
-=======
     private Vector2 currentDirection;
->>>>>>> Stashed changes
 
     private Rigidbody2D rb2d;
     [SerializeField] private Animator animator;
 
-<<<<<<< Updated upstream
-=======
     [SerializeField] private Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
 
     private float angle;
 
->>>>>>> Stashed changes
     //private SpriteRenderer spriteRenderer;
 
     //private bool facingLeft = false;
@@ -50,14 +41,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
     }
-<<<<<<< Updated upstream
-
-=======
     private void Start()
     {
         playerControls.Combat.Attack.started += _ => Attack();
     }
->>>>>>> Stashed changes
     private void OnEnable()
     {
         playerControls.Enable();
@@ -81,9 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             lastDirection = movementDirection;
         }
-<<<<<<< Updated upstream
-        movementDirection = new Vector2(moveX, moveY).normalized;
-=======
 
         movementDirection = new Vector2(moveX, moveY).normalized;
         Vector3 mousePos = Input.mousePosition;
@@ -114,16 +98,11 @@ public class PlayerController : MonoBehaviour
             currentDirection = Vector2.down; // (0, -1)
         }
 
->>>>>>> Stashed changes
     }
     
     private void Move() 
     {
-<<<<<<< Updated upstream
-        rb2d.velocity = new Vector2(movementDirection.x * moveSpeed, movementDirection.y * moveSpeed);
-=======
         rb2d.MovePosition(rb2d.position + movementDirection * (moveSpeed * Time.fixedDeltaTime));
->>>>>>> Stashed changes
     }
     private void Animated()
     {
@@ -133,8 +112,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("MoveMagnitude", movementDirection.magnitude);
         animator.SetFloat("LastMoveX", lastDirection.x);
         animator.SetFloat("LastMoveY", lastDirection.y);
-<<<<<<< Updated upstream
-=======
         animator.SetFloat("CurrentDirectionX", currentDirection.x);
         animator.SetFloat("CurrentDirectionY", currentDirection.y);
     }
@@ -155,6 +132,5 @@ public class PlayerController : MonoBehaviour
             return;
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
->>>>>>> Stashed changes
     }
 }

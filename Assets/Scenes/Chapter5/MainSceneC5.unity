@@ -122,8 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &108128977
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +775,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> Stashed changes
 --- !u!1 &887225646
 GameObject:
   m_ObjectHideFlags: 3
@@ -866,8 +863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1071523085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1023,6 @@ Transform:
   - {fileID: 474269388}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &1228374444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,8 +1222,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1427849799
 GameObject:
   m_ObjectHideFlags: 0
@@ -8349,7 +8341,6 @@ Transform:
   - {fileID: 1534450118}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &1674040488
 GameObject:
   m_ObjectHideFlags: 0
@@ -8412,11 +8403,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< Updated upstream
-  m_SortingOrder: 0
-=======
   m_SortingOrder: 1
->>>>>>> Stashed changes
   m_Sprite: {fileID: 1734736986, guid: 3a8b8d0a89ebfaa418b9ab43177f62d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8427,11 +8414,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-<<<<<<< Updated upstream
-  m_SpriteSortPoint: 0
-=======
   m_SpriteSortPoint: 1
->>>>>>> Stashed changes
 --- !u!4 &1674040494
 Transform:
   m_ObjectHideFlags: 0
@@ -8441,18 +8424,11 @@ Transform:
   m_GameObject: {fileID: 1674040488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: -7.21, y: 0.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-=======
   m_LocalPosition: {x: -8.81, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 108128978}
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1674040495
@@ -8488,11 +8464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967fa353f753dc44aa7f1d3aa593e465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  moveSpeed: 3
-  facingRight: 1
-  animator: {fileID: 1674040495}
-=======
   moveSpeed: 5
   facingRight: 1
   animator: {fileID: 1674040495}
@@ -8501,7 +8472,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
->>>>>>> Stashed changes
 --- !u!50 &1674040497
 Rigidbody2D:
   serializedVersion: 4
@@ -8528,11 +8498,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-<<<<<<< Updated upstream
-  m_Constraints: 0
-=======
   m_Constraints: 4
->>>>>>> Stashed changes
 --- !u!70 &1674040498
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8565,13 +8531,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<< Updated upstream
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.6875, y: 2.5625}
-=======
   m_Offset: {x: 0.1838398, y: 0}
   m_Size: {x: 1.1727467, y: 2.5625}
->>>>>>> Stashed changes
   m_Direction: 0
 --- !u!114 &1674040499
 MonoBehaviour:
@@ -8603,8 +8564,6 @@ MonoBehaviour:
   m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &2124720781
 GameObject:
   m_ObjectHideFlags: 0
@@ -8845,7 +8804,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8853,8 +8811,5 @@ SceneRoots:
   - {fileID: 1305952350}
   - {fileID: 1228374446}
   - {fileID: 1674040494}
-<<<<<<< Updated upstream
-=======
   - {fileID: 1632706312}
   - {fileID: 1224051060}
->>>>>>> Stashed changes
