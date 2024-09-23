@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController3 : MonoBehaviour
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
-    private bool facingLeft = false;
+   
     [SerializeField] private float moveSpeed = 5f;
 
     private PlayerControls playerControls;
@@ -14,7 +14,7 @@ public class PlayerController3 : MonoBehaviour
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
 
-
+    private bool facingLeft = false;
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -65,7 +65,7 @@ public class PlayerController3 : MonoBehaviour
         else
         {
             mySpriteRender.flipX = false;
-            FacingLeft = true;
+            FacingLeft = false;
         }
     }
 }
