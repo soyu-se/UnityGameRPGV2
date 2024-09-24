@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController3 : MonoBehaviour
+public class PlayerController3 : Singleton<PlayerController3>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
    
@@ -13,14 +13,17 @@ public class PlayerController3 : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
+    private Knockback knockback;
 
     private bool facingLeft = false;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();    
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
+        knockback = GetComponent<Knockback>();
     }
 
     private void OnEnable()
@@ -49,6 +52,11 @@ public class PlayerController3 : MonoBehaviour
 
     private void Move()
     {
+        if (knockback.GettingKnockedBack)
+        {
+            Debug.Log("PLayer being damaged");
+            return;
+        }
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 

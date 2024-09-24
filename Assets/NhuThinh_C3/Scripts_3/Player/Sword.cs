@@ -35,12 +35,12 @@ public class Sword : MonoBehaviour
         MouseFollowWithOffset();
     }
 
-    private void Attack() {
-        myAnimator.SetTrigger("Attack");
+    private void Attack() {        
         weaponCollider.gameObject.SetActive(true);
 
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
+        myAnimator.SetTrigger("Attack");
     }
 
     public void SwingUpFlipAnimEvent() {
