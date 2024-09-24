@@ -13,7 +13,7 @@ public class SwordSpawner : MonoBehaviour
 
     [Header("Spawner Attributes")]
     [SerializeField] private SpawnerType spawnerType;
-    [SerializeField] private float attackRange = 5f;   // Attack range for shooting
+    [SerializeField] private float attackRange;   // Attack range for shooting
 
     private GameObject spawnedBullet;
 

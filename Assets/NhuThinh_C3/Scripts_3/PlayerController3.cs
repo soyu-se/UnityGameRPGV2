@@ -13,12 +13,21 @@ public class PlayerController3 : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
-    public static PlayerController3 Instance;
+
+    public static PlayerController3 Instance { get; private set;  }
+    
 
 	private bool facingLeft = false;
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null){
+            Instance = this;
+			DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+			Destroy(gameObject);
+		}
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
