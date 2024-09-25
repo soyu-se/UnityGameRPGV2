@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter2/MainSceneC2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Chapter3/MainSceneC3.unity
+    path: Assets/Scenes/Chapter3/Scene 3.1.unity
     guid: 19038b625e023924eb31b17932c31c3f
   - enabled: 1
     path: Assets/Scenes/Chapter4/MainSceneC4.unity

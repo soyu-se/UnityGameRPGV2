@@ -18,10 +18,6 @@ public class EnemyHealth : MonoBehaviour
         flash = GetComponent<Flash>();
     }
 
-	public void Awake()
-	{
-		flash = GetComponent<Flash>();
-	}
 
     public void TakeDamage(int damage)
     {
