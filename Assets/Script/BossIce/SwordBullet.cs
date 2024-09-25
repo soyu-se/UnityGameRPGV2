@@ -38,7 +38,7 @@ public class SwordBullet : MonoBehaviour
 			PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 			Instantiate(VFX, transform.position, Quaternion.identity);
 			Destroy(this.gameObject); // Optionally destroy the bullet
-			playerHealth.TakeDamage(damageAmount);
+			playerHealth.TakeDamage(damageAmount,this.transform);
 
 		}
 

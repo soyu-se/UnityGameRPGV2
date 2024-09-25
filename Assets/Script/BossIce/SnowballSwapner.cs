@@ -20,7 +20,7 @@ public class SnowballSpawner : MonoBehaviour
 	[SerializeField] private float angleSpread = 30f; // Angle spread for the burst
 	[SerializeField] private float burstDuration = 3f; // Duration to shoot before stopping
 
-	private float timer = 0f;
+	//private float timer = 0f;
 	public event Action OnShootingComplete; // Event to notify when shooting is complete
 	public bool IsShootingComplete { get; private set; } // Property to track if shooting is complete
 
@@ -76,8 +76,8 @@ public class SnowballSpawner : MonoBehaviour
 				// Calculate the rotation for each bullet
 				Quaternion bulletRotation = Quaternion.Euler(0, 0, initialAngle + (i * angleStep));
 				GameObject spawnedBullet = Instantiate(bullet, transform.position, bulletRotation);
-				spawnedBullet.GetComponent<SwordBullet>().speed = speed;
-				spawnedBullet.GetComponent<SwordBullet>().bulletLife = bulletLife;
+				spawnedBullet.GetComponent<SnowBullet>().speed = speed;
+				spawnedBullet.GetComponent<SnowBullet>().bulletLife = bulletLife;
 			}
 		}
 	}

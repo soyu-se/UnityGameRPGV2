@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController3 : Singleton<PlayerController3>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
-   
+
     [SerializeField] private float moveSpeed = 5f;
+
+    [SerializeField] private float slipperyZoneMultiplier = 30f;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -16,9 +18,11 @@ public class PlayerController3 : Singleton<PlayerController3>
     private Knockback knockback;
 
     private bool facingLeft = false;
+
+    private bool isInSlipperyZone = false;
     protected override void Awake()
     {
-        base.Awake();    
+        base.Awake();
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -54,10 +58,25 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         if (knockback.GettingKnockedBack)
         {
-            Debug.Log("PLayer being damaged");
-            return;
+            Debug.Log("Player being damaged");
+            if (isInSlipperyZone)
+            {
+                float currentSpeedd = moveSpeed * slipperyZoneMultiplier*slipperyZoneMultiplier;
+                rb.MovePosition(rb.position + movement * (currentSpeedd * Time.fixedDeltaTime));
+            }
+            return; 
         }
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+
+
+        float currentSpeed = moveSpeed;
+
+        if (isInSlipperyZone)
+        {
+           currentSpeed *= slipperyZoneMultiplier * slipperyZoneMultiplier;
+
+        }
+
+        rb.MovePosition(rb.position + movement * (currentSpeed * Time.fixedDeltaTime));
     }
 
     private void AdjustPlayerFacingDirection()
@@ -74,6 +93,21 @@ public class PlayerController3 : Singleton<PlayerController3>
         {
             mySpriteRender.flipX = false;
             FacingLeft = false;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("SlipperyZone"))
+        {
+            isInSlipperyZone = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("SlipperyZone"))
+        {
+            isInSlipperyZone = false; 
         }
     }
 }
