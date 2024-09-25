@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] public int maxHealth = 3;
     [SerializeField] public float knockBackThrustAmount = 10f;
     [SerializeField] public float damageRecoveryTime = 1f;
 
+    private Slider healthSlider;
     private int currHealth;
     private bool canTakeDamage = true;
     private Knockback knockBack;
@@ -22,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currHealth = maxHealth;
+        UpdateHealthSlider();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -33,15 +35,45 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(flash.FlashRoutine());
         }
     }
+    public void HealPlayer()
+    {
+        if (currHealth < maxHealth)
+        {
+            currHealth += 1;
+            UpdateHealthSlider();
+        }
+    }
     private void TakeDamage(int damageAmount)
     {
         canTakeDamage = false;
         currHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRountine());
+        UpdateHealthSlider();
+        CheckIfPlayerDeath();
+    }
+
+    private void CheckIfPlayerDeath()
+    {
+        if (currHealth <= 0)
+        {
+            currHealth = 0;
+            Debug.Log("Player Dead");
+            Destroy(gameObject);
+        }
     }
     private IEnumerator DamageRecoveryRountine()
     {
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
+    }
+
+    private void UpdateHealthSlider()
+    {
+        if (healthSlider == null)
+        {
+            healthSlider = GameObject.Find("Health Slider").GetComponent<Slider>();
+        }
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currHealth;
     }
 }

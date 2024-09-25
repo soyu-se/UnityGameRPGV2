@@ -18,6 +18,7 @@ public class AreaEntrance : MonoBehaviour
 
                 // Set the camera to follow the player
                 CameraController.Instance.SetPlayerCameraFollow();
+                UIFade.Instance.FadeToClear();
             }
         }
     }
