@@ -44,8 +44,10 @@ public class SnowBullet : MonoBehaviour
 		{
 			// Reflect the bullet's direction upon collision with other objects
 			Vector2 normal = collision.contacts[0].normal; // Get the contact normal
-			Vector2 direction = Vector2.Reflect(transform.right, normal); // Reflect the direction
-			transform.up = direction; // Update the bullet's rotation to the new direction
+			Vector2 reflectedDirection = Vector2.Reflect(transform.right, normal); // Reflect the direction
+																		  // Log the reflection details
+			direction = reflectedDirection;
+			transform.up = reflectedDirection;
 		}
 	}
 }

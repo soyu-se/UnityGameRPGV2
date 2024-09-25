@@ -16004,6 +16004,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1294022500989638144, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2176260795993824936, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.78
@@ -16055,6 +16059,22 @@ PrefabInstance:
     - target: {fileID: 5386835578428411793, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: m_TagString
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764826146467491807, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472264056961708427, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: projectilesPerBurst
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731537809483463831, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996050954421930559, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -76,8 +76,8 @@ public class SnowballSpawner : MonoBehaviour
 				// Calculate the rotation for each bullet
 				Quaternion bulletRotation = Quaternion.Euler(0, 0, initialAngle + (i * angleStep));
 				GameObject spawnedBullet = Instantiate(bullet, transform.position, bulletRotation);
-				spawnedBullet.GetComponent<SwordBullet>().speed = speed;
-				spawnedBullet.GetComponent<SwordBullet>().bulletLife = bulletLife;
+				spawnedBullet.GetComponent<SnowBullet>().speed = speed;
+				spawnedBullet.GetComponent<SnowBullet>().bulletLife = bulletLife;
 			}
 		}
 	}
