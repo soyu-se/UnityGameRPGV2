@@ -33,7 +33,6 @@ public class BossController : MonoBehaviour
 
 			// Deactivate the Spawner Manager after it completes its action
 			spawnerManager.gameObject.SetActive(false);
-			Debug.Log("done for the sword");
 			// Ensure the SnowballSpawner is active
 			if (!snowballSpawner.gameObject.activeInHierarchy)
 			{
@@ -45,7 +44,6 @@ public class BossController : MonoBehaviour
 
 			// Wait until the Snowball Spawner completes its action
 			yield return new WaitUntil(() => snowballSpawner.IsShootingComplete); //
-			Debug.Log("don for the snow ball");
 
 		}
 	}
@@ -56,15 +54,4 @@ public class BossController : MonoBehaviour
 		snowballSpawner.Run(); // Assuming Run() is a method that starts the snowball spawner
 	}
 
-	// Method to reduce boss health (call this when the boss takes damage)
-	public void TakeDamage(float damage)
-	{
-		bossHealth -= damage;
-		Debug.Log("boss just take damage");
-		if (bossHealth <= 0)
-		{
-			// Handle boss defeat logic here
-			Debug.Log("Boss defeated!");
-		}
-	}
 }

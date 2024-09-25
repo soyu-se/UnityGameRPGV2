@@ -33,10 +33,11 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(flash.FlashRoutine());
         }
     }
-    private void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount)
     {
         canTakeDamage = false;
         currHealth -= damageAmount;
+        Debug.Log("the player health: " + currHealth);
         StartCoroutine(DamageRecoveryRountine());
     }
     private IEnumerator DamageRecoveryRountine()

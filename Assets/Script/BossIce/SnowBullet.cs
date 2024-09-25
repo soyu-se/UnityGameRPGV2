@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordBullet : MonoBehaviour
+public class SnowBullet : MonoBehaviour
 {
 	public float bulletLife = 1f;  // Defines how long before the bullet is destroyed
 	public float speed = 5f;        // Speed of the bullet
@@ -10,8 +10,8 @@ public class SwordBullet : MonoBehaviour
 	private float timer = 0f;       // Timer to track bullet lifetime
 	private Vector2 direction;       // Direction of the bullet movement
 
-	[SerializeField] private GameObject VFX;
-	[SerializeField] private int damageAmount;
+	[SerializeField] private GameObject snowballVFX;
+	[SerializeField] private int damageAmout;
 
 	// Start is called before the first frame update
 	void Start()
@@ -36,11 +36,16 @@ public class SwordBullet : MonoBehaviour
 		{
 			// Instantiate the VFX at the collision point
 			PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-			Instantiate(VFX, transform.position, Quaternion.identity);
+			Instantiate(snowballVFX, transform.position, Quaternion.identity);
 			Destroy(this.gameObject); // Optionally destroy the bullet
-			playerHealth.TakeDamage(damageAmount);
-
+			playerHealth.TakeDamage(damageAmout);
 		}
-
+		else
+		{
+			// Reflect the bullet's direction upon collision with other objects
+			Vector2 normal = collision.contacts[0].normal; // Get the contact normal
+			Vector2 direction = Vector2.Reflect(transform.right, normal); // Reflect the direction
+			transform.up = direction; // Update the bullet's rotation to the new direction
+		}
 	}
 }
