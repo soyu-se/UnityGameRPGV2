@@ -3916,7 +3916,7 @@ Transform:
   m_GameObject: {fileID: 1021186354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.87591964, w: 0.48245713}
-  m_LocalPosition: {x: 0.6, y: -0.45, z: 0}
+  m_LocalPosition: {x: 0.9092, y: -0.7468, z: 0}
   m_LocalScale: {x: 0.009409524, y: 0.009409524, z: 0.007527618}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3955,7 +3955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa95a99804196d4498ee4ea29ed0beee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimPrefab: {fileID: 3505976585799640703, guid: d411b0fbe21eab74fac7c332955b439d, type: 3}
+  slashAnimPrefab: {fileID: 6934183897527202345, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 1978600314}
   weaponCollider: {fileID: 1264881}
 --- !u!212 &1021186358
@@ -4097,7 +4097,7 @@ Transform:
   m_GameObject: {fileID: 1032210173}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.39637935, y: 1.7762386, z: -10}
+  m_LocalPosition: {x: -4.1663795, y: 1.9862386, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12239,7 +12239,7 @@ Transform:
   m_GameObject: {fileID: 1595528086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.77, y: 0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15104,7 +15104,7 @@ Transform:
   m_GameObject: {fileID: 1943088794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.39637935, y: 1.7762386, z: -10}
+  m_LocalPosition: {x: -4.1663795, y: 1.9862386, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

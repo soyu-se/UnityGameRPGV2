@@ -38,7 +38,7 @@ public class SnowBullet : MonoBehaviour
 			PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 			Instantiate(snowballVFX, transform.position, Quaternion.identity);
 			Destroy(this.gameObject); // Optionally destroy the bullet
-			playerHealth.TakeDamage(damageAmout);
+			playerHealth.TakeDamage(damageAmout,this.transform);
 		}
 		else
 		{

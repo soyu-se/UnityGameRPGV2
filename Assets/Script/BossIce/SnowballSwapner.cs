@@ -20,7 +20,7 @@ public class SnowballSpawner : MonoBehaviour
 	[SerializeField] private float angleSpread = 30f; // Angle spread for the burst
 	[SerializeField] private float burstDuration = 3f; // Duration to shoot before stopping
 
-	private float timer = 0f;
+	//private float timer = 0f;
 	public event Action OnShootingComplete; // Event to notify when shooting is complete
 	public bool IsShootingComplete { get; private set; } // Property to track if shooting is complete
 

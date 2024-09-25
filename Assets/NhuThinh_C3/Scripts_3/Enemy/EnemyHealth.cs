@@ -12,6 +12,10 @@ public class EnemyHealth : MonoBehaviour
     private Knockback knockback;
     private Flash flash;
 
+    private void Start()
+    {
+        currentHealth = startingHealth;
+    }
     private void Awake()
     {
         knockback = GetComponent<Knockback>();
@@ -21,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        knockback.GetKnockedBack(PlayerController3.Instance.transform, 15f);
+        knockback.GetKnockedBack(PlayerController3.Instance.transform, knockBackThurst);
         StartCoroutine(flash.FlashRoutine());
     }
 
