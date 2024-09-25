@@ -22,7 +22,7 @@ public class icelandsplatter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-        playerHealth?.TakeDamage(1, transform);
+        playerHealth?.TakeDamage(1);
     }
 
     private void DisableCollider()

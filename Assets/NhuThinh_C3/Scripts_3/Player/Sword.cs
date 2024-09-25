@@ -29,6 +29,7 @@ public class Sword : MonoBehaviour
     void Start()
     {
         playerControls.Combat.Attack.started += _ => Attack();
+        weaponCollider.gameObject.SetActive(false);
     }
 
     private void Update() {
