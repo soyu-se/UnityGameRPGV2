@@ -28,20 +28,22 @@ public class Sword : MonoBehaviour
 
     void Start()
     {
+        weaponCollider.gameObject.SetActive(false); 
         playerControls.Combat.Attack.started += _ => Attack();
-        weaponCollider.gameObject.SetActive(false);
+        
     }
 
     private void Update() {
         MouseFollowWithOffset();
     }
 
-    private void Attack() {        
-        weaponCollider.gameObject.SetActive(true);
+    private void Attack() {
+        myAnimator.SetTrigger("Attack");
 
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
-        myAnimator.SetTrigger("Attack");
+        weaponCollider.gameObject.SetActive(true);
+        
     }
 
     public void SwingUpFlipAnimEvent() {
