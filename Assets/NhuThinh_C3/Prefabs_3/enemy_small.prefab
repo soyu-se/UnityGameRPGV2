@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6622156221026508951}
   - component: {fileID: 7627166343445855788}
   - component: {fileID: 1157952080284265669}
+  - component: {fileID: 3910869401633083128}
   - component: {fileID: 875466403861401976}
   - component: {fileID: 8802264142417193715}
   - component: {fileID: 7109931172266559975}
@@ -164,6 +165,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9949f532a3460bc41bc5ed9d7fe66774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamChangeDirFloat: 2
+  attackRange: 0
+  enemyType: {fileID: 3910869401633083128}
+  attackCooldown: 2
+  stopMovingWhileAttacking: 0
+--- !u!114 &3910869401633083128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771060472603780071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558be3e6cc6193e48a5b71f1d00fad72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grapeProjectilePrefab: {fileID: 7720123948845455077, guid: 61f7b6dfbd7fccf42a8e4e1870c94f3d, type: 3}
 --- !u!114 &875466403861401976
 MonoBehaviour:
   m_ObjectHideFlags: 0
