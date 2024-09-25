@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int startingHealth = 3;
+	[SerializeField] private int startingHealth = 3;
+	[SerializeField] private GameObject deathVFXPrefab;
+	[SerializeField] private float knockBackThurst = 15f;
 
     private int currentHealth;
     private Knockback knockback;
@@ -16,10 +18,10 @@ public class EnemyHealth : MonoBehaviour
         flash = GetComponent<Flash>();
     }
 
-    private void Start()
-    {
-        currentHealth = startingHealth;
-    }
+	public void Awake()
+	{
+		flash = GetComponent<Flash>();
+	}
 
     public void TakeDamage(int damage)
     {

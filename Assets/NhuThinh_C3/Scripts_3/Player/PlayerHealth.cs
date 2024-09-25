@@ -59,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
     {
         canTakeDamage = false;
         currHealth -= damageAmount;
+        Debug.Log("the player health: " + currHealth);
         StartCoroutine(DamageRecoveryRountine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();
