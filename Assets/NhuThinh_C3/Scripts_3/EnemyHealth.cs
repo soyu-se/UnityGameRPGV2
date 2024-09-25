@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int startingHealth = 3;
+	[SerializeField] private int startingHealth = 3;
+	[SerializeField] private GameObject deathVFXPrefab;
+	[SerializeField] private float knockBackThurst = 15f;
 
-    private int currentHealth;
+	private int currentHealth;
+	private Flash flash;
 
-    private void Start()
-    {
-        currentHealth = startingHealth;
-    }
+	public void Awake()
+	{
+		flash = GetComponent<Flash>();
+	}
 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        Debug.Log(currentHealth);
-        DetectDeath();
-    }
+	private void Start()
+	{
+		currentHealth = startingHealth;
+	}
 
-    private void DetectDeath()
-    {
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+	public void TakeDamage(int damage)
+	{
+		currentHealth -= damage;
+		//knockBack.GetknockBack(PlayerController.Instance.transform, knockBackThurst);
+		StartCoroutine(flash.FlashRoutine());
+		StartCoroutine(CheckDetectDeathRoutine());
+	}
+
+	private IEnumerator CheckDetectDeathRoutine()
+	{
+		yield return new WaitForSeconds(flash.GetRestoreMatTime());
+		DetectDeath();
+	}
+
+	public void DetectDeath()
+	{
+		if (currentHealth <= 0)
+		{
+			Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+			Destroy(gameObject);
+		}
+	}
 }
