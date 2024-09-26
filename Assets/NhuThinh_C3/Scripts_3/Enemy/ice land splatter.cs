@@ -7,7 +7,7 @@ public class icelandsplatter : MonoBehaviour
 {
     private SpriteFade spriteFade;
 
-    private void Awake()    
+    private void Awake()
     {
         spriteFade = GetComponent<SpriteFade>();
     }
@@ -22,7 +22,7 @@ public class icelandsplatter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-        playerHealth?.TakeDamage(1,this.transform);
+        playerHealth?.TakeDamage(1, transform);
     }
 
     private void DisableCollider()

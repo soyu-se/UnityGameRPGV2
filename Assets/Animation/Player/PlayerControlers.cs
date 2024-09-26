@@ -52,7 +52,7 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""bc767bbe-568d-4c13-a9c6-438dd28880f5"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -63,7 +63,7 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""fdd2fb78-739d-4683-8b67-859a620ba0c0"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -74,7 +74,7 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""6c70c8e8-2b55-4f6f-bbf8-3e85ee3ce0f6"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -85,7 +85,7 @@ public partial class @PlayerControlers: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""047a52fe-5d83-419b-bd5b-a218a3844154"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

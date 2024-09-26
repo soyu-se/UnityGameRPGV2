@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 294425174, guid: a415c410fc970794980442079eaf333a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &6622156221026508951
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 2
-  attackRange: 0
+  attackRange: 8
   enemyType: {fileID: 3910869401633083128}
-  attackCooldown: 2
+  attackCooldown: 0.5
   stopMovingWhileAttacking: 0
 --- !u!114 &3910869401633083128
 MonoBehaviour:
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558be3e6cc6193e48a5b71f1d00fad72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grapeProjectilePrefab: {fileID: 7720123948845455077, guid: 61f7b6dfbd7fccf42a8e4e1870c94f3d, type: 3}
+  grapeProjectilePrefab: {fileID: 3766050745207519105, guid: 61f7b6dfbd7fccf42a8e4e1870c94f3d, type: 3}
 --- !u!114 &875466403861401976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d24ea348c63b94d988f73e2caf49af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
 --- !u!95 &8802264142417193715
 Animator:
   serializedVersion: 5
@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  deathVFXPrefab: {fileID: 0}
+  knockBackThrust: 15
 --- !u!114 &4170602915881841172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackTime: 0.1
+  knockBackTime: 0.2
 --- !u!114 &5117331137456002149
 MonoBehaviour:
   m_ObjectHideFlags: 0
