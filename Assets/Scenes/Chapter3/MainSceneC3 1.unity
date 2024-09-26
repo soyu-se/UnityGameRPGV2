@@ -668,10 +668,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.51471984, y: 0.123170264}
-      - {x: -0.16867071, y: 0.1259242}
-      - {x: -0.1698176, y: -0.16533862}
-      - {x: 0.51109266, y: -0.16242485}
+    - - {x: 0.5754284, y: 0.17782174}
+      - {x: -0.30138278, y: 0.1754199}
+      - {x: -0.30252957, y: -0.2096785}
+      - {x: 0.58450794, y: -0.20676473}
   m_UseDelaunayMesh: 0
 --- !u!1001 &419874030
 PrefabInstance:
@@ -955,7 +955,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.530064, y: 0.72199464, z: -9.983438}
+  m_LocalPosition: {x: 0.36943746, y: 0.6124347, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6670,7 +6670,7 @@ Transform:
   m_GameObject: {fileID: 1464792638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4300637, y: -2.6680055, z: -9.983438}
+  m_LocalPosition: {x: -6.3799367, y: -2.7780056, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6696,7 +6696,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1633794329}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8
@@ -9165,6 +9165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008850765}
   - component: {fileID: 2008850766}
+  - component: {fileID: 2008850767}
   m_Layer: 0
   m_Name: State-Driven Camera
   m_TagString: Untagged
@@ -9225,6 +9226,21 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
   m_ParentHash: []
+--- !u!114 &2008850767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008850764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 377348776}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!4 &2053402793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1695391015621961969, guid: a33fed0829bbf94488acfbc6ad30f59d, type: 3}
@@ -9746,7 +9762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6771060472603780071, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
