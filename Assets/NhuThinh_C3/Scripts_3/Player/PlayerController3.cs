@@ -6,7 +6,7 @@ public class PlayerController3 : Singleton<PlayerController3>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] public float moveSpeed = 5f;
 
     [SerializeField] private float slipperyZoneMultiplier = 3f;
 
