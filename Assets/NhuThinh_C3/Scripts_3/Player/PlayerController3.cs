@@ -8,7 +8,7 @@ public class PlayerController3 : Singleton<PlayerController3>
 
     [SerializeField] private float moveSpeed = 5f;
 
-    [SerializeField] private float slipperyZoneMultiplier = 30f;
+    [SerializeField] private float slipperyZoneMultiplier = 3f;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -61,7 +61,7 @@ public class PlayerController3 : Singleton<PlayerController3>
             Debug.Log("Player being damaged");
             if (isInSlipperyZone)
             {
-                float currentSpeedd = moveSpeed * slipperyZoneMultiplier*slipperyZoneMultiplier;
+                float currentSpeedd = moveSpeed * slipperyZoneMultiplier;
                 rb.MovePosition(rb.position + movement * (currentSpeedd * Time.fixedDeltaTime));
             }
             return; 
@@ -72,7 +72,7 @@ public class PlayerController3 : Singleton<PlayerController3>
 
         if (isInSlipperyZone)
         {
-           currentSpeed *= slipperyZoneMultiplier * slipperyZoneMultiplier;
+           currentSpeed *= slipperyZoneMultiplier;
 
         }
 
