@@ -22,12 +22,14 @@ public class Sword : MonoBehaviour
         playerControls = new PlayerControls();
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         playerControls.Enable();
     }
-
     void Start()
     {
+
+        myAnimator.enabled = true;        
         weaponCollider.gameObject.SetActive(false); 
         playerControls.Combat.Attack.started += _ => Attack();
         

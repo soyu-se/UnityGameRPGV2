@@ -60,12 +60,13 @@ public class EnemyAI : MonoBehaviour
         timeRoaming += Time.deltaTime;
 
         enemyPathfinding.MoveTo(roamPosition);
-
-        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < attackRange)
+        if (PlayerController3.Instance != null)
         {
-            state = State.Attacking;
+            if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < attackRange)
+            {
+                state = State.Attacking;
+            }
         }
-
         if (timeRoaming > roamChangeDirFloat)
         {
             roamPosition = GetRoamingPosition();
@@ -74,11 +75,13 @@ public class EnemyAI : MonoBehaviour
 
     private void Attacking()
     {
-        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > attackRange)
+        if (PlayerController3.Instance != null)
         {
-            state = State.Roaming;
+            if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > attackRange)
+            {
+                state = State.Roaming;
+            }
         }
-
         if (attackRange != 0 && canAttack)
         {
 

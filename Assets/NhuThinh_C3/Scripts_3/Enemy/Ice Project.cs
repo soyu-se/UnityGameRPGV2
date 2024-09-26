@@ -11,15 +11,17 @@ public class IceProject : MonoBehaviour
     [SerializeField] private GameObject splatterPrefab;
 
     private void Start()
-    { 
+    {
         GameObject grapeShadow =
         Instantiate(grapeProjectileShadow, transform.position + new Vector3(0, -0.3f, 0), Quaternion.identity);
+        if (PlayerController3.Instance != null)
+        {
+            Vector3 playerPos = PlayerController3.Instance.transform.position;
+            Vector3 grapeShadowStartPosition = grapeShadow.transform.position;
 
-        Vector3 playerPos = PlayerController3.Instance.transform.position;
-        Vector3 grapeShadowStartPosition = grapeShadow.transform.position;
-
-        StartCoroutine(ProjectileCurveRoutine(transform.position, playerPos));
-        StartCoroutine(MoveGrapeShadowRoutine(grapeShadow, grapeShadowStartPosition, playerPos));
+            StartCoroutine(ProjectileCurveRoutine(transform.position, playerPos));
+            StartCoroutine(MoveGrapeShadowRoutine(grapeShadow, grapeShadowStartPosition, playerPos));
+        } 
     }
 
     private IEnumerator ProjectileCurveRoutine(Vector3 startPosition, Vector3 endPosition)
@@ -38,6 +40,7 @@ public class IceProject : MonoBehaviour
             yield return null;
         }
         Instantiate(splatterPrefab, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
+
+    public static event Action OnPlayerDeath;
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
@@ -64,8 +67,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
-            Debug.Log("Player Death");
+            currentHealth = 0;            
+            OnPlayerDeath?.Invoke();
             Destroy(gameObject);
         }
     }
