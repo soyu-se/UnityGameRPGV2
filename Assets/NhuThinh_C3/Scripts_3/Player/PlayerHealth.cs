@@ -1,67 +1,76 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-public class PlayerHealth : MonoBehaviour
+
+public class PlayerHealth : Singleton<PlayerHealth>
 {
-    [SerializeField] public int maxHealth = 3;
-    [SerializeField] public float knockBackThrustAmount = 10f;
-    [SerializeField] public float damageRecoveryTime = 1f;
+    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private float knockBackThrustAmount = 10f;
+    [SerializeField] private float damageRecoveryTime = 1f;
 
     private Slider healthSlider;
-    private int currHealth;
+    private int currentHealth;
     private bool canTakeDamage = true;
-    private Knockback knockBack;
+    private Knockback knockback;
     private Flash flash;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         flash = GetComponent<Flash>();
-        knockBack = GetComponent<Knockback>();
+        knockback = GetComponent<Knockback>();
     }
+
     private void Start()
     {
-        currHealth = maxHealth;
+        currentHealth = maxHealth;
+
         UpdateHealthSlider();
     }
-    private void OnCollisionStay2D(Collision2D collision)
+
+    private void OnCollisionStay2D(Collision2D other)
     {
-        EnemyHealth enemy=collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemy && canTakeDamage) 
+        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
+
+        if (enemy)
         {
-            TakeDamage(1);
-            knockBack.GetKnockedBack(collision.gameObject.transform, knockBackThrustAmount);
-            StartCoroutine(flash.FlashRoutine());
+            TakeDamage(1, other.transform);
         }
     }
+
     public void HealPlayer()
     {
-        if (currHealth < maxHealth)
+        if (currentHealth < maxHealth)
         {
-            currHealth += 1;
+            currentHealth += 1;
             UpdateHealthSlider();
         }
     }
-    private void TakeDamage(int damageAmount)
+
+    public void TakeDamage(int damageAmount, Transform hitTransform)
     {
+        if (!canTakeDamage) { return; }
+        knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         canTakeDamage = false;
-        currHealth -= damageAmount;
-        StartCoroutine(DamageRecoveryRountine());
+        currentHealth -= damageAmount;
+        StartCoroutine(DamageRecoveryRoutine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();
     }
 
     private void CheckIfPlayerDeath()
     {
-        if (currHealth <= 0)
+        if (currentHealth <= 0)
         {
-            currHealth = 0;
-            Debug.Log("Player Dead");
+            currentHealth = 0;
+            Debug.Log("Player Death");
             Destroy(gameObject);
         }
     }
-    private IEnumerator DamageRecoveryRountine()
+
+    private IEnumerator DamageRecoveryRoutine()
     {
         yield return new WaitForSeconds(damageRecoveryTime);
         canTakeDamage = true;
@@ -73,7 +82,8 @@ public class PlayerHealth : MonoBehaviour
         {
             healthSlider = GameObject.Find("Health Slider").GetComponent<Slider>();
         }
+
         healthSlider.maxValue = maxHealth;
-        healthSlider.value = currHealth;
+        healthSlider.value = currentHealth;
     }
 }
