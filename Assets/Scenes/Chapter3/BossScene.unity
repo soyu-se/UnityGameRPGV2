@@ -12528,6 +12528,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionName: ToBossScene
+--- !u!1 &1565423602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5386835578428411793, guid: a2011c7bac209ad45b949db275103875, type: 3}
+  m_PrefabInstance: {fileID: 2028869033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1565423612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.3
 --- !u!1 &1590137139
 GameObject:
   m_ObjectHideFlags: 0
@@ -16089,9 +16107,17 @@ PrefabInstance:
       propertyPath: projectilesPerBurst
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7642786226655292806, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7731537809483463831, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965164923503365457, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: startingHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7996050954421930559, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: speed
@@ -16101,6 +16127,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5386835578428411793, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565423612}
     - targetCorrespondingSourceObject: {fileID: 3139365892179541955, guid: a2011c7bac209ad45b949db275103875, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2136026803}
