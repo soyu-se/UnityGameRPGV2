@@ -6920,7 +6920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa95a99804196d4498ee4ea29ed0beee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimPrefab: {fileID: 6934183897527202345, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
+  slashAnimPrefab: {fileID: 6264733203898987206, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 342741094}
   weaponCollider: {fileID: 1328014788}
 --- !u!212 &829050510
@@ -141302,6 +141302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  slipperyZoneMultiplier: 30
 --- !u!50 &1643324692
 Rigidbody2D:
   serializedVersion: 4

@@ -721,6 +721,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768582796}
   m_CullTransparentMesh: 1
+--- !u!1 &861360228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6702979832348548318, guid: a2011c7bac209ad45b949db275103875, type: 3}
+  m_PrefabInstance: {fileID: 2028869033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &861360232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861360228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f41140ac876eb49ad8f94747f75840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
+  deathVFXPrefab: {fileID: 0}
+  knockBackThrust: 15
 --- !u!1 &924651097
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,7 +4322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa95a99804196d4498ee4ea29ed0beee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimPrefab: {fileID: 6934183897527202345, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
+  slashAnimPrefab: {fileID: 6264733203898987206, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 1978600314}
   weaponCollider: {fileID: 1264881}
 --- !u!212 &1021186358
@@ -12700,6 +12720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  slipperyZoneMultiplier: 30
 --- !u!50 &1595528091
 Rigidbody2D:
   serializedVersion: 4
@@ -12769,7 +12790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d600c455db5b28408784e26686ab762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 10
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
 --- !u!1 &1597368244
@@ -16079,8 +16100,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3139365892179541955, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2136026803}
+    - targetCorrespondingSourceObject: {fileID: 6702979832348548318, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 861360232}
   m_SourcePrefab: {fileID: 100100000, guid: a2011c7bac209ad45b949db275103875, type: 3}
+--- !u!1 &2136026800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3139365892179541955, guid: a2011c7bac209ad45b949db275103875, type: 3}
+  m_PrefabInstance: {fileID: 2028869033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2136026803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136026800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f41140ac876eb49ad8f94747f75840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
+  deathVFXPrefab: {fileID: 0}
+  knockBackThrust: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

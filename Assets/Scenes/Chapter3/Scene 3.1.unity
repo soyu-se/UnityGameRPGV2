@@ -1063,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.061848, y: 15.585306, z: -9.983438}
+  m_LocalPosition: {x: -16.06727, y: 15.585396, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45030,7 +45030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa95a99804196d4498ee4ea29ed0beee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimPrefab: {fileID: 6934183897527202345, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
+  slashAnimPrefab: {fileID: 6264733203898987206, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 395889542}
   weaponCollider: {fileID: 748108200}
 --- !u!212 &1779261515
