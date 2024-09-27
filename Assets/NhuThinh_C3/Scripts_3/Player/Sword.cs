@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : Singleton<Sword>
 {
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
@@ -15,32 +15,39 @@ public class Sword : MonoBehaviour
 
     private GameObject slashAnim;
 
-    private void Awake() {
+    protected override void Awake()
+    {
+        base.Awake();
         playerController = GetComponentInParent<PlayerController3>();
         activeWeapon = GetComponentInParent<ActiveWeapons>();
         myAnimator = GetComponent<Animator>();
         playerControls = new PlayerControls();
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         playerControls.Enable();
     }
-
     void Start()
     {
+
+        myAnimator.enabled = true;        
+        weaponCollider.gameObject.SetActive(false); 
         playerControls.Combat.Attack.started += _ => Attack();
+        
     }
 
     private void Update() {
         MouseFollowWithOffset();
     }
 
-    private void Attack() {        
-        weaponCollider.gameObject.SetActive(true);
+    private void Attack() {
+        myAnimator.SetTrigger("Attack");
 
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
-        myAnimator.SetTrigger("Attack");
+        weaponCollider.gameObject.SetActive(true);
+        
     }
 
     public void SwingUpFlipAnimEvent() {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlashAnim : MonoBehaviour
 {
-    private ParticleSystem ps;
+	private ParticleSystem ps;
 
 	private void Awake()
 	{
@@ -20,7 +20,7 @@ public class SlashAnim : MonoBehaviour
 	}
 
 	public void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
+	{
+		Destroy(gameObject);
+	}
 }

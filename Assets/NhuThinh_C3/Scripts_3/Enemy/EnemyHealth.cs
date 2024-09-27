@@ -4,43 +4,45 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-	[SerializeField] private int startingHealth = 3;
-	[SerializeField] private GameObject deathVFXPrefab;
-	[SerializeField] private float knockBackThurst = 15f;
+    [SerializeField] private int startingHealth = 3;
+    [SerializeField] private GameObject deathVFXPrefab;
+    [SerializeField] private float knockBackThrust = 15f;
 
-	private int currentHealth;
-	private Flash flash;
+    private int currentHealth;
+    private Knockback knockback;
+    private Flash flash;
 
-	public void Awake()
-	{
-		flash = GetComponent<Flash>();
-	}
+    private void Start()
+    {
+        currentHealth = startingHealth;
+    }
+    private void Awake()
+    {
+        knockback = GetComponent<Knockback>();
+        flash = GetComponent<Flash>();
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
 
-	private void Start()
-	{
-		currentHealth = startingHealth;
-	}
+        knockback.GetKnockedBack(PlayerController3.Instance.transform, knockBackThrust);
+        StartCoroutine(flash.FlashRoutine());
+        StartCoroutine(CheckDetectDeathRoutine());
+    }
 
-	public void TakeDamage(int damage)
-	{
-		currentHealth -= damage;
-		//knockBack.GetknockBack(PlayerController3.Instance.transform, knockBackThurst);
-		StartCoroutine(flash.FlashRoutine());
-		StartCoroutine(CheckDetectDeathRoutine());
-	}
+    private IEnumerator CheckDetectDeathRoutine()
+    {
+        yield return new WaitForSeconds(flash.GetRestoreMatTime());
+        DetectDeath();
+    }
 
-	private IEnumerator CheckDetectDeathRoutine()
-	{
-		yield return new WaitForSeconds(flash.GetRestoreMatTime());
-		DetectDeath();
-	}
-
-	public void DetectDeath()
-	{
-		if (currentHealth <= 0)
-		{
-			Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
-			Destroy(gameObject);
-		}
-	}
+    public void DetectDeath()
+    {
+        if (currentHealth <= 0)
+        {
+            Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
+            //GetComponent<PickUpSpawner>().DropItems();
+            Destroy(gameObject);
+        }
+    }
 }
