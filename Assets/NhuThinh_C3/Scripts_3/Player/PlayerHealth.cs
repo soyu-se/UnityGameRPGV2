@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
-
+    public bool isDead { get; private set; }
     public static event Action OnPlayerDeath;
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 10f;
@@ -18,6 +18,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private Knockback knockback;
     private Flash flash;
 
+    readonly int DEATH_HASH = Animator.StringToHash("Death");
     protected override void Awake()
     {
         base.Awake();
@@ -29,7 +30,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private void Start()
     {
         currentHealth = maxHealth;
-
+        isDead = false;
         UpdateHealthSlider();
     }
 
@@ -65,12 +66,21 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void CheckIfPlayerDeath()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
+            isDead = true;
             currentHealth = 0;            
+            
+            Destroy(Sword.Instance.gameObject);            
+            GetComponent<Animator>().SetTrigger(DEATH_HASH);
+            StartCoroutine(DeathLoadSceneRoutine());
             OnPlayerDeath?.Invoke();
-            Destroy(gameObject);
         }
+    }
+    private IEnumerator DeathLoadSceneRoutine()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 
     private IEnumerator DamageRecoveryRoutine()

@@ -68,7 +68,7 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         if (rb.bodyType == RigidbodyType2D.Dynamic)
         {
-            if (knockback.GettingKnockedBack)
+            if (knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
             {
                 Debug.Log("Player being damaged");
                 if (isInSlipperyZone)

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 514319947099366460}
   - component: {fileID: 7795766336773950008}
   - component: {fileID: 7618954278752980739}
-  - component: {fileID: 6656285368939527231}
   - component: {fileID: 9042309192104955766}
   m_Layer: 0
   m_Name: Ice Projectile Splatter
@@ -122,19 +121,6 @@ CapsuleCollider2D:
   m_Offset: {x: -2.398074, y: 1.3322656}
   m_Size: {x: 57.70387, y: 47.045803}
   m_Direction: 1
---- !u!114 &6656285368939527231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6128634286241339603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 057d05ae114dc894f9ff874a92a5be7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeTime: 0.6
 --- !u!114 &9042309192104955766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e2ed28047b39d42a145d06dfe3d504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteFade: {fileID: 800878362864110772, guid: ab15784fd0059a843b7d6a599aa7a9e4, type: 3}

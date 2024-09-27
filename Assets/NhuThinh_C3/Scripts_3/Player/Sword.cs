@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : Singleton<Sword>
 {
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
@@ -15,7 +15,9 @@ public class Sword : MonoBehaviour
 
     private GameObject slashAnim;
 
-    private void Awake() {
+    protected override void Awake()
+    {
+        base.Awake();
         playerController = GetComponentInParent<PlayerController3>();
         activeWeapon = GetComponentInParent<ActiveWeapons>();
         myAnimator = GetComponent<Animator>();
