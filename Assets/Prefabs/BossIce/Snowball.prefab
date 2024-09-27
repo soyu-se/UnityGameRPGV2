@@ -162,6 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLife: 2
-  speed: 3
+  speed: 4
   snowballVFX: {fileID: 259376842178263901, guid: 79af6bc927a24dc4a836f5bbcecf44fb, type: 3}
-  damageAmout: 1
+  damageAmout: 2
