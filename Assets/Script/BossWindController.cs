@@ -5,20 +5,29 @@ using UnityEngine;
 public class BossWindController : MonoBehaviour
 {
 	[SerializeField] private float health = 100f;
-
-	[Header("Cyclone SKill Attribute")]
-	[SerializeField] private float pullForce;
-	[SerializeField] private float pullDuration;
-	[SerializeField] private float skillCD;
-	[SerializeField] private float damage;
-
-	private CycloneSkill cycloneSkill;
+	[SerializeField] private CycloneSkill cycloneSkill;
 
 	private void Start()
 	{
-		cycloneSkill = GetComponentInChildren<CycloneSkill>();
-		cycloneSkill.PullForce = pullForce;
-		cycloneSkill.PullDuration = pullDuration;
-		cycloneSkill.SkillCD = skillCD;
+		StartCoroutine(ManageActivation());
+	}
+
+	private IEnumerator ManageActivation()
+	{
+		while (health > 0)
+		{
+			if (!cycloneSkill.gameObject.activeInHierarchy)
+			{
+				cycloneSkill.gameObject.SetActive(true);
+			}
+
+			cycloneSkill.Run();
+
+			yield return new WaitUntil(() => cycloneSkill.IsActingComplete);
+
+			cycloneSkill.gameObject.SetActive(false);
+
+			yield return new WaitForSeconds(cycloneSkill.skillCD);
+		}
 	}
 }

@@ -1,38 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CycloneSkill : MonoBehaviour
 {
-    public float PullForce { get; set; }
-    public float PullDuration { get; set; }
-	public float SkillCD { get; set; }
-    // Cooldown time after pulling
-    private bool isPulling = false;
+	[SerializeField] private float pullForce;
+	[SerializeField] private float pullDuration;
+	//[SerializeField] private float skillCD;
+	[SerializeField] private float damage;
+
+	public float skillCD;
+	// Cooldown time after pulling
+	private bool isPulling = false;
 	private bool isOnCooldown = false;
+	public bool IsActingComplete { get; private set; }
 
-	[SerializeField] private Transform pullCenter; // Reference to the center of the pull effect
+	[SerializeField] private Transform pullCenter;
 
-
-	private void Start()
+	public void Run()
 	{
-		// Start the pulling process using Coroutine
 		StartCoroutine(PullCycle());
 	}
 
 	private IEnumerator PullCycle()
 	{
-		while (true) // Infinite loop to repeat the cycle
-		{
-			// Pulling phase
-			isPulling = true;
-			yield return new WaitForSeconds(PullDuration); // Pull for pullDuration seconds
-
-			// After pulling ends, start the attack cooldown routine
-			isPulling = false;
-			yield return StartCoroutine(AttackCDRoutine());
-			Debug.Log("run form the cyclone script");
-		}
+		IsActingComplete = false;
+		// Pulling phase
+		isPulling = true;
+		yield return new WaitForSeconds(pullDuration);
+		// After pulling ends, start the attack cooldown routine
+		isPulling = false;
+		IsActingComplete = true;
 	}
 
 	private void Update()
@@ -41,15 +40,7 @@ public class CycloneSkill : MonoBehaviour
 		{
 			// Pull the player towards the center of this object
 			Vector3 directionToCenter = (pullCenter.position - PlayerController3.Instance.transform.position).normalized;
-			PlayerController3.Instance.GetComponent<Rigidbody2D>().AddForce(directionToCenter * PullForce);
+			PlayerController3.Instance.GetComponent<Rigidbody2D>().AddForce(directionToCenter * pullForce);
 		}
-	}
-
-	private IEnumerator AttackCDRoutine()
-	{
-		// Cooldown phase after pulling
-		isOnCooldown = true;
-		yield return new WaitForSeconds(SkillCD); // Wait for cooldown duration
-		isOnCooldown = false; // Cooldown is over, pulling can resume
 	}
 }
