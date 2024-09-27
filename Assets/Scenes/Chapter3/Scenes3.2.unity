@@ -178,6 +178,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 83036926}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage5
@@ -185,8 +205,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 83036926}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &60524455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 60524454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &80683677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,11 +266,15 @@ PrefabInstance:
     - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
+      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
     - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme2
@@ -266,6 +298,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1876018039159264719, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
   m_PrefabInstance: {fileID: 60524454}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &83036926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60524455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!4 &114477973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
@@ -8455,6 +8509,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 380405041}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage7
@@ -8462,8 +8536,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 380405041}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &380405040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 380405039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &380405041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380405040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!1001 &444223344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8515,11 +8619,15 @@ PrefabInstance:
     - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
+      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
     - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme5
@@ -8634,6 +8742,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 849478857}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage13
@@ -8641,8 +8769,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 849478857}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &480529076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 480529075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &501449244
 GameObject:
   m_ObjectHideFlags: 0
@@ -8830,6 +8966,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 1836836411}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage9
@@ -8837,8 +8993,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1836836411}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &569884243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 569884242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &613471247
 GameObject:
   m_ObjectHideFlags: 0
@@ -9233,6 +9397,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 1641051103}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage3
@@ -9240,8 +9424,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1641051103}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &658937038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 658937037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &709159464
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,6 +10073,22 @@ Transform:
   - {fileID: 2076100759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 480529076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!1 &874512030
 GameObject:
   m_ObjectHideFlags: 0
@@ -135839,7 +136047,7 @@ Transform:
   m_GameObject: {fileID: 1133665506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.75005, y: -22.9097, z: -10}
+  m_LocalPosition: {x: 44.75724, y: -22.90969, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -135938,75 +136146,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1001 &1152059839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2030324695}
-    m_Modifications:
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.08221055
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
-    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: deathVFXPrefab
-      value: 
-      objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
-    - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_Name
-      value: knight_mau_farme4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137653133864830201, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: moveSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
 --- !u!1 &1155528682
 GameObject:
   m_ObjectHideFlags: 0
@@ -136313,6 +136452,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 1339989132}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage10
@@ -136320,8 +136479,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1339989132}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &1277672074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 1277672073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1290699678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136373,11 +136540,15 @@ PrefabInstance:
     - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
+      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
     - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme11
@@ -136720,6 +136891,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1876018039159264719, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
   m_PrefabInstance: {fileID: 1277672073}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339989132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277672074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!1 &1378238396
 GameObject:
   m_ObjectHideFlags: 0
@@ -144238,6 +144431,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1876018039159264719, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
   m_PrefabInstance: {fileID: 658937037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1641051103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658937038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!1 &1643324685
 GameObject:
   m_ObjectHideFlags: 0
@@ -144740,11 +144955,15 @@ PrefabInstance:
     - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
+      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
     - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme8
@@ -144763,6 +144982,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1876018039159264719, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
   m_PrefabInstance: {fileID: 569884242}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836836411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569884243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!1001 &1837545083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144819,6 +145060,26 @@ PrefabInstance:
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: startingHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: enemyType
+      value: 
+      objectReference: {fileID: 2114471785}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage8
@@ -144826,8 +145087,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2114471785}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+--- !u!1 &1837545084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
+  m_PrefabInstance: {fileID: 1837545083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1840702479
 GameObject:
   m_ObjectHideFlags: 0
@@ -145051,11 +145320,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!4 &1945553851 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-  m_PrefabInstance: {fileID: 1152059839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1987435738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145172,7 +145436,6 @@ Transform:
   - {fileID: 1987435739}
   - {fileID: 1231853277}
   - {fileID: 80683678}
-  - {fileID: 1945553851}
   - {fileID: 114477973}
   - {fileID: 834002059}
   - {fileID: 379353510}
@@ -145237,11 +145500,15 @@ PrefabInstance:
     - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
+      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
     - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme7
@@ -145305,6 +145572,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1876018039159264719, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
   m_PrefabInstance: {fileID: 1837545083}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2114471785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837545084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
 --- !u!198 &5953161873231824892
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -150153,11 +150442,15 @@ PrefabInstance:
     - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6a520de117728e648b765ddff6a8aa90, type: 2}
+      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
     - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: deathVFXPrefab
       value: 
       objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme1
