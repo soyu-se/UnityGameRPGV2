@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float roamChangeDirFloat = 2f;
-    [SerializeField] private float attackRange = 0f;
+    [SerializeField] private float attackRange = 5f;
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private bool stopMovingWhileAttacking = false;
@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     private enum State
     {
         Roaming,
+        Chasing,
         Attacking
     }
 
@@ -49,6 +50,10 @@ public class EnemyAI : MonoBehaviour
                 Roaming();
                 break;
 
+            case State.Chasing:
+                Chasing();
+                break;
+
             case State.Attacking:
                 Attacking();
                 break;
@@ -63,7 +68,7 @@ public class EnemyAI : MonoBehaviour
 
         if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < attackRange)
         {
-            state = State.Attacking;
+            state = State.Chasing;
         }
 
         if (timeRoaming > roamChangeDirFloat)
@@ -72,26 +77,35 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void Attacking()
+    private void Chasing()
     {
-        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > attackRange)
+        enemyPathfinding.MoveTo(PlayerController3.Instance.transform.position);
+
+        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < 1f)
+        {
+            state = State.Attacking;
+        }
+        else if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > attackRange)
         {
             state = State.Roaming;
         }
+    }
 
-        if (attackRange != 0 && canAttack)
+    private void Attacking()
+    {
+        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > 1f)
         {
+            state = State.Chasing;
+        }
 
+        if (canAttack)
+        {
             canAttack = false;
             (enemyType as IEnemy).Attack();
 
             if (stopMovingWhileAttacking)
             {
                 enemyPathfinding.StopMoving();
-            }
-            else
-            {
-                enemyPathfinding.MoveTo(roamPosition);
             }
 
             StartCoroutine(AttackCooldownRoutine());
