@@ -54,9 +54,9 @@ public class EnemyAI : MonoBehaviour
                 Chasing();
                 break;
 
-            case State.Attacking:
-                Attacking();
-                break;
+            //case State.Attacking:
+            //    Attacking();
+            //    break;
         }
     }
 
