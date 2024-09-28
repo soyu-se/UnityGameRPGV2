@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01b533d80fc7e4188eb977bd46fb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 1
   animCurve:
     serializedVersion: 2
     m_Curve:
@@ -175,8 +175,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.183246
-      value: 0.0024677003
+      time: 0.6004213
+      value: 0.00005681161
       inSlope: -1.4510703
       outSlope: -1.4510703
       tangentMode: 0

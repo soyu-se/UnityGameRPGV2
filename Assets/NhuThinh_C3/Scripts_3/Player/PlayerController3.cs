@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController3 : Singleton<PlayerController3>
@@ -29,10 +30,19 @@ public class PlayerController3 : Singleton<PlayerController3>
         mySpriteRender = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
     }
+    private void Start()
+    {
+        EnablePlayerMovement();
+    }
 
     private void OnEnable()
     {
         playerControls.Enable();
+        PlayerHealth.OnPlayerDeath += DisablePlayerMovement;
+    }
+    private void OnDisable()
+    {
+        PlayerHealth.OnPlayerDeath -= DisablePlayerMovement;
     }
 
     private void Update()
@@ -56,27 +66,30 @@ public class PlayerController3 : Singleton<PlayerController3>
 
     private void Move()
     {
-        if (knockback.GettingKnockedBack)
+        if (rb.bodyType == RigidbodyType2D.Dynamic)
         {
-            Debug.Log("Player being damaged");
+            if (knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
+            {
+                Debug.Log("Player being damaged");
+                if (isInSlipperyZone)
+                {
+                    float currentSpeedd = moveSpeed * slipperyZoneMultiplier;
+                    rb.MovePosition(rb.position + movement * (currentSpeedd * Time.fixedDeltaTime));
+                }
+                return;
+            }
+
+
+            float currentSpeed = moveSpeed;
+
             if (isInSlipperyZone)
             {
-                float currentSpeedd = moveSpeed * slipperyZoneMultiplier;
-                rb.MovePosition(rb.position + movement * (currentSpeedd * Time.fixedDeltaTime));
+                currentSpeed *= slipperyZoneMultiplier;
+
             }
-            return; 
+
+            rb.MovePosition(rb.position + movement * (currentSpeed * Time.fixedDeltaTime));
         }
-
-
-        float currentSpeed = moveSpeed;
-
-        if (isInSlipperyZone)
-        {
-           currentSpeed *= slipperyZoneMultiplier;
-
-        }
-
-        rb.MovePosition(rb.position + movement * (currentSpeed * Time.fixedDeltaTime));
     }
 
     private void AdjustPlayerFacingDirection()
@@ -108,6 +121,16 @@ public class PlayerController3 : Singleton<PlayerController3>
         if (other.CompareTag("SlipperyZone"))
         {
             isInSlipperyZone = false; 
-        }
+        }      
+    }
+    private void DisablePlayerMovement()
+    {
+        myAnimator.enabled = false;
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+    private void EnablePlayerMovement()
+    {
+        myAnimator.enabled = true;
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

@@ -65,12 +65,13 @@ public class EnemyAI : MonoBehaviour
         timeRoaming += Time.deltaTime;
 
         enemyPathfinding.MoveTo(roamPosition);
-
-        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < attackRange)
+        if (PlayerController3.Instance != null)
         {
-            state = State.Chasing;
+            if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < attackRange)
+            {
+                state = State.Attacking;
+            }
         }
-
         if (timeRoaming > roamChangeDirFloat)
         {
             roamPosition = GetRoamingPosition();
@@ -79,21 +80,14 @@ public class EnemyAI : MonoBehaviour
 
     private void Chasing()
     {
-        enemyPathfinding.MoveTo(PlayerController3.Instance.transform.position);
-
-        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) < 1f)
+        if (PlayerController3.Instance != null)
         {
-            state = State.Attacking;
+            if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > attackRange)
+            {
+                state = State.Roaming;
+            }
         }
-        else if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > attackRange)
-        {
-            state = State.Roaming;
-        }
-    }
-
-    private void Attacking()
-    {
-        if (Vector2.Distance(transform.position, PlayerController3.Instance.transform.position) > 1f)
+        if (attackRange != 0 && canAttack)
         {
             state = State.Chasing;
         }

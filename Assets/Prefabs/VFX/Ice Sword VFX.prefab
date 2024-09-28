@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3849239136688303487}
   - component: {fileID: 966470230830948590}
   - component: {fileID: 457208635724098805}
-  - component: {fileID: 4120345232779246910}
+  - component: {fileID: 1879654476362475500}
   m_Layer: 0
   m_Name: Ice Sword VFX
   m_TagString: Untagged
@@ -4889,7 +4889,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &4120345232779246910
+--- !u!114 &1879654476362475500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
