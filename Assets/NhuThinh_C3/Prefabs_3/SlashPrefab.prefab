@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1244371983231208725}
   - component: {fileID: 2342095203292851845}
   - component: {fileID: 1744581754706858154}
+  - component: {fileID: 7998760500534408318}
   m_Layer: 0
   m_Name: SlashPrefab
   m_TagString: Untagged
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6ff8b71a7356f4bbb481e412a54801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7998760500534408318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264733203898987206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057d05ae114dc894f9ff874a92a5be7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 0.5

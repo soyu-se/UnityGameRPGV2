@@ -8,7 +8,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 {
     public bool isDead { get; private set; }
     public static event Action OnPlayerDeath;
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int maxHealth = 1;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
@@ -37,8 +37,12 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private void OnCollisionStay2D(Collision2D other)
     {
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
-
+        DragonAI dr = other.gameObject.GetComponent<DragonAI>();
         if (enemy)
+        {
+            TakeDamage(1, other.transform);
+        }
+        if (dr)
         {
             TakeDamage(1, other.transform);
         }

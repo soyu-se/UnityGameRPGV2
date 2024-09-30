@@ -13491,7 +13491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d600c455db5b28408784e26686ab762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 10
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
 --- !u!1 &1597368244
