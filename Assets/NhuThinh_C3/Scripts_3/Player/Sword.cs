@@ -51,11 +51,12 @@ public class Sword : Singleton<Sword>
     }
 
     public void SwingUpFlipAnimEvent() {
-        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
+        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180,0, 0);
 
         if (playerController.FacingLeft) { 
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
         }
+        Debug.Log("Swing up");
     }
     public void DoneAttackingAnimEvent()
     {
@@ -68,6 +69,7 @@ public class Sword : Singleton<Sword>
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
         }
+        Debug.Log("Swing down");
     }
 
     private void MouseFollowWithOffset() {
@@ -78,7 +80,7 @@ public class Sword : Singleton<Sword>
 
         if (mousePos.x < playerScreenPoint.x) {
             activeWeapon.transform.rotation = Quaternion.Euler(0, -180, angle);
-            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);            
         } else {
             activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
             weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
