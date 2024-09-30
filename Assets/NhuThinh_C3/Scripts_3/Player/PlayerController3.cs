@@ -70,7 +70,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         {
             if (knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
             {
-                Debug.Log("Player being damaged");
+                //Debug.Log("Player being damaged");
                 if (isInSlipperyZone)
                 {
                     float currentSpeedd = moveSpeed * slipperyZoneMultiplier;

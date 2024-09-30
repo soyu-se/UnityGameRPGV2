@@ -8,7 +8,7 @@ public class CycloneSkill : MonoBehaviour
 	[SerializeField] private float pullForce;
 	[SerializeField] private float pullDuration;
 	//[SerializeField] private float skillCD;
-	[SerializeField] private float damage;
+	[SerializeField] private int damage;
 
 	public float skillCD;
 	// Cooldown time after pulling
@@ -41,6 +41,15 @@ public class CycloneSkill : MonoBehaviour
 			// Pull the player towards the center of this object
 			Vector3 directionToCenter = (pullCenter.position - PlayerController3.Instance.transform.position).normalized;
 			PlayerController3.Instance.GetComponent<Rigidbody2D>().AddForce(directionToCenter * pullForce);
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.GetComponent<PlayerController3>())
+		{
+			PlayerHealth playerHealth = PlayerController3.Instance.GetComponent<PlayerHealth>();
+			playerHealth.TakeDamage(damage, this.transform);
 		}
 	}
 }
