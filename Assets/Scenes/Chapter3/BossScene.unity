@@ -13795,7 +13795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  weaponCollider: {fileID: 0}
+  weaponCollider: {fileID: 1264881}
   slipperyZoneMultiplier: 30
 --- !u!50 &1595528091
 Rigidbody2D:
