@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 978781006616073490}
   - component: {fileID: 876297399941542911}
   - component: {fileID: -7650705043298682189}
+  - component: {fileID: 1929258200296201330}
   m_Layer: 0
   m_Name: Enemy1 DeathVFX
   m_TagString: Untagged
@@ -4890,6 +4891,19 @@ ParticleSystemRenderer:
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!114 &-7650705043298682189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426143543424103503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccdbadc622d5c0498aa13e0b441ec40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 0.4
+--- !u!114 &1929258200296201330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
