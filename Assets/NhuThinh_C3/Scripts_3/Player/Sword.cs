@@ -21,7 +21,7 @@ public class Sword : Singleton<Sword>
         playerController = GetComponentInParent<PlayerController3>();
         activeWeapon = GetComponentInParent<ActiveWeapons>();
         myAnimator = GetComponent<Animator>();
-        playerControls = new PlayerControls();
+        playerControls = new PlayerControls();        
     }
 
     private void OnEnable()
@@ -31,7 +31,10 @@ public class Sword : Singleton<Sword>
     void Start()
     {
 
-        myAnimator.enabled = true;        
+        if (myAnimator != null)
+        {
+            myAnimator.enabled = true;
+        }
         weaponCollider.gameObject.SetActive(false); 
         playerControls.Combat.Attack.started += _ => Attack();
         
@@ -42,12 +45,21 @@ public class Sword : Singleton<Sword>
     }
 
     private void Attack() {
-        myAnimator.SetTrigger("Attack");
+        if (myAnimator != null && myAnimator.isActiveAndEnabled)
+        {
+            myAnimator.SetTrigger("Attack");
+        }
 
-        slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
-        slashAnim.transform.parent = this.transform.parent;
-        weaponCollider.gameObject.SetActive(true);
-        
+        if (slashAnimSpawnPoint != null)
+        {
+            slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+            slashAnim.transform.parent = this.transform.parent;
+        }
+        if (weaponCollider != null)
+        {
+            weaponCollider.gameObject.SetActive(true);
+        }
+
     }
 
     public void SwingUpFlipAnimEvent() {
@@ -55,8 +67,7 @@ public class Sword : Singleton<Sword>
 
         if (playerController.FacingLeft) { 
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        Debug.Log("Swing up");
+        }        
     }
     public void DoneAttackingAnimEvent()
     {
@@ -68,8 +79,7 @@ public class Sword : Singleton<Sword>
         if (playerController.FacingLeft)
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        Debug.Log("Swing down");
+        }        
     }
 
     private void MouseFollowWithOffset() {

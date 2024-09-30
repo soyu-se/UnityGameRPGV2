@@ -75,7 +75,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
             isDead = true;
             currentHealth = 0;            
             
-            Destroy(Sword.Instance.gameObject);            
+            Sword.Instance.gameObject.SetActive(false);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
             StartCoroutine(DeathLoadSceneRoutine());
             OnPlayerDeath?.Invoke();
