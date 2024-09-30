@@ -28,7 +28,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
-        knockback = GetComponent<Knockback>();
+        knockback = GetComponent<Knockback>();        
     }
     private void Start()
     {
@@ -69,8 +69,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         if (rb.bodyType == RigidbodyType2D.Dynamic)
         {
             if (knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
-            {
-                Debug.Log("Player being damaged");
+            {                
                 if (isInSlipperyZone)
                 {
                     float currentSpeedd = moveSpeed * slipperyZoneMultiplier;

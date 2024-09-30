@@ -21,7 +21,7 @@ public class Sword : Singleton<Sword>
         playerController = GetComponentInParent<PlayerController3>();
         activeWeapon = GetComponentInParent<ActiveWeapons>();
         myAnimator = GetComponent<Animator>();
-        playerControls = new PlayerControls();
+        playerControls = new PlayerControls();        
     }
 
     private void OnEnable()
@@ -31,7 +31,10 @@ public class Sword : Singleton<Sword>
     void Start()
     {
 
-        myAnimator.enabled = true;        
+        if (myAnimator != null)
+        {
+            myAnimator.enabled = true;
+        }
         weaponCollider.gameObject.SetActive(false); 
         playerControls.Combat.Attack.started += _ => Attack();
         
@@ -42,20 +45,29 @@ public class Sword : Singleton<Sword>
     }
 
     private void Attack() {
-        myAnimator.SetTrigger("Attack");
+        if (myAnimator != null && myAnimator.isActiveAndEnabled)
+        {
+            myAnimator.SetTrigger("Attack");
+        }
 
-        slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
-        slashAnim.transform.parent = this.transform.parent;
-        weaponCollider.gameObject.SetActive(true);
-        
+        if (slashAnimSpawnPoint != null)
+        {
+            slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+            slashAnim.transform.parent = this.transform.parent;
+        }
+        if (weaponCollider != null)
+        {
+            weaponCollider.gameObject.SetActive(true);
+        }
+
     }
 
     public void SwingUpFlipAnimEvent() {
-        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
+        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180,0, 0);
 
         if (playerController.FacingLeft) { 
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-        }
+        }        
     }
     public void DoneAttackingAnimEvent()
     {
@@ -67,7 +79,7 @@ public class Sword : Singleton<Sword>
         if (playerController.FacingLeft)
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-        }
+        }        
     }
 
     private void MouseFollowWithOffset() {
@@ -78,7 +90,7 @@ public class Sword : Singleton<Sword>
 
         if (mousePos.x < playerScreenPoint.x) {
             activeWeapon.transform.rotation = Quaternion.Euler(0, -180, angle);
-            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);            
         } else {
             activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
             weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
