@@ -59,6 +59,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         canTakeDamage = false;
         currentHealth -= damageAmount;
+        Debug.Log("Player take damage");
         StartCoroutine(DamageRecoveryRoutine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();

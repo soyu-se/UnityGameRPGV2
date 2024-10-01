@@ -6,9 +6,10 @@ public class BossWindController : MonoBehaviour
 {
 	[SerializeField] private float health = 100f;
 	[SerializeField] private CycloneSkill cycloneSkill;
+	[SerializeField] private ShurikenSpawn shurikenSpawn;
 
 
-    private SpriteRenderer mySprireRenderer;
+	private SpriteRenderer mySprireRenderer;
 	private Animator myAnimator;
 
 
@@ -51,6 +52,14 @@ public class BossWindController : MonoBehaviour
 			cycloneSkill.gameObject.SetActive(false);
 
 			yield return new WaitForSeconds(cycloneSkill.skillCD);
+
+			
+			myAnimator.SetTrigger(ATTACK_HASH);
+			yield return new WaitForSeconds(0.5f);
+
+
+			shurikenSpawn.Run();
+			yield return new WaitUntil(() => shurikenSpawn.isActionComplete); 
 		}
 	}
 

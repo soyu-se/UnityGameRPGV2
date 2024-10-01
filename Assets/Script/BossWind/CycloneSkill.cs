@@ -9,7 +9,7 @@ public class CycloneSkill : MonoBehaviour
 	[SerializeField] private float pullDuration = 5f;
 	[SerializeField] private int damage = 1;
 	[SerializeField] private Transform pullCenter;
-	[SerializeField] private float randomRadius = 3f;
+	[SerializeField] private float spawnRadius = 3f;
 
 	public float skillCD = 2f;
 	// Cooldown time after pulling
@@ -27,14 +27,11 @@ public class CycloneSkill : MonoBehaviour
 	{
 		if (PlayerController3.Instance != null)
 		{
-			// Get the player's position
 			Vector3 playerPosition = PlayerController3.Instance.transform.position;
 
-			// Generate a random position near the player within the specified radius
 			Vector2 randomDirection = UnityEngine.Random.insideUnitCircle.normalized;
-			Vector3 randomPosition = playerPosition + new Vector3(randomDirection.x, randomDirection.y, 0) * UnityEngine.Random.Range(0, randomRadius);
+			Vector3 randomPosition = playerPosition + new Vector3(randomDirection.x, randomDirection.y, 0) * UnityEngine.Random.Range(0, spawnRadius);
 
-			// Set the pullCenter position to the new random position
 			pullCenter.position = randomPosition;
 		}
 	}
@@ -42,10 +39,10 @@ public class CycloneSkill : MonoBehaviour
 	private IEnumerator PullCycle()
 	{
 		IsActingComplete = false;
-		// Pulling phase
+
 		isPulling = true;
 		yield return new WaitForSeconds(pullDuration);
-		// After pulling ends, start the attack cooldown routine
+
 		isPulling = false;
 		IsActingComplete = true;
 	}
@@ -54,7 +51,7 @@ public class CycloneSkill : MonoBehaviour
 	{
 		if (isPulling && PlayerController3.Instance != null && !isOnCooldown)
 		{
-			// Pull the player towards the center of this object
+			
 			Vector3 directionToCenter = (pullCenter.position - PlayerController3.Instance.transform.position).normalized;
 			PlayerController3.Instance.GetComponent<Rigidbody2D>().AddForce(directionToCenter * pullForce);
 		}
