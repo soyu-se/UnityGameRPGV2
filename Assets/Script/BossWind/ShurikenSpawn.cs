@@ -5,19 +5,21 @@ using UnityEngine;
 public class ShurikenSpawn : MonoBehaviour
 {
 	[SerializeField] private GameObject shurikenPrefab;  
+	[SerializeField] private int damage = 1;
 	[SerializeField] private int projectile = 3;        
-	[SerializeField] private float spawnRadius = 10f;     
+	[SerializeField] private float spawnRadius = 7f;     
+	[SerializeField] private float minRadius = 4f;
 	[SerializeField] private float duration = 5f;        // Duration after which shurikens are destroyed
 
-	[SerializeField] private int damage = 1;
 
 	private List<GameObject> spawnedShurikens = new List<GameObject>(); 
 
-	public bool isActionComplete { get; private set; } = false;
+	public bool isActionComplete { get; private set; }
 	[SerializeField] private ShurikenSkill shurikenSkill;
 
 	public void Run()
 	{
+		isActionComplete = false;
 		shurikenSkill.Damage = damage;
 		StartCoroutine(SpawnShurikens());
 	}
@@ -30,8 +32,11 @@ public class ShurikenSpawn : MonoBehaviour
 			{
 				Vector3 playerPosition = PlayerController3.Instance.transform.position;
 
-				Vector2 randomDirection = Random.insideUnitCircle.normalized;
-				Vector3 randomPosition = playerPosition + new Vector3(randomDirection.x, randomDirection.y, 0) * Random.Range(0, spawnRadius);
+				Vector2 randomDirection = UnityEngine.Random.insideUnitCircle.normalized;
+				float randomDistance = UnityEngine.Random.Range(minRadius, spawnRadius);
+
+				Vector3 randomPosition = playerPosition + new Vector3(randomDirection.x, randomDirection.y, 0) * randomDistance;
+
 
 				GameObject shuriken = Instantiate(shurikenPrefab, randomPosition, Quaternion.identity);
 				spawnedShurikens.Add(shuriken);
@@ -50,6 +55,6 @@ public class ShurikenSpawn : MonoBehaviour
 
 		spawnedShurikens.Clear();
 
-		isActionComplete = true; 
+		isActionComplete = true;
 	}
 }

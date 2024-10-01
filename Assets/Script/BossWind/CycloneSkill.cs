@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class CycloneSkill : MonoBehaviour
 {
+	[SerializeField] private Transform pullCenter;
+	[SerializeField] private int damage = 1;
 	[SerializeField] private float pullForce = 10f;
 	[SerializeField] private float pullDuration = 5f;
-	[SerializeField] private int damage = 1;
-	[SerializeField] private Transform pullCenter;
-	[SerializeField] private float spawnRadius = 3f;
+	[SerializeField] private float spawnRadius = 7f;
+	[SerializeField] private float minRadius = 4f;
 
 	public float skillCD = 2f;
 	// Cooldown time after pulling
@@ -30,7 +31,9 @@ public class CycloneSkill : MonoBehaviour
 			Vector3 playerPosition = PlayerController3.Instance.transform.position;
 
 			Vector2 randomDirection = UnityEngine.Random.insideUnitCircle.normalized;
-			Vector3 randomPosition = playerPosition + new Vector3(randomDirection.x, randomDirection.y, 0) * UnityEngine.Random.Range(0, spawnRadius);
+			float randomDistance = UnityEngine.Random.Range(minRadius, spawnRadius);
+
+			Vector3 randomPosition = playerPosition + new Vector3(randomDirection.x, randomDirection.y, 0) * randomDistance;
 
 			pullCenter.position = randomPosition;
 		}
