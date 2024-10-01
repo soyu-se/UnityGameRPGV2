@@ -6,6 +6,7 @@ public class Sword : MonoBehaviour,IWeapon
 {
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
+    [SerializeField] private WeaponInfo weaponInfo;
 
     private Transform weaponCollider;
     private Animator myAnimator;
@@ -25,6 +26,7 @@ public class Sword : MonoBehaviour,IWeapon
     private void Update() {
         MouseFollowWithOffset();
     }
+    public WeaponInfo GetWeaponInfo() {return weaponInfo;}
 
     public void Attack() {
         if (myAnimator != null && myAnimator.isActiveAndEnabled)
@@ -66,17 +68,21 @@ public class Sword : MonoBehaviour,IWeapon
         }
     }
 
-    private void MouseFollowWithOffset() {
+    private void MouseFollowWithOffset()
+    {
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(PlayerController3.Instance.transform.position);
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-        if (mousePos.x < playerScreenPoint.x) {
-            ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, -180, angle);            
-            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);            
-        } else {
-            ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);            
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, -180, angle);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);
             weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
