@@ -62,7 +62,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         if (!canTakeDamage) { return; }
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         canTakeDamage = false;
-        currentHealth -= damageAmount;
+        currentHealth -= damageAmount;        
         StartCoroutine(DamageRecoveryRoutine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();
@@ -75,7 +75,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
             isDead = true;
             currentHealth = 0;            
             
-            Sword.Instance.gameObject.SetActive(false);
+            Sword.Destroy(gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
             StartCoroutine(DeathLoadSceneRoutine());
             OnPlayerDeath?.Invoke();
