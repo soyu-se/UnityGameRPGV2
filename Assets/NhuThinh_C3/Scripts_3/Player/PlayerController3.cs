@@ -8,6 +8,7 @@ public class PlayerController3 : Singleton<PlayerController3>
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
     [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] private Transform weaponCollider;
 
     [SerializeField] private float slipperyZoneMultiplier = 3f;
 
@@ -55,7 +56,10 @@ public class PlayerController3 : Singleton<PlayerController3>
         AdjustPlayerFacingDirection();
         Move();
     }
-
+    public Transform GetWeaponCollider()
+    {
+        return weaponCollider;
+    }
     private void PlayerInput()
     {
         movement = playerControls.Movement.Movement.ReadValue<Vector2>();
@@ -103,7 +107,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         }
         else
         {
-            mySpriteRender.flipX = false;
+            mySpriteRender.flipX = false;           
             FacingLeft = false;
         }
     }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteFade : MonoBehaviour
@@ -11,6 +10,11 @@ public class SpriteFade : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(SlowFadeRoutine());
     }
 
     public IEnumerator SlowFadeRoutine()
@@ -26,6 +30,7 @@ public class SpriteFade : MonoBehaviour
             yield return null;
         }
 
+        // Ensure object is destroyed after fade
         Destroy(gameObject);
     }
 }
