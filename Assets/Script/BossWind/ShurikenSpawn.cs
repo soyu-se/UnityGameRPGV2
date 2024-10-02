@@ -19,8 +19,11 @@ public class ShurikenSpawn : MonoBehaviour
 
 	public void Run()
 	{
+		//shurikenPrefab.GetComponent<ShurikenSkill>().Damage = damage;
 		isActionComplete = false;
-		shurikenSkill.Damage = damage;
+		//shurikenSkill.Damage = damage;
+		//Debug.Log("damage from the spawn: " + damage);
+		//Debug.Log("damage from the skill: " + shurikenSkill.Damage);
 		StartCoroutine(SpawnShurikens());
 	}
 
@@ -39,6 +42,7 @@ public class ShurikenSpawn : MonoBehaviour
 
 
 				GameObject shuriken = Instantiate(shurikenPrefab, randomPosition, Quaternion.identity);
+				shuriken.GetComponent<ShurikenSkill>().Damage = damage;
 				spawnedShurikens.Add(shuriken);
 			}
 		}
