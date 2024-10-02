@@ -138427,6 +138427,10 @@ PrefabInstance:
       propertyPath: attackCooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1157952080284265669, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
+      propertyPath: stopMovingWhileAttacking
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3437966915558485297, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.24481201
