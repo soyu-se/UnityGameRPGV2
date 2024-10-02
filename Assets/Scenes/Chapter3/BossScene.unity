@@ -13945,6 +13945,7 @@ GameObject:
   - component: {fileID: 1597368248}
   - component: {fileID: 1597368247}
   - component: {fileID: 1597368246}
+  - component: {fileID: 1597368249}
   m_Layer: 0
   m_Name: CollisionObjects
   m_TagString: Untagged
@@ -16656,6 +16657,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1597368249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597368244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c1a6d79636e6242b1bdab137f8935c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1602080842
 GameObject:
   m_ObjectHideFlags: 0
@@ -17493,7 +17506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485256800730667605, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: bossHealth
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1821487805054508905, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: moveSpeed

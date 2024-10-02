@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private bool isEnemyProjectile = false;
     [SerializeField] private float projectileRange = 10f;
 
+    private WeaponInfo weaponInfo;  
     private Vector3 startPosition;
 
     private void Start()
@@ -21,7 +22,10 @@ public class Projectile : MonoBehaviour
         MoveProjectile();
         DetectFireDistance();
     }
-
+    public void UpdateWeaponInfo(WeaponInfo weaponInfo1)
+    {
+        this.weaponInfo = weaponInfo1;
+    }
     public void UpdateProjectileRange(float projectileRange)
     {
         this.projectileRange = projectileRange;
@@ -38,21 +42,32 @@ public class Projectile : MonoBehaviour
         Indestructible indestructible = other.gameObject.GetComponent<Indestructible>();
         PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
 
-        if (!other.isTrigger && (enemyHealth || indestructible || player))
+        // Handle interaction based on the source of the projectile
+        if (!other.isTrigger)
         {
-            if ((player && isEnemyProjectile) || (enemyHealth && !isEnemyProjectile))
+            if (isEnemyProjectile && player != null)
             {
-                player?.TakeDamage(1, transform);
+                // Enemy projectile hits the player
+                player.TakeDamage(1, transform);
                 Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
-            else if (!other.isTrigger && indestructible)
+            else if (!isEnemyProjectile && enemyHealth != null)
             {
+                // Player's arrow hits the enemy
+                enemyHealth.TakeDamage(weaponInfo.weaponDamage);
+                Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+            else if (indestructible != null)
+            {
+                // Projectile hits an indestructible object
                 Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
         }
     }
+
 
     private void DetectFireDistance()
     {
