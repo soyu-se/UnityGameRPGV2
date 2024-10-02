@@ -29,7 +29,7 @@ public class EnemyPathfinding : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-        else if (moveDir.x > 0)
+        else //if (moveDir.x > 0)
         {
             spriteRenderer.flipX = false;
         }
