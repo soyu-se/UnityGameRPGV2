@@ -10,6 +10,7 @@ public class GameOverManager : MonoBehaviour
 	public GameObject chapterMenu;
 	public GameObject sceneMenu;
 	private Text buttonText;            // Reference to the text of the button inside the Chapter Menu
+	public string SceneToLoad;
 
 	public void EnableGameMenu()
 	{
@@ -25,7 +26,7 @@ public class GameOverManager : MonoBehaviour
 	}
 	public void Restart()
 	{
-		SceneManager.LoadScene("Scene 3.1");
+		SceneManager.LoadScene(SceneToLoad);
 		gameOverMenu.SetActive(false);
 	}
 

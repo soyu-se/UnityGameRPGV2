@@ -14,7 +14,10 @@ public class SpriteFade : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(SlowFadeRoutine());
+        if (spriteRenderer != null)
+        {
+            StartCoroutine(SlowFadeRoutine());
+        }
     }
 
     public IEnumerator SlowFadeRoutine()
