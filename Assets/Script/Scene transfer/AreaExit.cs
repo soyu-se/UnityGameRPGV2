@@ -18,7 +18,7 @@ public class AreaExit : MonoBehaviour
             // Set the transition name in the scene management system
             SceneManagement.Instance.SetTransitionName(sceneTransitionName);
             UIFade.Instance.FadeToBlack();
-            StartCoroutine(LoadSceneRoutine());
+            StartCoroutine(LoadSceneRoutine() );
         }
     }
     private IEnumerator LoadSceneRoutine()
