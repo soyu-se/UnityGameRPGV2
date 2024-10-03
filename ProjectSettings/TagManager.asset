@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - SlipperyZone
   - Weapon
+  - TileMap
   layers:
   - Default
   - TransparentFX
