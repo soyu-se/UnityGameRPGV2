@@ -6747,8 +6747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3119fa8346e6adc4e89e61ec5e2f882b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Scenes3.2
-  sceneTransitionName: ToScene3.2
+  sceneToLoad: 1.2
+  sceneTransitionName: ToScene1.2
 --- !u!4 &1007592286
 Transform:
   m_ObjectHideFlags: 0
@@ -41394,7 +41394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fdb98df54146c499fc9c723d4d843e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: BackFromScene3.2
+  transitionName: BackFromScene1.2
 --- !u!4 &1714793812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7100958750609360284, guid: 68814a77fa83c2546882b9165da586e9, type: 3}
@@ -46621,6 +46621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 1240611587}
+  chapterMenu: {fileID: 0}
+  sceneMenu: {fileID: 0}
 --- !u!114 &1930501017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46982,7 +46984,7 @@ Transform:
   m_GameObject: {fileID: 1990954213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.06727, y: 15.585396, z: -9.983438}
+  m_LocalPosition: {x: -16.072926, y: 15.585496, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47642,7 +47644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3912e2814d276df44814966992b1d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
 --- !u!114 &3127545398877805491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47655,7 +47656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d600c455db5b28408784e26686ab762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1000
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
 --- !u!114 &3171217909686260988
@@ -47672,7 +47673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashAnimPrefab: {fileID: 6264733203898987206, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 7360455979195144699}
-  weaponCollider: {fileID: 8602809682483760141}
+  weaponInfo: {fileID: 0}
 --- !u!4 &3178943798641621701
 Transform:
   m_ObjectHideFlags: 0
@@ -47869,7 +47870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272ff94329b9a6e42ae41f005294d2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 100
+  weaponCollider: {fileID: 0}
   slipperyZoneMultiplier: 5
 --- !u!212 &4746533151583353043
 SpriteRenderer:
@@ -48010,6 +48012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a2b7f16fdc5614baa56712ce4976f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0
 --- !u!1 &5016642506395766836
 GameObject:
   m_ObjectHideFlags: 0

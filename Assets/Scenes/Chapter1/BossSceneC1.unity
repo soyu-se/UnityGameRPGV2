@@ -5406,6 +5406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  weaponCollider: {fileID: 0}
   slipperyZoneMultiplier: 30
 --- !u!50 &378353643
 Rigidbody2D:
@@ -6089,7 +6090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3912e2814d276df44814966992b1d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
 --- !u!60 &506883069
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6394,6 +6394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a2b7f16fdc5614baa56712ce4976f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0
 --- !u!1 &568022265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6556,7 +6557,7 @@ Transform:
   m_GameObject: {fileID: 586473531}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 3.01, z: 0}
+  m_LocalPosition: {x: 0.19, y: 1.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6813,7 +6814,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.39894342, y: 0.56440663}
+  m_Offset: {x: 0.12431097, y: 0.94202566}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6824,7 +6825,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1419935, y: 2.1288128}
+  m_Size: {x: 1.226552, y: 2.8840508}
   m_EdgeRadius: 0
 --- !u!114 &702360650
 MonoBehaviour:
@@ -6838,8 +6839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3119fa8346e6adc4e89e61ec5e2f882b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Scenes3.2
-  sceneTransitionName: BackFromBossScene
+  sceneToLoad: 1.2
+  sceneTransitionName: BackFromBossSceneC1
 --- !u!4 &702360651
 Transform:
   m_ObjectHideFlags: 0
@@ -6849,7 +6850,7 @@ Transform:
   m_GameObject: {fileID: 702360648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.44, y: -14.47, z: 0.029413631}
+  m_LocalPosition: {x: -13.96, y: 2.49, z: 0.029413631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42465,7 +42466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashAnimPrefab: {fileID: 6264733203898987206, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 191657687}
-  weaponCollider: {fileID: 506883067}
+  weaponInfo: {fileID: 0}
 --- !u!212 &1609418120
 SpriteRenderer:
   m_ObjectHideFlags: 0
