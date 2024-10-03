@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4382229989041675941}
   - component: {fileID: 1330996914762876263}
   - component: {fileID: 4045689471342340767}
+  - component: {fileID: -4433996790036428344}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -310,3 +311,15 @@ MonoBehaviour:
   particleOnHitPrefabVFX: {fileID: 8101404689074997989, guid: 6a41151797501dd4b8aea383f6dd232c, type: 3}
   isEnemyProjectile: 0
   projectileRange: 20
+--- !u!114 &-4433996790036428344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218902174744805418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3912e2814d276df44814966992b1d6f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
