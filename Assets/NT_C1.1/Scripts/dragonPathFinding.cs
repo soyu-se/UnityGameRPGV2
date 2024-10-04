@@ -8,6 +8,8 @@ public class DragonPathFinding : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveDir;
+    private Knockback knockback;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -16,6 +18,7 @@ public class DragonPathFinding : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         rb.MovePosition(rb.position + moveDir * (moveSpeed * Time.fixedDeltaTime));
     }
 

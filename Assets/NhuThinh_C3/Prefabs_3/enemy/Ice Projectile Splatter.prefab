@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7795766336773950008}
   - component: {fileID: 7618954278752980739}
   - component: {fileID: 9042309192104955766}
-  - component: {fileID: 6685725698408699862}
+  - component: {fileID: 1367304956886046876}
   m_Layer: 0
   m_Name: Ice Projectile Splatter
   m_TagString: Untagged
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e2ed28047b39d42a145d06dfe3d504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6685725698408699862
+--- !u!114 &1367304956886046876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6128634286241339603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ccdbadc622d5c0498aa13e0b441ec40, type: 3}
+  m_Script: {fileID: 11500000, guid: 057d05ae114dc894f9ff874a92a5be7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.4
