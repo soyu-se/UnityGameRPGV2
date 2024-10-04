@@ -6,7 +6,7 @@ public class Staff : MonoBehaviour,IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
     [SerializeField] private GameObject magicLaser;
-    [SerializeField] private Transform magicLaserSpawnPoint;
+    [SerializeField] private Transform magicLaserSpawnPoint;    
 
     private Animator animator;
 
@@ -21,8 +21,8 @@ public class Staff : MonoBehaviour,IWeapon
         MouseFollowWithOffset();
     }
     public void Attack()
-    {
-        animator.SetTrigger(AttackHarsh);        
+    {       
+            animator.SetTrigger(AttackHarsh);
     }
     public void SpamStaffProjectileAnimeEvent()
     {

@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour,IWeapon
     public void Attack() {
         if (myAnimator != null && myAnimator.isActiveAndEnabled)
         {
-            myAnimator.SetTrigger("Attack");
+            myAnimator.SetTrigger("Attack");            
         }
 
         if (slashAnimSpawnPoint != null)

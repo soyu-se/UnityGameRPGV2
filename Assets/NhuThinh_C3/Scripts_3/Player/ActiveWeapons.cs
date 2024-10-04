@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ActiveWeapon : Singleton<ActiveWeapon>
-{    
-    public MonoBehaviour CurrentActiveWeapon {  get; private set; }
+{
+    public MonoBehaviour CurrentActiveWeapon { get; private set; }
+
     private PlayerControls playerControls;
-    [SerializeField] private float timeBetweenAttacks;
+    private float timeBetweenAttacks;
 
     private bool attackButtonDown, isAttacking = false;
 
@@ -34,7 +35,19 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     {
         Attack();
     }
-
+    private void Attack()
+    {
+        if (attackButtonDown && !isAttacking && CurrentActiveWeapon)
+        {
+            AttackCooldown();
+            var manaCost = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponStaminaCost;
+            if (Stamina.Instance.CurrentStamina >= manaCost)
+            {
+                (CurrentActiveWeapon as IWeapon).Attack();
+                Stamina.Instance.UseStamina(manaCost);
+            }
+        }
+    }
     public void NewWeapon(MonoBehaviour newWeapon)
     {
         CurrentActiveWeapon = newWeapon;
@@ -71,13 +84,5 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         attackButtonDown = false;
     }
 
-    private void Attack()
-    {
-        if (attackButtonDown && !isAttacking && CurrentActiveWeapon)
-        {            
-            (CurrentActiveWeapon as IWeapon).Attack();
-            AttackCooldown();
-        }
-    }
-
+    
 }

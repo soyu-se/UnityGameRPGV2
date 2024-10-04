@@ -9,4 +9,5 @@ public class WeaponInfo : ScriptableObject
     public float weaponCooldown;
     public int weaponDamage;
     public int weaponRange;
+    public int weaponStaminaCost;
 }
