@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ActiveWeapon : Singleton<ActiveWeapon>
@@ -26,9 +27,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private void Start()
     {
         playerControls.Combat.Attack.started += _ => StartAttacking();
-        playerControls.Combat.Attack.canceled += _ => StopAttacking();
-
-        AttackCooldown();
+        playerControls.Combat.Attack.canceled += _ => StopAttacking();     
     }
 
     private void Update()
@@ -37,43 +36,33 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     }
     private void Attack()
     {
-        if (attackButtonDown && !isAttacking && CurrentActiveWeapon)
+        IWeapon weapon = CurrentActiveWeapon as IWeapon;
+        if (weapon == null) return;
+
+        if (attackButtonDown && !weapon.IsCoolingDown())
         {
-            AttackCooldown();
-            var manaCost = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponStaminaCost;
+            var manaCost = weapon.GetWeaponInfo().weaponStaminaCost;
             if (Stamina.Instance.CurrentStamina >= manaCost)
             {
-                (CurrentActiveWeapon as IWeapon).Attack();
+                weapon.Attack();
                 Stamina.Instance.UseStamina(manaCost);
             }
         }
     }
     public void NewWeapon(MonoBehaviour newWeapon)
     {
+        if (CurrentActiveWeapon != null)
+        {            
+            CurrentActiveWeapon.enabled = false;
+        }
+
         CurrentActiveWeapon = newWeapon;
-
-        AttackCooldown();
-        timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
+        CurrentActiveWeapon.enabled = true;
     }
-
     public void WeaponNull()
     {
         CurrentActiveWeapon = null;
     }
-
-    private void AttackCooldown()
-    {
-        isAttacking = true;
-        StopAllCoroutines();
-        StartCoroutine(TimeBetweenAttacksRoutine());
-    }
-
-    private IEnumerator TimeBetweenAttacksRoutine()
-    {
-        yield return new WaitForSeconds(timeBetweenAttacks);
-        isAttacking = false;
-    }
-
     private void StartAttacking()
     {
         attackButtonDown = true;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PickupSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     [SerializeField] private GameObject heartPreFab, staminaPrefab;
     public void DropItems()
     {

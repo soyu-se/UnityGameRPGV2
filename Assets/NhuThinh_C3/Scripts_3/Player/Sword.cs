@@ -10,6 +10,8 @@ public class Sword : MonoBehaviour,IWeapon
 
     private Transform weaponCollider;
     private Animator myAnimator;
+    private float cooldownTimer;
+    private bool isAttacking = false;
 
     private GameObject slashAnim;
 
@@ -23,25 +25,42 @@ public class Sword : MonoBehaviour,IWeapon
         slashAnimSpawnPoint = GameObject.Find("SlashSpawnPoint").transform;
     }
 
-    private void Update() {
+    private void Update()
+    {
         MouseFollowWithOffset();
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false; // Allow attack when cooldown is finished
+        }
+        weaponInfo.isAttacking = isAttacking;
     }
     public WeaponInfo GetWeaponInfo() {return weaponInfo;}
 
-    public void Attack() {
-        if (myAnimator != null && myAnimator.isActiveAndEnabled)
+    public void Attack()
+    {
+        if (cooldownTimer <= 0)
         {
-            myAnimator.SetTrigger("Attack");            
-        }
+            weaponInfo.isAttacking =true;
+            if (myAnimator != null && myAnimator.isActiveAndEnabled)
+            {
+                myAnimator.SetTrigger("Attack");
+            }
 
-        if (slashAnimSpawnPoint != null)
-        {
-            slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
-            slashAnim.transform.parent = this.transform.parent;
-        }
-        if (weaponCollider != null)
-        {
-            weaponCollider.gameObject.SetActive(true);
+            if (slashAnimSpawnPoint != null)
+            {
+                slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+                slashAnim.transform.parent = this.transform.parent;
+            }
+            if (weaponCollider != null)
+            {
+                weaponCollider.gameObject.SetActive(true);
+            }
+            cooldownTimer = weaponInfo.weaponCooldown;
         }
     }
 
@@ -85,5 +104,9 @@ public class Sword : MonoBehaviour,IWeapon
             ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);
             weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+    }
+    public bool IsCoolingDown()
+    {
+        return cooldownTimer > 0;
     }
 }

@@ -77,7 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a2b7f16fdc5614baa56712ce4976f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0
 --- !u!114 &5877619039896619609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +206,7 @@ GameObject:
   - component: {fileID: 2886762055655502907}
   - component: {fileID: 2213691635671195871}
   - component: {fileID: 3747095871831043200}
+  - component: {fileID: 6880719371499553267}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272ff94329b9a6e42ae41f005294d2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   weaponCollider: {fileID: 3125720760990851123}
   slipperyZoneMultiplier: 15
 --- !u!212 &3283132554279967411
@@ -406,6 +406,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d600c455db5b28408784e26686ab762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
+--- !u!114 &6880719371499553267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248514146744334591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53691fd9ed43de74aab446ac9a1f24b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenStaminaRefresh: 1
+  startingStamina: 100

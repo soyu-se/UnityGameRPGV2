@@ -41,25 +41,39 @@ public class ActiveInventory : MonoBehaviour
         this.transform.GetChild(indexNum).GetChild(0).gameObject.SetActive(true);
         ChangeActiveWeapon();
     }
+    private MonoBehaviour previousWeapon;
     private void ChangeActiveWeapon()
     {
+        // Disable the current active weapon, but keep it alive to preserve its state
         if (ActiveWeapon.Instance.CurrentActiveWeapon != null)
         {
-            Destroy(ActiveWeapon.Instance.CurrentActiveWeapon.gameObject);
+            ActiveWeapon.Instance.CurrentActiveWeapon.gameObject.SetActive(false);
+            previousWeapon = ActiveWeapon.Instance.CurrentActiveWeapon; // Store the current weapon
         }
-        if (transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().GetWeaponInfo() == null)
+
+        // Check if the new slot has a valid weapon
+        var newWeaponInfo = transform.GetChild(activeSlotIndexNum).GetComponentInChildren<InventorySlot>().GetWeaponInfo();
+        if (newWeaponInfo == null)
         {
             ActiveWeapon.Instance.WeaponNull();
             return;
         }
-        
-        GameObject weaponToSpam = transform.GetChild(activeSlotIndexNum).
-            GetComponentInChildren<InventorySlot>().GetWeaponInfo().weaponPrefab;
 
-        GameObject newWeapon = Instantiate(weaponToSpam, ActiveWeapon.Instance.transform.position, Quaternion.identity);
+        // If the weapon in this slot is the same as the previous weapon, simply re-enable it
+        if (previousWeapon != null && previousWeapon.GetComponent<IWeapon>().GetWeaponInfo() == newWeaponInfo)
+        {
+            previousWeapon.gameObject.SetActive(true);  // Reactivate the stored weapon
+            ActiveWeapon.Instance.NewWeapon(previousWeapon);
+            return;
+        }
 
-        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, 0);
+        // If it's a different weapon, instantiate it
+        GameObject weaponToSpawn = newWeaponInfo.weaponPrefab;
+        GameObject newWeapon = Instantiate(weaponToSpawn, ActiveWeapon.Instance.transform.position, Quaternion.identity);
+
+        // Set up the new weapon
         newWeapon.transform.parent = ActiveWeapon.Instance.transform;
+        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         ActiveWeapon.Instance.NewWeapon(newWeapon.GetComponent<MonoBehaviour>());
     }
