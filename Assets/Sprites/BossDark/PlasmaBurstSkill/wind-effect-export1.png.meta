@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1819e08167581c48ae068af77dcda21
+guid: 9107be0b125a37841b16e1b8e012ee0b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wind-effect-export2_0
+      name: wind-effect-export1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d645e49fa96ce9f42a62ddf0506fcb1a
-      internalID: -621850156
+      spriteID: 209c4ea37c356884fa09c14095f6f2f1
+      internalID: -2031444921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_1
+      name: wind-effect-export1_1
       rect:
         serializedVersion: 2
         x: 96
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 246a7bad40b4ea140a697f11a3ea3af0
-      internalID: -1547631084
+      spriteID: 83809d4e12410df4e9103bbf775368bb
+      internalID: 73250696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_2
+      name: wind-effect-export1_2
       rect:
         serializedVersion: 2
         x: 192
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a496376d79427ff4aabb0ad760476776
-      internalID: 200036281
+      spriteID: e354535d88e11e340a67066a32c5f443
+      internalID: 1952835805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_3
+      name: wind-effect-export1_3
       rect:
         serializedVersion: 2
         x: 288
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2371c4ca5efb9fe4fa5b2937af26fae9
-      internalID: -1784102426
+      spriteID: ea593ca6c6e2b6942a8d97c9bdd4d4ef
+      internalID: -1529632949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_4
+      name: wind-effect-export1_4
       rect:
         serializedVersion: 2
         x: 384
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41453d9a78a264343808223eda6f3e26
-      internalID: 1820428537
+      spriteID: 80d52f8472657204d89db38140202a18
+      internalID: 1594171314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_5
+      name: wind-effect-export1_5
       rect:
         serializedVersion: 2
         x: 480
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfc85fa74b5502c48b43260efc3c0d00
-      internalID: -1389405308
+      spriteID: 4387d22e7f991854bac058e6c731a417
+      internalID: -1097385200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_6
+      name: wind-effect-export1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5c8485310156464d886315fa426ecea
-      internalID: 1897482673
+      spriteID: 2a56eb22d157a5a4bb3cce06d2793c09
+      internalID: -392575763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_7
+      name: wind-effect-export1_7
       rect:
         serializedVersion: 2
         x: 96
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b78544f5e673f3047b9fd809704cb8a7
-      internalID: -1084765275
+      spriteID: a291fa4877aeb084882574845ca15fb2
+      internalID: 111626688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_8
+      name: wind-effect-export1_8
       rect:
         serializedVersion: 2
         x: 192
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f20d6c9cb13b5ec4891a7b9d08bd505e
-      internalID: 1609018752
+      spriteID: d29ea1b06d9b1bf478d724efa78a6938
+      internalID: 341102590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_9
+      name: wind-effect-export1_9
       rect:
         serializedVersion: 2
         x: 288
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f9329610cf022347ad7433e3a69a331
-      internalID: 18890030
+      spriteID: 4af9ba31fd6076946991db339e993b5a
+      internalID: 140024876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_10
+      name: wind-effect-export1_10
       rect:
         serializedVersion: 2
         x: 384
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cae6b6334b93ee844b1f428dce161dc8
-      internalID: -650439488
+      spriteID: b74a13cc80dbe5e4abb2648ec2f169ed
+      internalID: -1279877359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_11
+      name: wind-effect-export1_11
       rect:
         serializedVersion: 2
         x: 480
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea82b2fc53252e647bdc121b0a2acf8f
-      internalID: -1446908848
+      spriteID: 4ce27a6ddc9133841922572041323742
+      internalID: -1082553488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_12
+      name: wind-effect-export1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d0daeaca87cb03408a4f0183eb4401c
-      internalID: -1638759101
+      spriteID: 78df851d34a49864f8633f1d75dcac08
+      internalID: -1186136164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_13
+      name: wind-effect-export1_13
       rect:
         serializedVersion: 2
         x: 96
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdc121fa7b7279341bf557ece8b2ce22
-      internalID: -907307624
+      spriteID: 6ae22eed8778d0e46a84898c2fadf1a0
+      internalID: 1579292074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_14
+      name: wind-effect-export1_14
       rect:
         serializedVersion: 2
         x: 192
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a343e472c42004d908f659c953bd94
-      internalID: -1388863629
+      spriteID: 9092de7113eaffc40864f11591eccee2
+      internalID: -247164163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_15
+      name: wind-effect-export1_15
       rect:
         serializedVersion: 2
         x: 288
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35d1c3ddb9dfca7469fd911836026e38
-      internalID: 1926734529
+      spriteID: 2872d301e1fa30f4db971b9011780edb
+      internalID: 692707556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_16
+      name: wind-effect-export1_16
       rect:
         serializedVersion: 2
         x: 384
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f9dfb9786caa3740b0620a0bf706fd3
-      internalID: -468145188
+      spriteID: 87ef9a66b63eb944a9a09ee94c3c6f35
+      internalID: 1017181997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_17
+      name: wind-effect-export1_17
       rect:
         serializedVersion: 2
         x: 480
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c75cdeab12c80a848bd8fef245c3b103
-      internalID: -1050666711
+      spriteID: 4495b09b55fadd14a86107aaa79620bf
+      internalID: -40973951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_18
+      name: wind-effect-export1_18
       rect:
         serializedVersion: 2
         x: 0
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 151d2af252c10db4f97ae29adb9b0ae5
-      internalID: 218081574
+      spriteID: 7fc5d8769493efd498dd8da9cc21c124
+      internalID: -1545411845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_19
+      name: wind-effect-export1_19
       rect:
         serializedVersion: 2
         x: 96
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f03b998525bf884d96727baf63065ff
-      internalID: -197091680
+      spriteID: d3beba23f6de583469023669e84a610a
+      internalID: 895788102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_20
+      name: wind-effect-export1_20
       rect:
         serializedVersion: 2
         x: 192
@@ -531,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33a74f24928ee8f4bb9d63053da16fbd
-      internalID: -1909918294
+      spriteID: 858d0512b147590418b52239cfba7c01
+      internalID: -1446978382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_21
+      name: wind-effect-export1_21
       rect:
         serializedVersion: 2
         x: 288
@@ -552,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 840411a223af967418742690e0f8c95f
-      internalID: 391944121
+      spriteID: 5889ea94cbf3e2a4894ad207deb10771
+      internalID: 1178991520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_22
+      name: wind-effect-export1_22
       rect:
         serializedVersion: 2
         x: 384
@@ -573,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3696ec868230b4943905eb2ef3781252
-      internalID: -537748721
+      spriteID: e69e6e8f531e80a4e820dc547b2b69bc
+      internalID: -266386558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind-effect-export2_23
+      name: wind-effect-export1_23
       rect:
         serializedVersion: 2
         x: 480
@@ -594,8 +594,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8de38dbb78f72d47a0ca498a3fb8c1e
-      internalID: 933761100
+      spriteID: 58ab99a20d03cb546bb55d0addf10093
+      internalID: 1909222194
       vertices: []
       indices: 
       edges: []
@@ -611,30 +611,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wind-effect-export2_0: -621850156
-      wind-effect-export2_1: -1547631084
-      wind-effect-export2_10: -650439488
-      wind-effect-export2_11: -1446908848
-      wind-effect-export2_12: -1638759101
-      wind-effect-export2_13: -907307624
-      wind-effect-export2_14: -1388863629
-      wind-effect-export2_15: 1926734529
-      wind-effect-export2_16: -468145188
-      wind-effect-export2_17: -1050666711
-      wind-effect-export2_18: 218081574
-      wind-effect-export2_19: -197091680
-      wind-effect-export2_2: 200036281
-      wind-effect-export2_20: -1909918294
-      wind-effect-export2_21: 391944121
-      wind-effect-export2_22: -537748721
-      wind-effect-export2_23: 933761100
-      wind-effect-export2_3: -1784102426
-      wind-effect-export2_4: 1820428537
-      wind-effect-export2_5: -1389405308
-      wind-effect-export2_6: 1897482673
-      wind-effect-export2_7: -1084765275
-      wind-effect-export2_8: 1609018752
-      wind-effect-export2_9: 18890030
+      wind-effect-export1_0: -2031444921
+      wind-effect-export1_1: 73250696
+      wind-effect-export1_10: -1279877359
+      wind-effect-export1_11: -1082553488
+      wind-effect-export1_12: -1186136164
+      wind-effect-export1_13: 1579292074
+      wind-effect-export1_14: -247164163
+      wind-effect-export1_15: 692707556
+      wind-effect-export1_16: 1017181997
+      wind-effect-export1_17: -40973951
+      wind-effect-export1_18: -1545411845
+      wind-effect-export1_19: 895788102
+      wind-effect-export1_2: 1952835805
+      wind-effect-export1_20: -1446978382
+      wind-effect-export1_21: 1178991520
+      wind-effect-export1_22: -266386558
+      wind-effect-export1_23: 1909222194
+      wind-effect-export1_3: -1529632949
+      wind-effect-export1_4: 1594171314
+      wind-effect-export1_5: -1097385200
+      wind-effect-export1_6: -392575763
+      wind-effect-export1_7: 111626688
+      wind-effect-export1_8: 341102590
+      wind-effect-export1_9: 140024876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

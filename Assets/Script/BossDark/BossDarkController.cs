@@ -1,11 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossDarkController : MonoBehaviour
 {
-	[SerializeField] private float health = 100f;
 	[SerializeField] private SlashSkill slashSkill;
+	[SerializeField] private PlasmaBurstSkill plasmaBurstSkill;
+	[SerializeField] private float GapBetweenSkill = 2f;
+
 	private void Start()
 	{
 		StartCoroutine(ManageActivation());
@@ -14,9 +16,9 @@ public class BossDarkController : MonoBehaviour
 	private IEnumerator ManageActivation()
 	{
 		yield return new WaitForSeconds(1f);
-		while (health > 0)
+
+		while (true)
 		{
-			yield return new WaitForSeconds(0.5f);
 
 			if (!slashSkill.gameObject.activeInHierarchy)
 			{
@@ -29,6 +31,19 @@ public class BossDarkController : MonoBehaviour
 
 			slashSkill.gameObject.SetActive(false);
 
+			yield return new WaitForSeconds(GapBetweenSkill);
+
+			if (!plasmaBurstSkill.gameObject.activeInHierarchy)
+			{
+				plasmaBurstSkill.gameObject.SetActive(false);
+			}
+
+			plasmaBurstSkill.Run();
+			yield return new WaitUntil(() => plasmaBurstSkill.IsActingComplete);
+
+			plasmaBurstSkill.gameObject.SetActive(false);
+
+			yield return new WaitForSeconds(GapBetweenSkill);
 		}
 	}
 }
