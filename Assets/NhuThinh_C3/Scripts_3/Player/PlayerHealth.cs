@@ -38,11 +38,17 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
         DragonAI dr = other.gameObject.GetComponent<DragonAI>();
+        EnemyMovement enemyChapter5E1 = other.gameObject.GetComponent<EnemyMovement>();
+        
         if (enemy)
         {
             TakeDamage(1, other.transform);
         }
         if (dr)
+        {
+            TakeDamage(1, other.transform);
+        }
+        if (enemyChapter5E1)
         {
             TakeDamage(1, other.transform);
         }

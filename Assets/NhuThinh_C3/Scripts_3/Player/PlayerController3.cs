@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerController3 : Singleton<PlayerController3>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+
+    public VisualEffect vfxRenderer;
 
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private Transform weaponCollider;
@@ -29,7 +32,8 @@ public class PlayerController3 : Singleton<PlayerController3>
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
-        knockback = GetComponent<Knockback>();        
+        knockback = GetComponent<Knockback>();
+        //vfxRenderer = GetComponent<VisualEffect>();
     }
     private void Start()
     {
@@ -55,6 +59,7 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         AdjustPlayerFacingDirection();
         Move();
+        vfxRenderer.SetVector3("ColliderPos", transform.position);
     }
     public Transform GetWeaponCollider()
     {
@@ -136,4 +141,6 @@ public class PlayerController3 : Singleton<PlayerController3>
         myAnimator.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
+
+    
 }
