@@ -8,9 +8,6 @@ public class GameOverManager : MonoBehaviour
 {
 	public GameObject gameOverMenu;
 	public GameObject chapterMenu;
-	public GameObject sceneMenu;
-	private Text buttonText;            // Reference to the text of the button inside the Chapter Menu
-	public string SceneToLoad;
 	public void EnableGameMenu()
 	{
 		gameOverMenu.SetActive(true);
@@ -25,37 +22,45 @@ public class GameOverManager : MonoBehaviour
 	}
 	public void Restart()
 	{
-		SceneManager.LoadScene(SceneToLoad);
-		gameOverMenu.SetActive(false);
-	}
-
-	public void ChapterMenu()
-	{
 		gameOverMenu.SetActive(false);
 		chapterMenu.SetActive(true);
 	}
 
-	public void SceneMenu()
+	//public void LoadChapter1()
+	//{
+	//	SceneManager.LoadScene("Scenes/Chapter1/1.1");
+	//	chapterMenu.SetActive(false);
+	//}
+
+	//public void LoadChapter2()
+	//{
+	//	SceneManager.LoadScene("Scenes/Chapter1/2.1");
+	//	chapterMenu.SetActive(false);
+	//}
+
+	//public void LoadChapter3()
+	//{
+	//	SceneManager.LoadScene("Scenes/Chapter3/Scene 3.1");
+	//	chapterMenu.SetActive(false);
+	//}
+
+	public void LoadChapter(string buttonName)
 	{
-		GameObject optionChapter = chapterMenu.transform.Find("Option Chapter")?.gameObject;
-		Button chapterButton = optionChapter.transform.Find("Chapter1")?.GetComponent<Button>();
-		// If Text is null, try TextMeshPro
-		TMPro.TMP_Text tmpText = chapterButton.GetComponentInChildren<TMPro.TMP_Text>();
-		if (tmpText != null)
+		switch (buttonName)
 		{
-			Debug.Log("TextMeshPro text found: " + tmpText.text);
-		}
-		else
-		{
-			Debug.LogError("No text component found on the button");
+			case "Chapter 1 Button":
+				SceneManager.LoadScene("Scenes/Chapter1/1.1");
+				break;
+			case "Chapter 2 Button":
+				SceneManager.LoadScene("Scenes/Chapter1/2.1");
+				break;
+			case "Chapter 3 Button":
+				SceneManager.LoadScene("Scenes/Chapter3/Scene 3.1");
+				break;
+			default:
+				Debug.LogError("Invalid chapter button name: " + buttonName);
+				break;
 		}
 		chapterMenu.SetActive(false);
-		sceneMenu.SetActive(true);
-	}
-
-	public void LoadScene()
-	{
-		sceneMenu.SetActive(false);
-		SceneManager.LoadScene("Scene 3.1");
 	}
 }
