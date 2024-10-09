@@ -9,6 +9,7 @@ TagManager:
   - SlipperyZone
   - Weapon
   - TileMap
+  - Teleport
   layers:
   - Default
   - TransparentFX
