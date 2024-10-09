@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 1962826253901453139}
   - component: {fileID: 8824229441328319785}
   - component: {fileID: 7153755373553306728}
+  - component: {fileID: 675632686134642376}
+  - component: {fileID: 6908230249242281269}
   m_Layer: 0
   m_Name: mage_2
   m_TagString: Untagged
@@ -166,6 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9949f532a3460bc41bc5ed9d7fe66774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamChangeDirFloat: 2
+  attackRange: 8
+  enemyType: {fileID: 6908230249242281269}
+  attackCooldown: 0.5
+  stopMovingWhileAttacking: 0
 --- !u!114 &3550666134453650966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f41140ac876eb49ad8f94747f75840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 7
+  deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
+  knockBackThrust: 15
+  score: 0
 --- !u!114 &3060336594612310282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d24ea348c63b94d988f73e2caf49af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 0.5
+  collisionDelay: 0.1
 --- !u!114 &1962826253901453139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1b3e9721cb5c946b981ddc44f25cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteFlashMat: {fileID: 0}
+  whiteFlashMat: {fileID: 2100000, guid: 11308a6ef7a58934896d435b2fc139cf, type: 2}
   restoreDefaultMatTime: 0.2
 --- !u!114 &8824229441328319785
 MonoBehaviour:
@@ -240,3 +251,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &675632686134642376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236705175196872691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}
+--- !u!114 &6908230249242281269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236705175196872691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
+  bulletMoveSpeed: 1
+  burstCount: 1
+  projectilesPerBurst: 1
+  angleSpread: 70
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0

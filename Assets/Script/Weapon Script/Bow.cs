@@ -20,8 +20,7 @@ public class Bow : MonoBehaviour, IWeapon
     {
         if (cooldownTimer > 0)
         {
-            cooldownTimer -= Time.deltaTime;
-            Debug.Log("Bow cd =" + cooldownTimer);
+            cooldownTimer -= Time.deltaTime;            
             isAttacking = true;
         }
         else

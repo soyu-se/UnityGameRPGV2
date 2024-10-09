@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Script;
 
 public class PlayerHealth : Singleton<PlayerHealth>
 {
@@ -75,17 +76,18 @@ public class PlayerHealth : Singleton<PlayerHealth>
             isDead = true;
             currentHealth = 0;            
             
-            Sword.Destroy(gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
-            StartCoroutine(DeathLoadSceneRoutine());
+            
+            //HighScoreEntry newScore = new HighScoreEntry();
+            //newScore.score=ScoreManager.Instance.Score;
+
+            //List<HighScoreEntry> scoreList = new List<HighScoreEntry>();
+            //scoreList.Add(newScore);            
+            //XMLManager.instance.SaveScores(scoreList);
             OnPlayerDeath?.Invoke();
         }
     }
-    private IEnumerator DeathLoadSceneRoutine()
-    {
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
-    }
+
 
     private IEnumerator DamageRecoveryRoutine()
     {

@@ -6,10 +6,10 @@ public class Pickup : MonoBehaviour
 {
     private enum PickUpType
     {
-        GoldCoin,
-        StaminaObs,
-        HealthObs
+        HealthObs,
+        StaminaObs
     }
+
     [SerializeField] private PickUpType pickUpType;
     [SerializeField] private float pickUpDistance = 5f;
     [SerializeField] private float accelartionRate = .2f;
@@ -33,17 +33,20 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
-        Vector3 playerPos = PlayerController3.Instance.transform.position;
+        if (PlayerController3.Instance.transform != null)
+        {
+            Vector3 playerPos = PlayerController3.Instance.transform.position;
 
-        if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
-        {
-            moveDir = (playerPos - transform.position).normalized;
-            moveSpeed += accelartionRate;
-        }
-        else
-        {
-            moveDir = Vector3.zero;
-            moveSpeed = 0;
+            if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
+            {
+                moveDir = (playerPos - transform.position).normalized;
+                moveSpeed += accelartionRate;
+            }
+            else
+            {
+                moveDir = Vector3.zero;
+                moveSpeed = 0;
+            }
         }
     }
 
@@ -82,6 +85,7 @@ public class Pickup : MonoBehaviour
             yield return null;
         }
     }
+
     private void DetectPickUpType()
     {
         switch (pickUpType)

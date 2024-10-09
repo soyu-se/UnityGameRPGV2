@@ -10,7 +10,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private PlayerControls playerControls;
     private float timeBetweenAttacks;
 
-    private bool attackButtonDown, isAttacking = false;
+    private bool attackButtonDown;
 
     protected override void Awake()
     {

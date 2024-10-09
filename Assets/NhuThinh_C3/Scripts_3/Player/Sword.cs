@@ -45,7 +45,8 @@ public class Sword : MonoBehaviour,IWeapon
     {
         if (cooldownTimer <= 0)
         {
-            weaponInfo.isAttacking =true;
+            weaponInfo.isAttacking = true;
+
             if (myAnimator != null && myAnimator.isActiveAndEnabled)
             {
                 myAnimator.SetTrigger("Attack");

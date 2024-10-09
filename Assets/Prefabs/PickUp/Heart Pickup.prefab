@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3f06ece5f7e594e982a8680824a2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpType: 2
-  pickUpDistance: 5
-  accelartionRate: 0.2
-  moveSpeed: 100
+  pickUpType: 0
+  pickUpDistance: 10
+  accelartionRate: 2
+  moveSpeed: 10
   animCurve:
     serializedVersion: 2
     m_Curve:
@@ -128,7 +128,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   heightY: 1.5
-  popDuration: 0.5
+  popDuration: 1
 --- !u!60 &7500703333062916270
 PolygonCollider2D:
   m_ObjectHideFlags: 0

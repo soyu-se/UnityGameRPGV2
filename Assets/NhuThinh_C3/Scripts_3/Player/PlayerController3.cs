@@ -9,8 +9,10 @@ public class PlayerController3 : Singleton<PlayerController3>
 
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private Transform weaponCollider;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private TrailRenderer myTrailRenderer;
 
-    [SerializeField] private float slipperyZoneMultiplier = 3f;
+    [SerializeField] public float slipperyZoneMultiplier = 3f;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -18,6 +20,8 @@ public class PlayerController3 : Singleton<PlayerController3>
     private Animator myAnimator;
     private SpriteRenderer mySpriteRender;
     private Knockback knockback;
+    private bool isDashing;
+    private float startingMoveSpeed;   
 
     private bool facingLeft = false;
 
@@ -29,11 +33,16 @@ public class PlayerController3 : Singleton<PlayerController3>
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
-        knockback = GetComponent<Knockback>();        
+        knockback = GetComponent<Knockback>();
+
     }
     private void Start()
     {
-        EnablePlayerMovement();
+        playerControls.Combat.Dash.performed += _ => Dash();
+
+        startingMoveSpeed = moveSpeed;
+
+        ActiveInventory.Instance.EquipStartingWeapon();
     }
 
     private void OnEnable()
@@ -41,6 +50,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         playerControls.Enable();
         PlayerHealth.OnPlayerDeath += DisablePlayerMovement;
     }
+
     private void OnDisable()
     {
         PlayerHealth.OnPlayerDeath -= DisablePlayerMovement;
@@ -70,29 +80,13 @@ public class PlayerController3 : Singleton<PlayerController3>
 
     private void Move()
     {
-        if (rb.bodyType == RigidbodyType2D.Dynamic)
+        if (!(rb.bodyType == RigidbodyType2D.Dynamic) || knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
         {
-            if (knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
-            {                
-                if (isInSlipperyZone)
-                {
-                    float currentSpeedd = moveSpeed * slipperyZoneMultiplier;
-                    rb.MovePosition(rb.position + movement * (currentSpeedd * Time.fixedDeltaTime));
-                }
-                return;
-            }
-
-
-            float currentSpeed = moveSpeed;
-
-            if (isInSlipperyZone)
-            {
-                currentSpeed *= slipperyZoneMultiplier;
-
-            }
-
-            rb.MovePosition(rb.position + movement * (currentSpeed * Time.fixedDeltaTime));
+            return;
         }
+
+        float currentMoveSpeed = isInSlipperyZone ? moveSpeed * slipperyZoneMultiplier : moveSpeed;
+        rb.velocity = new Vector2(movement.x * currentMoveSpeed, movement.y * currentMoveSpeed);
     }
 
     private void AdjustPlayerFacingDirection()
@@ -107,7 +101,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         }
         else
         {
-            mySpriteRender.flipX = false;           
+            mySpriteRender.flipX = false;
             FacingLeft = false;
         }
     }
@@ -115,7 +109,7 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         if (other.CompareTag("SlipperyZone"))
         {
-            isInSlipperyZone = true;
+            isInSlipperyZone = true;            
         }
     }
 
@@ -123,8 +117,8 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         if (other.CompareTag("SlipperyZone"))
         {
-            isInSlipperyZone = false; 
-        }      
+            isInSlipperyZone = false;
+        }
     }
     private void DisablePlayerMovement()
     {
@@ -135,5 +129,28 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         myAnimator.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    private void Dash()
+    {
+        if (!isDashing && Stamina.Instance.CurrentStamina > 0)
+        {
+            Stamina.Instance.UseStamina(10);
+            isDashing = true;
+            moveSpeed *= dashSpeed;
+            myTrailRenderer.emitting = true;
+            StartCoroutine(EndDashRoutine());
+        }
+    }
+
+    private IEnumerator EndDashRoutine()
+    {
+        float dashTime = .2f;
+        float dashCD = 1f;
+        yield return new WaitForSeconds(dashTime);
+        moveSpeed = startingMoveSpeed;
+        myTrailRenderer.emitting = false;
+        yield return new WaitForSeconds(dashCD);
+        isDashing = false;
     }
 }

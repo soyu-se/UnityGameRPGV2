@@ -9,19 +9,30 @@ public class PickupSpawner : MonoBehaviour
     [SerializeField] private GameObject heartPreFab, staminaPrefab;
     public void DropItems()
     {
-        int randomNum = Random.Range(1, 5);
 
-        if(randomNum == 1)
+        float dropChance = Random.Range(0f, 1f);
+        
+        if (dropChance <= 0.3f)
         {
-            Instantiate(heartPreFab, transform.position, Quaternion.identity);
-        }
-        if (randomNum == 2)
-        {
-            int randomNumOfStamina=Random.Range(1, 4);
-            for (int i = 0; i < randomNumOfStamina; i++)
+            int randomNum = Random.Range(1, 4);
+
+            switch (randomNum)
             {
-                Instantiate(staminaPrefab, transform.position, Quaternion.identity);
-            }            
+                case 1:
+                    Instantiate(heartPreFab, transform.position, Quaternion.identity);
+                    break;
+                case 2:
+                    int randomNumOfStamina = Random.Range(1, 4);
+                    for (int i = 0; i < randomNumOfStamina; i++)
+                    {
+                        Instantiate(staminaPrefab, transform.position, Quaternion.identity);
+                    }
+                    break;
+                case 3:
+                    Instantiate(heartPreFab, transform.position, Quaternion.identity);
+                    Instantiate(staminaPrefab, transform.position, Quaternion.identity);
+                    break;
+            }
         }
     }
 }

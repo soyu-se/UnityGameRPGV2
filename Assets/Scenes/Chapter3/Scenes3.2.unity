@@ -341,10 +341,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2030324695}
     m_Modifications:
-    - target: {fileID: 1818402256667823771, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: whiteFlashMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 11308a6ef7a58934896d435b2fc139cf, type: 2}
     - target: {fileID: 3217787088028592728, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.44
@@ -385,25 +381,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4055123089246039033, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9e825a131570c964c861aa877fe21187, type: 2}
-    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: deathVFXPrefab
-      value: 
-      objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
-    - target: {fileID: 4682579398665339027, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: startingHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5627722239825035031, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
       propertyPath: m_Name
       value: knight_mau_farme2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137653133864830201, guid: da9b521e82bdf1843983d5589b39d828, type: 3}
-      propertyPath: moveSpeed
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4421,7 +4401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03f9b0cacb48d74d8354ef77a38382a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowSpeed: 5
+  slowSpeed: 2
 --- !u!60 &125470753
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10724,38 +10704,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1962826253901453139, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: whiteFlashMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 11308a6ef7a58934896d435b2fc139cf, type: 2}
-    - target: {fileID: 3060336594612310282, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: moveSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: deathVFXPrefab
-      value: 
-      objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
-    - target: {fileID: 3550666134453650966, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: startingHealth
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: enemyType
-      value: 
-      objectReference: {fileID: 1641051103}
-    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: attackRange
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: attackCooldown
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6521641312259387687, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      propertyPath: stopMovingWhileAttacking
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
       propertyPath: m_Name
       value: mage3
@@ -10763,16 +10711,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1641051103}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
---- !u!1 &658937038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8236705175196872691, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
-  m_PrefabInstance: {fileID: 658937037}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &709159464
 GameObject:
   m_ObjectHideFlags: 0
@@ -137599,26 +137539,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2030324695}
     m_Modifications:
-    - target: {fileID: 875466403861401976, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: moveSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157952080284265669, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: attackCooldown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157952080284265669, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: stopMovingWhileAttacking
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437966915558485297, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.24481201
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437966915558485297, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2363623
-      objectReference: {fileID: 0}
     - target: {fileID: 3437966915558485297, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.31
@@ -137659,18 +137579,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5117331137456002149, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: whiteFlashMat
-      value: 
-      objectReference: {fileID: 2100000, guid: 11308a6ef7a58934896d435b2fc139cf, type: 2}
     - target: {fileID: 6771060472603780071, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
       propertyPath: m_Name
       value: slime1
       objectReference: {fileID: 0}
-    - target: {fileID: 7109931172266559975, guid: 4f4ce84eec6ca3b46bc78521efd63f56, type: 3}
-      propertyPath: deathVFXPrefab
-      value: 
-      objectReference: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -145157,28 +145069,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1876018039159264719, guid: 3cb3ced20bdf5594f986939b678dcde5, type: 3}
   m_PrefabInstance: {fileID: 658937037}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1641051103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658937038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654c8282120264e489f9cd3d52e4e776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8521120302174821097, guid: fff6bb6511997ae4b8aeee1a996e8cf2, type: 3}
-  bulletMoveSpeed: 1
-  burstCount: 1
-  projectilesPerBurst: 1
-  angleSpread: 70
-  startingDistance: 0.1
-  timeBetweenBursts: 0.1
-  restTime: 1
-  stagger: 0
-  oscillate: 0
 --- !u!1 &1762538932
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class GameOverManager : MonoBehaviour
 	public void EnableGameMenu()
 	{
 		gameOverMenu.SetActive(true);
+		Time.timeScale = 0;
+		Timer.Instance.EndTimer();
 	}
 	private void OnEnable()
 	{
@@ -27,6 +29,8 @@ public class GameOverManager : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneToLoad);
 		gameOverMenu.SetActive(false);
+		Time.timeScale = 1;
+		Timer.Instance.BeginTimer();
 	}
 
 	public void ChapterMenu()
@@ -51,11 +55,5 @@ public class GameOverManager : MonoBehaviour
 		}
 		chapterMenu.SetActive(false);
 		sceneMenu.SetActive(true);
-	}
-
-	public void LoadScene()
-	{
-		sceneMenu.SetActive(false);
-		SceneManager.LoadScene("Scene 3.1");
 	}
 }
