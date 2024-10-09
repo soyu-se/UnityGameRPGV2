@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3912e2814d276df44814966992b1d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
 --- !u!60 &89498976
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -82837,7 +82836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272ff94329b9a6e42ae41f005294d2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxRenderer: {fileID: 0}
   moveSpeed: 10
+  weaponCollider: {fileID: 0}
   slipperyZoneMultiplier: 30
 --- !u!50 &1223243277
 Rigidbody2D:
@@ -83069,7 +83070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashAnimPrefab: {fileID: 6264733203898987206, guid: bfb311599693ada41aed3e0cbb882ea7, type: 3}
   slashAnimSpawnPoint: {fileID: 126761329}
-  weaponCollider: {fileID: 89498974}
+  weaponInfo: {fileID: 0}
 --- !u!212 &1847377401
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83168,6 +83169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a2b7f16fdc5614baa56712ce4976f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0
 --- !u!1 &1911217404
 GameObject:
   m_ObjectHideFlags: 0
