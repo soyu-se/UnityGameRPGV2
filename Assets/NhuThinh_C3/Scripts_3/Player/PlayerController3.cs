@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerController3 : Singleton<PlayerController3>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
+    public VisualEffect vfxRenderer;
+
     [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] private Transform weaponCollider;
 
     [SerializeField] private float slipperyZoneMultiplier = 3f;
 
@@ -29,6 +33,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
+        //vfxRenderer = GetComponent<VisualEffect>();
     }
     private void Start()
     {
@@ -54,8 +59,12 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         AdjustPlayerFacingDirection();
         Move();
+        vfxRenderer.SetVector3("ColliderPos", transform.position);
     }
-
+    public Transform GetWeaponCollider()
+    {
+        return weaponCollider;
+    }
     private void PlayerInput()
     {
         movement = playerControls.Movement.Movement.ReadValue<Vector2>();
@@ -69,8 +78,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         if (rb.bodyType == RigidbodyType2D.Dynamic)
         {
             if (knockback.GettingKnockedBack || PlayerHealth.Instance.isDead)
-            {
-                Debug.Log("Player being damaged");
+            {                
                 if (isInSlipperyZone)
                 {
                     float currentSpeedd = moveSpeed * slipperyZoneMultiplier;
@@ -104,7 +112,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         }
         else
         {
-            mySpriteRender.flipX = false;
+            mySpriteRender.flipX = false;           
             FacingLeft = false;
         }
     }
@@ -133,4 +141,6 @@ public class PlayerController3 : Singleton<PlayerController3>
         myAnimator.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
+
+    
 }

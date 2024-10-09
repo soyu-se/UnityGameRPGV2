@@ -8,7 +8,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 {
     public bool isDead { get; private set; }
     public static event Action OnPlayerDeath;
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int maxHealth = 1;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
 
@@ -18,7 +18,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private Knockback knockback;
     private Flash flash;
 
-    readonly int DEATH_HASH = Animator.StringToHash("Death");
+	readonly int DEATH_HASH = Animator.StringToHash("Death");
     protected override void Awake()
     {
         base.Awake();
@@ -37,8 +37,18 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private void OnCollisionStay2D(Collision2D other)
     {
         EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
-
+        DragonAI dr = other.gameObject.GetComponent<DragonAI>();
+        EnemyMovement enemyChapter5E1 = other.gameObject.GetComponent<EnemyMovement>();
+        
         if (enemy)
+        {
+            TakeDamage(1, other.transform);
+        }
+        if (dr)
+        {
+            TakeDamage(1, other.transform);
+        }
+        if (enemyChapter5E1)
         {
             TakeDamage(1, other.transform);
         }
@@ -58,7 +68,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         if (!canTakeDamage) { return; }
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         canTakeDamage = false;
-        currentHealth -= damageAmount;
+        currentHealth -= damageAmount;        
         StartCoroutine(DamageRecoveryRoutine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();
@@ -71,7 +81,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
             isDead = true;
             currentHealth = 0;            
             
-            Destroy(Sword.Instance.gameObject);            
+            Sword.Destroy(gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
             StartCoroutine(DeathLoadSceneRoutine());
             OnPlayerDeath?.Invoke();
