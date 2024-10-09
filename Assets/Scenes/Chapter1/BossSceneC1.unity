@@ -5263,7 +5263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
-  deathVFXPrefab: {fileID: 0}
+  deathVFXPrefab: {fileID: 259376842178263901, guid: d3877a9a2d6f845438ab0150caa36741, type: 3}
   knockBackThrust: 15
 --- !u!114 &480992604
 MonoBehaviour:
