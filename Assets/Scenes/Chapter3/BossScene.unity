@@ -4967,7 +4967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988356947466745907, guid: f220f156017ef894491e13c4a15455be, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5092,7 +5092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988356947466745907, guid: f220f156017ef894491e13c4a15455be, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5217,7 +5217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988356947466745907, guid: f220f156017ef894491e13c4a15455be, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16903,6 +16903,10 @@ PrefabInstance:
       propertyPath: startingHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7965164923503365457, guid: a2011c7bac209ad45b949db275103875, type: 3}
+      propertyPath: knockBackThrust
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7996050954421930559, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: speed
       value: 10
@@ -16946,19 +16950,6 @@ MonoBehaviour:
   chestAnimator: {fileID: 2128190087}
   heart: {fileID: 0}
   isOpen: 0
---- !u!114 &2128190091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128190084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeartPreFab: {fileID: 5698330606974013661, guid: 141c6624ee84425409fbf765d93f9505, type: 3}
 --- !u!1 &2136026800 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3139365892179541955, guid: a2011c7bac209ad45b949db275103875, type: 3}
@@ -17053,7 +17044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988356947466745907, guid: f220f156017ef894491e13c4a15455be, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17178,7 +17169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988356947466745907, guid: f220f156017ef894491e13c4a15455be, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17187,9 +17178,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2332124543616418423, guid: f220f156017ef894491e13c4a15455be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2128190090}
-    - targetCorrespondingSourceObject: {fileID: 2332124543616418423, guid: f220f156017ef894491e13c4a15455be, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2128190091}
   m_SourcePrefab: {fileID: 100100000, guid: f220f156017ef894491e13c4a15455be, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

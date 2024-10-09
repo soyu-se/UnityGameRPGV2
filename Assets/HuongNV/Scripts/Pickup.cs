@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +38,19 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerController3>())
         {
+            PlayerHealth.Instance.HealPlayer();
             Destroy(gameObject);
         }
     }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    // Kiểm tra xem đối tượng va chạm có phải là nhân vật (Player) không
+    //    PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+
+    //    if (playerHealth != null)  // Nếu nhân vật có hệ thống sức khỏe
+    //    {
+    //        playerHealth.Heal(healAmount);  // Hồi máu cho nhân vật
+    //        Destroy(gameObject);  // Hủy vật phẩm sau khi nhặt
+    //    }
+    //}
 }
