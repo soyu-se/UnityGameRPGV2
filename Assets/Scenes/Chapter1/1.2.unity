@@ -11274,7 +11274,7 @@ Transform:
   m_GameObject: {fileID: 74989169}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.4955, y: 3.2395997, z: -10}
+  m_LocalPosition: {x: 40.573284, y: 3.23591, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32492,7 +32492,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -37960,7 +37960,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -43583,7 +43583,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -43623,7 +43623,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -43730,7 +43730,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -43837,7 +43837,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -43948,7 +43948,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -43975,7 +43975,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
@@ -46247,7 +46247,7 @@ MonoBehaviour:
   bulletMoveSpeed: 5
   burstCount: 1
   projectilesPerBurst: 1
-  angleSpread: 359
+  angleSpread: 0
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
