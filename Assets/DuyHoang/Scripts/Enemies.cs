@@ -23,7 +23,7 @@ public class Enemies : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(detectionZone.detectGameObjs.Count > 0)
+        if(detectionZone != null && detectionZone.detectGameObjs.Count > 0)
         {
             Vector2 direction = (detectionZone.detectGameObjs[0].transform.position - transform.position).normalized;
             rb.AddForce((moveSpeed * 10) * Time.deltaTime * direction);
