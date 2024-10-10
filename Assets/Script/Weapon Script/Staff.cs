@@ -6,9 +6,11 @@ public class Staff : MonoBehaviour,IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
     [SerializeField] private GameObject magicLaser;
-    [SerializeField] private Transform magicLaserSpawnPoint;
+    [SerializeField] private Transform magicLaserSpawnPoint;    
 
     private Animator animator;
+    private float cooldownTimer;
+    private bool isAttacking = false;
 
     readonly int AttackHarsh = Animator.StringToHash("Attack");
 
@@ -19,10 +21,25 @@ public class Staff : MonoBehaviour,IWeapon
     private void Update()
     {
         MouseFollowWithOffset();
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false; // Allow attack when cooldown is finished
+        }
+        weaponInfo.isAttacking = isAttacking;
     }
     public void Attack()
     {
-        animator.SetTrigger(AttackHarsh);        
+        if (cooldownTimer <= 0)
+        {
+            weaponInfo.isAttacking = true;
+            animator.SetTrigger(AttackHarsh);
+            cooldownTimer = weaponInfo.weaponCooldown;
+        }
     }
     public void SpamStaffProjectileAnimeEvent()
     {
@@ -49,5 +66,8 @@ public class Staff : MonoBehaviour,IWeapon
             ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, 0, angle);            
         }
     }
-
+    public bool IsCoolingDown()
+    {
+        return cooldownTimer > 0;
+    }
 }

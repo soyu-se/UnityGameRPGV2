@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ActiveWeapon : Singleton<ActiveWeapon>
-{    
-    public MonoBehaviour CurrentActiveWeapon {  get; private set; }
-    private PlayerControls playerControls;
-    [SerializeField] private float timeBetweenAttacks;
+{
+    public MonoBehaviour CurrentActiveWeapon { get; private set; }
 
-    private bool attackButtonDown, isAttacking = false;
+    private PlayerControls playerControls;
+    private float timeBetweenAttacks;
+
+    private bool attackButtonDown;
 
     protected override void Awake()
     {
@@ -25,42 +27,42 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private void Start()
     {
         playerControls.Combat.Attack.started += _ => StartAttacking();
-        playerControls.Combat.Attack.canceled += _ => StopAttacking();
-
-        AttackCooldown();
+        playerControls.Combat.Attack.canceled += _ => StopAttacking();     
     }
 
     private void Update()
     {
         Attack();
     }
+    private void Attack()
+    {
+        IWeapon weapon = CurrentActiveWeapon as IWeapon;
+        if (weapon == null) return;
 
+        if (attackButtonDown && !weapon.IsCoolingDown())
+        {
+            var manaCost = weapon.GetWeaponInfo().weaponStaminaCost;
+            if (Stamina.Instance.CurrentStamina >= manaCost)
+            {
+                weapon.Attack();
+                Stamina.Instance.UseStamina(manaCost);
+            }
+        }
+    }
     public void NewWeapon(MonoBehaviour newWeapon)
     {
+        if (CurrentActiveWeapon != null)
+        {            
+            CurrentActiveWeapon.enabled = false;
+        }
+
         CurrentActiveWeapon = newWeapon;
-
-        AttackCooldown();
-        timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
+        CurrentActiveWeapon.enabled = true;
     }
-
     public void WeaponNull()
     {
         CurrentActiveWeapon = null;
     }
-
-    private void AttackCooldown()
-    {
-        isAttacking = true;
-        StopAllCoroutines();
-        StartCoroutine(TimeBetweenAttacksRoutine());
-    }
-
-    private IEnumerator TimeBetweenAttacksRoutine()
-    {
-        yield return new WaitForSeconds(timeBetweenAttacks);
-        isAttacking = false;
-    }
-
     private void StartAttacking()
     {
         attackButtonDown = true;
@@ -71,13 +73,5 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         attackButtonDown = false;
     }
 
-    private void Attack()
-    {
-        if (attackButtonDown && !isAttacking && CurrentActiveWeapon)
-        {            
-            (CurrentActiveWeapon as IWeapon).Attack();
-            AttackCooldown();
-        }
-    }
-
+    
 }

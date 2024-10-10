@@ -4,29 +4,49 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private enum PickUpType
+    {
+        HealthObs,
+        StaminaObs
+    }
+
+    [SerializeField] private PickUpType pickUpType;
     [SerializeField] private float pickUpDistance = 5f;
     [SerializeField] private float accelartionRate = .2f;
     [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private AnimationCurve animCurve;
+    [SerializeField] private float heightY = 1.5f;
+    [SerializeField] private float popDuration = 1f;
+
     private Vector3 moveDir;
     private Rigidbody2D rb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void Start()
+    {
+        StartCoroutine(AnimCurveSpawnRoutine());
+    }
+
     private void Update()
     {
-        Vector3 playerPos = PlayerController3.Instance.transform.position;
+        if (PlayerController3.Instance.transform != null)
+        {
+            Vector3 playerPos = PlayerController3.Instance.transform.position;
 
-        if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
-        {
-            moveDir = (playerPos - transform.position).normalized;
-            moveSpeed += accelartionRate;
-        }
-        else
-        {
-            moveDir = Vector3.zero;
-            moveSpeed = 0;
+            if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
+            {
+                moveDir = (playerPos - transform.position).normalized;
+                moveSpeed += accelartionRate;
+            }
+            else
+            {
+                moveDir = Vector3.zero;
+                moveSpeed = 0;
+            }
         }
     }
 
@@ -34,23 +54,48 @@ public class Pickup : MonoBehaviour
     {
         rb.velocity = moveDir * moveSpeed * Time.deltaTime;
     }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<PlayerController3>())
         {
-            PlayerHealth.Instance.HealPlayer();
+            DetectPickUpType();
             Destroy(gameObject);
         }
     }
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    // Kiểm tra xem đối tượng va chạm có phải là nhân vật (Player) không
-    //    PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
-    //    if (playerHealth != null)  // Nếu nhân vật có hệ thống sức khỏe
-    //    {
-    //        playerHealth.Heal(healAmount);  // Hồi máu cho nhân vật
-    //        Destroy(gameObject);  // Hủy vật phẩm sau khi nhặt
-    //    }
-    //}
+    private IEnumerator AnimCurveSpawnRoutine()
+    {
+        Vector2 startPoint = transform.position;
+        float randomX = transform.position.x + Random.Range(-2f, 2f);
+        float randomY = transform.position.y + Random.Range(-1f, 1f);
+
+        Vector2 endPoint = new Vector2(randomX, randomY);
+
+        float timePassed = 0f;
+
+        while (timePassed < popDuration)
+        {
+            timePassed += Time.deltaTime;
+            float linearT = timePassed / popDuration;
+            float heightT = animCurve.Evaluate(linearT);
+            float height = Mathf.Lerp(0f, heightY, heightT);
+
+            transform.position = Vector2.Lerp(startPoint, endPoint, linearT) + new Vector2(0f, height);
+            yield return null;
+        }
+    }
+
+    private void DetectPickUpType()
+    {
+        switch (pickUpType)
+        {
+            case PickUpType.HealthObs:
+                PlayerHealth.Instance.HealPlayer();
+                break;
+            case PickUpType.StaminaObs:
+                Stamina.Instance.StaminaPickUp();
+                break;
+        }
+    }
 }

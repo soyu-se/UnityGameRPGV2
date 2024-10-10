@@ -55,7 +55,6 @@ public class Projectile : MonoBehaviour
             else if (!isEnemyProjectile && enemyHealth != null)
             {
                 // Projectile hits the enemy
-                enemyHealth.TakeDamage(weaponInfo.weaponDamage);
                 Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
                 Destroy(gameObject);
             }

@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &249396197
 Transform:
   m_ObjectHideFlags: 0
@@ -158,26 +158,6 @@ Transform:
   - {fileID: 2144128641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &861360228 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6702979832348548318, guid: a2011c7bac209ad45b949db275103875, type: 3}
-  m_PrefabInstance: {fileID: 2028869033}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &861360232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861360228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f41140ac876eb49ad8f94747f75840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 1
-  deathVFXPrefab: {fileID: 259376842178263901, guid: 79af6bc927a24dc4a836f5bbcecf44fb, type: 3}
-  knockBackThrust: 15
 --- !u!1 &952242328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,7 +3804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartPreFab: {fileID: 5698330606974013661, guid: 141c6624ee84425409fbf765d93f9505, type: 3}
+  heartPreFab: {fileID: 0}
+  staminaPrefab: {fileID: 0}
 --- !u!114 &1060598457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3958,7 +3939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartPreFab: {fileID: 5698330606974013661, guid: 141c6624ee84425409fbf765d93f9505, type: 3}
+  heartPreFab: {fileID: 0}
+  staminaPrefab: {fileID: 0}
 --- !u!114 &1064413333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4090,7 +4072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestAnimator: {fileID: 1131791657}
-  heart: {fileID: 0}
+  heart: {fileID: 1768328167615620205, guid: 0fd7a9925278b16408cd1ea9034ea1ea, type: 3}
   isOpen: 0
 --- !u!4 &1131791663 stripped
 Transform:
@@ -11936,24 +11918,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1565423602 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5386835578428411793, guid: a2011c7bac209ad45b949db275103875, type: 3}
-  m_PrefabInstance: {fileID: 2028869033}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1565423612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565423602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687e4df2d64f3564e92eccf1588349d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockBackTime: 0.3
 --- !u!1 &1590137139
 GameObject:
   m_ObjectHideFlags: 0
@@ -14904,18 +14868,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1294022500989638144, guid: a2011c7bac209ad45b949db275103875, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485256800730667605, guid: a2011c7bac209ad45b949db275103875, type: 3}
-      propertyPath: bossHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821487805054508905, guid: a2011c7bac209ad45b949db275103875, type: 3}
-      propertyPath: moveSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2176260795993824936, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.78
@@ -15003,16 +14955,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5386835578428411793, guid: a2011c7bac209ad45b949db275103875, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1565423612}
-    - targetCorrespondingSourceObject: {fileID: 3139365892179541955, guid: a2011c7bac209ad45b949db275103875, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2136026803}
-    - targetCorrespondingSourceObject: {fileID: 6702979832348548318, guid: a2011c7bac209ad45b949db275103875, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 861360232}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2011c7bac209ad45b949db275103875, type: 3}
 --- !u!1 &2128190084 stripped
 GameObject:
@@ -15039,44 +14982,11 @@ MonoBehaviour:
   chestAnimator: {fileID: 2128190087}
   heart: {fileID: 0}
   isOpen: 0
---- !u!114 &2128190091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128190084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeartPreFab: {fileID: 5698330606974013661, guid: 141c6624ee84425409fbf765d93f9505, type: 3}
 --- !u!4 &2128190096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1841296919838634571, guid: f220f156017ef894491e13c4a15455be, type: 3}
   m_PrefabInstance: {fileID: 4401922628734803212}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2136026800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3139365892179541955, guid: a2011c7bac209ad45b949db275103875, type: 3}
-  m_PrefabInstance: {fileID: 2028869033}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2136026803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136026800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f41140ac876eb49ad8f94747f75840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 1
-  deathVFXPrefab: {fileID: 0}
-  knockBackThrust: 15
 --- !u!1001 &2144128632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15190,7 +15100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartPreFab: {fileID: 5698330606974013661, guid: 141c6624ee84425409fbf765d93f9505, type: 3}
+  heartPreFab: {fileID: 0}
+  staminaPrefab: {fileID: 0}
 --- !u!114 &2144128636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15280,9 +15191,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2077893643330262761, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
-      propertyPath: SceneToLoad
-      value: Scene 3.1
+    - target: {fileID: 3516273147911337292, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516273147911337292, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3610324977901241339, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15593,9 +15508,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2332124543616418423, guid: f220f156017ef894491e13c4a15455be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2128190090}
-    - targetCorrespondingSourceObject: {fileID: 2332124543616418423, guid: f220f156017ef894491e13c4a15455be, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2128190091}
   m_SourcePrefab: {fileID: 100100000, guid: f220f156017ef894491e13c4a15455be, type: 3}
 --- !u!1001 &6443709377858956587
 PrefabInstance:

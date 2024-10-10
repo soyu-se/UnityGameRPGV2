@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeartPreFab: {fileID: 1768328167615620205, guid: 0fd7a9925278b16408cd1ea9034ea1ea, type: 3}
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}
 --- !u!114 &5280975058133232531
 MonoBehaviour:
   m_ObjectHideFlags: 0

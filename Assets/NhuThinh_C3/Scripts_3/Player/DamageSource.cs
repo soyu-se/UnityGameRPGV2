@@ -17,8 +17,7 @@ public class DamageSource : MonoBehaviour
         if (other.gameObject.GetComponent<EnemyHealth>())
         {
             EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(damageAmount);
-            Debug.Log("enemy take damage");
+            enemyHealth.TakeDamage(damageAmount);            
         }
     }
 }

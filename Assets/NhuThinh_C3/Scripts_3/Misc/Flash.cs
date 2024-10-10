@@ -24,7 +24,6 @@ public class Flash : MonoBehaviour
     public IEnumerator FlashRoutine() {
         spriteRenderer.material = whiteFlashMat;
         yield return new WaitForSeconds(restoreDefaultMatTime);
-        spriteRenderer.material = defaultMat;
-        enemyHealth.DetectDeath();
+        spriteRenderer.material = defaultMat;        
     }
 }

@@ -11,6 +11,8 @@ public class GameOverManager : MonoBehaviour
 	public void EnableGameMenu()
 	{
 		gameOverMenu.SetActive(true);
+		Time.timeScale = 0;
+		Timer.Instance.EndTimer();
 	}
 	private void OnEnable()
 	{
@@ -21,6 +23,14 @@ public class GameOverManager : MonoBehaviour
 		PlayerHealth.OnPlayerDeath -= EnableGameMenu;
 	}
 	public void Restart()
+	{
+		SceneManager.LoadScene(SceneToLoad);
+		gameOverMenu.SetActive(false);
+		Time.timeScale = 1;
+		Timer.Instance.ResetTimer();
+	}
+
+	public void ChapterMenu()
 	{
 		gameOverMenu.SetActive(false);
 		chapterMenu.SetActive(true);
@@ -62,5 +72,6 @@ public class GameOverManager : MonoBehaviour
 				break;
 		}
 		chapterMenu.SetActive(false);
+		sceneMenu.SetActive(true);
 	}
 }
