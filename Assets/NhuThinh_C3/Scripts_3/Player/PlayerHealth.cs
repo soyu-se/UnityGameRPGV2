@@ -75,7 +75,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         {
             isDead = true;
             currentHealth = 0;            
-            
+            Destroy(gameObject);
             GetComponent<Animator>().SetTrigger(DEATH_HASH);
             
             //HighScoreEntry newScore = new HighScoreEntry();

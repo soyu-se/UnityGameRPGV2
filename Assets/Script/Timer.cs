@@ -17,12 +17,12 @@ public class Timer : Singleton<Timer>
     protected override void Awake()
     {
         base.Awake();
-        timeCounter = GameObject.Find("Timer text").GetComponent<TMP_Text>();
+        timeCounter = GameObject.Find("Timer text").GetComponent<TMP_Text>();        
     }
     private void Start()
     {
         timeCounter.text = "Time: 00:00:00";
-        timerGoing = false;
+        timerGoing = true;
     }
     public void BeginTimer()
     {
@@ -34,13 +34,18 @@ public class Timer : Singleton<Timer>
     {
         timerGoing = false;
     }
+    public void ResetTimer()
+    {
+        playingTime = TimeSpan.Zero;
+        timerGoing = true;
+    }
     private IEnumerator UpdateTimer()
     {
         while (timerGoing)
         {
             elapseTime += Time.deltaTime;
             playingTime = TimeSpan.FromSeconds(elapseTime);
-            string playingTimeStr = "Time: " + playingTime.ToString("mm':'ss'.'ff");
+            string playingTimeStr = "Time: " + playingTime.ToString("mm':'ss'.'ff");            
             timeCounter.text = playingTimeStr;
 
             yield return null;

@@ -30,7 +30,7 @@ public class GameOverManager : MonoBehaviour
 		SceneManager.LoadScene(SceneToLoad);
 		gameOverMenu.SetActive(false);
 		Time.timeScale = 1;
-		Timer.Instance.BeginTimer();
+		Timer.Instance.ResetTimer();
 	}
 
 	public void ChapterMenu()

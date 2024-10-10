@@ -33,8 +33,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
-        knockback = GetComponent<Knockback>();
-
+        knockback = GetComponent<Knockback>();        
     }
     private void Start()
     {
@@ -43,6 +42,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         startingMoveSpeed = moveSpeed;
 
         ActiveInventory.Instance.EquipStartingWeapon();
+        Timer.Instance.BeginTimer();
     }
 
     private void OnEnable()
