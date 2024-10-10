@@ -240,11 +240,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5685400364248779958, guid: 97536ca8e0a8a8b4c876b0f61d10c053, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5685400364248779958, guid: 97536ca8e0a8a8b4c876b0f61d10c053, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5791858366452372051, guid: 97536ca8e0a8a8b4c876b0f61d10c053, type: 3}
       propertyPath: m_LocalPosition.x
@@ -961,11 +961,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5685400364248779958, guid: 97536ca8e0a8a8b4c876b0f61d10c053, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5685400364248779958, guid: 97536ca8e0a8a8b4c876b0f61d10c053, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5791858366452372051, guid: 97536ca8e0a8a8b4c876b0f61d10c053, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45310,11 +45310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6716068733094252589, guid: 97f38fa4e763e054eb43bc587d83576a, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6716068733094252589, guid: 97f38fa4e763e054eb43bc587d83576a, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
