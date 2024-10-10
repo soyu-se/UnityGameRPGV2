@@ -7,7 +7,7 @@ public class ScoreDisplay : Singleton<ScoreDisplay>
 {
     private TMP_Text scoreText;
 
-    const string COIN_AMOUNT_TEXT = "Score Text";
+    const string score = "Score Text";
     float displayScore = 0;
     public float transitionSpeed = 100;
     private void Update()
@@ -19,7 +19,7 @@ public class ScoreDisplay : Singleton<ScoreDisplay>
     {
         if (scoreText == null)
         {
-            scoreText = GameObject.Find(COIN_AMOUNT_TEXT).GetComponent<TMP_Text>();
+            scoreText = GameObject.Find(score).GetComponent<TMP_Text>();
         }
         scoreText.text = "Score: " + ScoreManager.Instance.Score;
     }
