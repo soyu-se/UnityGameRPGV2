@@ -169,7 +169,7 @@ MonoBehaviour:
   startingHealth: 20
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 20
-  score: 0
+  score: 15
 --- !u!114 &1883742710423916141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,12 +211,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _rotationSpeed: 50
-  _screenBorder: 0
-  _obstacleCheckCircleRadius: 0
-  _obstacleCheckDistance: 0
+  _screenBorder: -30
+  _obstacleCheckCircleRadius: 0.45
+  _obstacleCheckDistance: 1
   _obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!114 &6625392739217571040
 MonoBehaviour:
   m_ObjectHideFlags: 0

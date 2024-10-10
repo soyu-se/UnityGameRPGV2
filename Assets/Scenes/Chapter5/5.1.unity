@@ -161,29 +161,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 531337571}
     m_Modifications:
-    - target: {fileID: 345784814272045158, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
-      propertyPath: _screenBorder
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 345784814272045158, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
-      propertyPath: _obstacleCheckDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 345784814272045158, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
-      propertyPath: _obstacleLayerMask.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 345784814272045158, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
-      propertyPath: _obstacleCheckCircleRadius
-      value: 0.45
-      objectReference: {fileID: 0}
     - target: {fileID: 449925305912011073, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
       propertyPath: m_Name
       value: zombie_big
-      objectReference: {fileID: 0}
-    - target: {fileID: 449925305912011073, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2539106168658000015, guid: 59c9dac759205f74d96ded6f098cbb47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -989,20 +969,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1209677338720953584, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
-      propertyPath: moveSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209677338720953584, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: vfxRenderer
       value: 
       objectReference: {fileID: 1580111875}
     - target: {fileID: 5679694665954423402, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.3
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 5679694665954423402, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3
+      value: 6.74
       objectReference: {fileID: 0}
     - target: {fileID: 5679694665954423402, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1039,10 +1015,6 @@ PrefabInstance:
     - target: {fileID: 8248514146744334591, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_Name
       value: 'Player '
-      objectReference: {fileID: 0}
-    - target: {fileID: 8248514146744334591, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1743,7 +1715,7 @@ Transform:
   m_GameObject: {fileID: 880988466}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.65933, y: -10.62912, z: -9.983438}
+  m_LocalPosition: {x: 3.8806715, y: -0.5891199, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35254,10 +35226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombie_3
       objectReference: {fileID: 0}
-    - target: {fileID: 7708289218820692199, guid: 61c1495126e994f4cbbcc489d05c8235, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9175399355911497548, guid: 61c1495126e994f4cbbcc489d05c8235, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.01
@@ -49624,7 +49592,7 @@ Transform:
   m_GameObject: {fileID: 2033896562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.396677, y: -2.9175553, z: -9.983438}
+  m_LocalPosition: {x: 7.730063, y: 7.141995, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
