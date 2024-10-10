@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4651565476986353064}
   - component: {fileID: 3621728749458724743}
   - component: {fileID: 8494806187212205352}
+  - component: {fileID: 685417882431017845}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Untagged
@@ -169,6 +170,7 @@ MonoBehaviour:
   startingHealth: 5
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 15
+  score: 0
 --- !u!114 &5658295031855856179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +252,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &685417882431017845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708289218820692199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}

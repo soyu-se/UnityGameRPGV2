@@ -340,5 +340,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartPreFab: {fileID: 0}
-  staminaPrefab: {fileID: 0}
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}

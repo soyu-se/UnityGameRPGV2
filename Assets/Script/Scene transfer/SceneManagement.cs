@@ -10,9 +10,5 @@ public class SceneManagement : Singleton<SceneManagement>
     {
         this.SceneTransitionName = sceneTransitionName;
     }
-    protected override void Awake()
-    {
-        base.Awake();
-    }
 }
 

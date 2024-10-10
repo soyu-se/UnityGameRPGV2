@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7984119517383038133}
   - component: {fileID: 345784814272045158}
   - component: {fileID: 6625392739217571040}
+  - component: {fileID: 8221119998266506405}
   m_Layer: 0
   m_Name: zombie_big
   m_TagString: Untagged
@@ -168,6 +169,7 @@ MonoBehaviour:
   startingHealth: 20
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 20
+  score: 0
 --- !u!114 &1883742710423916141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +211,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _rotationSpeed: 50
+  _screenBorder: 0
+  _obstacleCheckCircleRadius: 0
+  _obstacleCheckDistance: 0
+  _obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6625392739217571040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +230,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAwarenessDistance: 10
+--- !u!114 &8221119998266506405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449925305912011073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}

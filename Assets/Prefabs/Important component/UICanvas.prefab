@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acecd2b6eaa4f643b9f6c283dd0b319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeScreen: {fileID: 0}
+  fadeScreen: {fileID: 6611593930417348161}
   fadeSpeed: 1
 --- !u!114 &2077893643330262761
 MonoBehaviour:
