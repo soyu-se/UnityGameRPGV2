@@ -69,7 +69,7 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         AdjustPlayerFacingDirection();
         Move();
-        vfxRenderer.SetVector3("ColliderPos", transform.position);
+        //vfxRenderer.SetVector3("ColliderPos", transform.position);
     }
     public Transform GetWeaponCollider()
     {

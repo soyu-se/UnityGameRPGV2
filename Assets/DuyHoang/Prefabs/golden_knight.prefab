@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8821145040729969952}
   - component: {fileID: 2877608072881874389}
   - component: {fileID: 5126836797426826238}
+  - component: {fileID: 6599178223458127362}
   m_Layer: 0
   m_Name: golden_knight
   m_TagString: Untagged
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1b3e9721cb5c946b981ddc44f25cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteFlashMat: {fileID: 0}
+  whiteFlashMat: {fileID: 2100000, guid: 11308a6ef7a58934896d435b2fc139cf, type: 2}
   restoreDefaultMatTime: 0.2
 --- !u!114 &8082493158227106282
 MonoBehaviour:
@@ -227,6 +228,7 @@ MonoBehaviour:
   startingHealth: 1
   deathVFXPrefab: {fileID: 8101404689074997989, guid: 9872ffebc99a72841a62adb85490b6f0, type: 3}
   knockBackThrust: 15
+  score: 0
 --- !u!114 &4989847935010467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +325,20 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3658669, y: -0.02724576}
-  m_Size: {x: 0.8996949, y: 1.5769372}
-  m_Direction: 1
+  m_Offset: {x: -0.37659264, y: -0.02724576}
+  m_Size: {x: 0.72955704, y: 1.5769374}
+  m_Direction: 0
+--- !u!114 &6599178223458127362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650478463052836807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 0}
+  staminaPrefab: {fileID: 0}

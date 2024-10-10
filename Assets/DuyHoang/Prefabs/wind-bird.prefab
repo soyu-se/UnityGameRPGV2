@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8688720770922392096}
   - component: {fileID: 224677937736706495}
   - component: {fileID: 553287215474127669}
+  - component: {fileID: 1001870897746658650}
   m_Layer: 0
   m_Name: wind-bird
   m_TagString: Untagged
@@ -184,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  collisionDelay: 0.1
 --- !u!114 &7412740025087158681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +228,7 @@ MonoBehaviour:
   startingHealth: 3
   deathVFXPrefab: {fileID: 8101404689074997989, guid: 9872ffebc99a72841a62adb85490b6f0, type: 3}
   knockBackThrust: 15
+  score: 0
 --- !u!95 &553287215474127669
 Animator:
   serializedVersion: 5
@@ -247,3 +250,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1001870897746658650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456094948663423504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 0}
+  staminaPrefab: {fileID: 0}
