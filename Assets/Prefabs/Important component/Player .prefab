@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272ff94329b9a6e42ae41f005294d2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfxRenderer: {fileID: 0}
   moveSpeed: 4
   weaponCollider: {fileID: 3125720760990851123}
   dashSpeed: 5

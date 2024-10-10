@@ -8,7 +8,10 @@ public class GameOverManager : MonoBehaviour
 {
 	public GameObject gameOverMenu;
 	public GameObject chapterMenu;
-	public void EnableGameMenu()
+	public GameObject sceneMenu;
+	public string SceneToLoad;
+
+    public void EnableGameMenu()
 	{
 		gameOverMenu.SetActive(true);
 		Time.timeScale = 0;
