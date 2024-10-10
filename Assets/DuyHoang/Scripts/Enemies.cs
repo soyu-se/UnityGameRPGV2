@@ -6,14 +6,15 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
 
-    public float damage = 1;
-    public float knockbackForce = 100f;
-    public float moveSpeed = 500f;
+    //private readonly float damage = 1;
+    //public float knockbackForce = 1f;
+    public float moveSpeed = 5f;
+    private bool isFacingRight = true;
 
     public DetectionZone detectionZone;
     Rigidbody2D rb;
 
-    public float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    //public float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     void Start()
     {
@@ -25,23 +26,46 @@ public class Enemies : MonoBehaviour
         if(detectionZone.detectGameObjs.Count > 0)
         {
             Vector2 direction = (detectionZone.detectGameObjs[0].transform.position - transform.position).normalized;
-            rb.AddForce(moveSpeed * Time.deltaTime * direction);
+            rb.AddForce((moveSpeed * 10) * Time.deltaTime * direction);
+            
+            if (direction.x > 0 && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (direction.x < 0 && isFacingRight)
+            {
+                Flip();
+            }
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+     void Flip()
     {
-        Collider2D collider = collision.collider;
-        IDamageable damageable = collider.GetComponent<IDamageable>();
+        // Đảo ngược hướng quay mặt
+        isFacingRight = !isFacingRight;
 
-        if(damageable != null)
-        {
-            Vector2 direction = (collider.transform.position - transform.position).normalized;
-
-            Vector2 knockback = direction * knockbackForce;
-
-            damageable.OnHit(damage, knockback);
-        }
+        // Lật đối tượng theo trục X
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
+
+
+
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Collider2D collider = collision.collider;
+    //     //IDamageable damageable = collider.GetComponent<IDamageable>();
+
+    //     if(damageable != null)
+    //     {
+    //         Vector2 direction = (collider.transform.position - transform.position).normalized;
+
+    //         Vector2 knockback = (knockbackForce * 10) * direction;
+
+    //         damageable.OnHit(damage, knockback);
+    //     }
+    // }
+
 
 }
