@@ -69,7 +69,10 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         AdjustPlayerFacingDirection();
         Move();
-        vfxRenderer.SetVector3("ColliderPos", transform.position);
+        if (vfxRenderer != null)
+        {
+            vfxRenderer.SetVector3("ColliderPos", transform.position);
+        }
     }
     public Transform GetWeaponCollider()
     {
@@ -114,7 +117,8 @@ public class PlayerController3 : Singleton<PlayerController3>
     {
         if (other.CompareTag("SlipperyZone"))
         {
-            isInSlipperyZone = true;            
+            isInSlipperyZone = true;
+            playerControls.Combat.Dash.Disable();
         }
     }
 
@@ -123,6 +127,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         if (other.CompareTag("SlipperyZone"))
         {
             isInSlipperyZone = false;
+            playerControls.Combat.Dash.Enable();
         }
     }
     private void DisablePlayerMovement()

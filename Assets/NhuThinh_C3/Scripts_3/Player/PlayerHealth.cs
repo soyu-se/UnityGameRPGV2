@@ -43,11 +43,11 @@ public class PlayerHealth : Singleton<PlayerHealth>
         
         if (enemy)
         {
-            TakeDamage(1, other.transform);
+            TakeDamage(4, other.transform);
         }
         if (dr)
         {
-            TakeDamage(1, other.transform);
+            TakeDamage(2, other.transform);
         }
         if (enemyChapter5E1)
         {
