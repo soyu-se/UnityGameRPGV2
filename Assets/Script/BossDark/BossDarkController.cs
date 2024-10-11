@@ -6,6 +6,7 @@ public class BossDarkController : MonoBehaviour
 {
 	[SerializeField] private SlashSkill slashSkill;
 	[SerializeField] private PlasmaBurstSkill plasmaBurstSkill;
+	[SerializeField] private ElectricBallSpawner snowballSpawner;
 	[SerializeField] private float GapBetweenSkill = 2f;
 
 	private void Start()
@@ -42,6 +43,16 @@ public class BossDarkController : MonoBehaviour
 			yield return new WaitUntil(() => plasmaBurstSkill.IsActingComplete);
 
 			plasmaBurstSkill.gameObject.SetActive(false);
+
+			yield return new WaitForSeconds(GapBetweenSkill);
+
+			if (!snowballSpawner.gameObject.activeInHierarchy)
+			{
+				snowballSpawner.gameObject.SetActive(true);
+			}
+			snowballSpawner.Run();
+			yield return new WaitUntil(() => snowballSpawner.IsShootingComplete);
+			snowballSpawner.gameObject.SetActive(false);
 
 			yield return new WaitForSeconds(GapBetweenSkill);
 		}
