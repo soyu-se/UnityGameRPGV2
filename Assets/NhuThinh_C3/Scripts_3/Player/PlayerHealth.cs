@@ -71,11 +71,12 @@ public class PlayerHealth : Singleton<PlayerHealth>
         canTakeDamage = false;
         currentHealth -= damageAmount;        
         StartCoroutine(DamageRecoveryRoutine());
+        StartCoroutine(flash.FlashRoutine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();
     }
 
-    private void CheckIfPlayerDeath()
+	private void CheckIfPlayerDeath()
     {
         if (currentHealth <= 0 && !isDead)
         {

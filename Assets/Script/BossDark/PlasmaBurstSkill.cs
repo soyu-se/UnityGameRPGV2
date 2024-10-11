@@ -22,7 +22,6 @@ public class PlasmaBurstSkill : MonoBehaviour
 
 	public void Run()
 	{
-		gameObject.SetActive(true);
 		IsActingComplete = false;
 		if (rb != null)
 		{

@@ -16,9 +16,9 @@ public class ElectricBallSpawner : MonoBehaviour
 	[SerializeField] private float firingRate = 1f; 
 	[SerializeField] private int projectilesPerBurst = 10; 
 	[SerializeField] private float angleSpread = 360f; 
-	[SerializeField] private float burstDuration = 3f; // Duration to shoot before stopping
+	[SerializeField] private float burstDuration = 2f; // Duration to shoot before stopping
 
-	public bool IsShootingComplete { get; private set; }
+	public bool IsActingComplete { get; private set; }
 
 	public void Run() // Add this method
 	{
@@ -33,7 +33,7 @@ public class ElectricBallSpawner : MonoBehaviour
 	private IEnumerator ShootRoutine()
 	{
 		float elapsedTime = 0f;
-		IsShootingComplete = false;
+		IsActingComplete = false;
 
 
 		while (elapsedTime < burstDuration)
@@ -44,7 +44,7 @@ public class ElectricBallSpawner : MonoBehaviour
 		}
 
 		yield return new WaitForSeconds(3f);
-		IsShootingComplete = true;
+		IsActingComplete = true;
 	}
 
 	private void Fire()

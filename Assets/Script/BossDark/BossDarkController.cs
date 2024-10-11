@@ -6,7 +6,8 @@ public class BossDarkController : MonoBehaviour
 {
 	[SerializeField] private SlashSkill slashSkill;
 	[SerializeField] private PlasmaBurstSkill plasmaBurstSkill;
-	[SerializeField] private ElectricBallSpawner snowballSpawner;
+	[SerializeField] private ElectricBallSpawner electricBallSpawner;
+	[SerializeField] private FlameSkill flameSkill;
 	[SerializeField] private float GapBetweenSkill = 2f;
 
 	private void Start()
@@ -16,7 +17,7 @@ public class BossDarkController : MonoBehaviour
 
 	private IEnumerator ManageActivation()
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(GapBetweenSkill);
 
 		while (true)
 		{
@@ -36,7 +37,7 @@ public class BossDarkController : MonoBehaviour
 
 			if (!plasmaBurstSkill.gameObject.activeInHierarchy)
 			{
-				plasmaBurstSkill.gameObject.SetActive(false);
+				plasmaBurstSkill.gameObject.SetActive(true);
 			}
 
 			plasmaBurstSkill.Run();
@@ -46,13 +47,26 @@ public class BossDarkController : MonoBehaviour
 
 			yield return new WaitForSeconds(GapBetweenSkill);
 
-			if (!snowballSpawner.gameObject.activeInHierarchy)
+			if (!electricBallSpawner.gameObject.activeInHierarchy)
 			{
-				snowballSpawner.gameObject.SetActive(true);
+				electricBallSpawner.gameObject.SetActive(true);
 			}
-			snowballSpawner.Run();
-			yield return new WaitUntil(() => snowballSpawner.IsShootingComplete);
-			snowballSpawner.gameObject.SetActive(false);
+			electricBallSpawner.Run();
+
+			yield return new WaitUntil(() => electricBallSpawner.IsActingComplete);
+			electricBallSpawner.gameObject.SetActive(false);
+
+			yield return new WaitForSeconds(GapBetweenSkill);
+
+
+			if (!flameSkill.gameObject.activeInHierarchy)
+			{
+				flameSkill.gameObject.SetActive(true);
+			}
+
+			flameSkill.Run();
+			yield return new WaitUntil(() => flameSkill.IsActingComplete);
+			flameSkill.gameObject.SetActive(false);
 
 			yield return new WaitForSeconds(GapBetweenSkill);
 		}

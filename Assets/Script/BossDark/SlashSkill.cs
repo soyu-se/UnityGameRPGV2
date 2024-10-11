@@ -18,7 +18,6 @@ public class SlashSkill : MonoBehaviour
 
 	public void Run()
 	{
-		gameObject.SetActive(true);
 		IsActingComplete = false;
 		StartCoroutine(Slash());
 	}
