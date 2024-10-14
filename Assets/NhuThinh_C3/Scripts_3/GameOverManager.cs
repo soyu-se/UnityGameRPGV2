@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class GameOverManager : MonoBehaviour
 	public GameObject gameOverMenu;
 	public GameObject chapterMenu;
 	public GameObject sceneMenu;
+	public GameObject pauseMenu;
 	public string SceneToLoad;
 
     public void EnableGameMenu()
@@ -17,7 +19,7 @@ public class GameOverManager : MonoBehaviour
 		Time.timeScale = 0;
 		Timer.Instance.EndTimer();
 	}
-	private void OnEnable()
+    private void OnEnable()
 	{
 		PlayerHealth.OnPlayerDeath += EnableGameMenu;
 	}
@@ -29,6 +31,7 @@ public class GameOverManager : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneToLoad);
 		gameOverMenu.SetActive(false);
+		pauseMenu.SetActive(false);
 		Time.timeScale = 1;
 		Timer.Instance.ResetTimer();
 	}
