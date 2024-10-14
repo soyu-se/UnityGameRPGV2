@@ -12,15 +12,19 @@ public class PortalConditioner : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.isTrigger = false;
         boss = GameObject.FindGameObjectWithTag("Boss");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        var bossHealth = boss.GetComponent<EnemyHealth>();
-        if (bossHealth.currentHealth <= (bossHealth.startingHealth * 0.5))
+        if (boss != null)
         {
-            boxCollider2D.isTrigger = true;
+            EnemyHealth bossHealth = boss.GetComponent<EnemyHealth>();
+            if (bossHealth.currentHealth <= 0 && bossHealth != null)
+            {
+                boxCollider2D.isTrigger = true;
+            }
         }
     }
 }

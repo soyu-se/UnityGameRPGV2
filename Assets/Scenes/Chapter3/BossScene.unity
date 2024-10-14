@@ -15191,6 +15191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2077893643330262761, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
+      propertyPath: SceneToLoad
+      value: Scene 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2557832775640807702, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
       propertyPath: m_Value
       value: 100

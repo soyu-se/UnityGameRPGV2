@@ -35,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(flash.GetRestoreMatTime());
         DetectDeath();
     }
-
     public void DetectDeath()
     {
         if (currentHealth <= 0)
