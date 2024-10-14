@@ -14942,7 +14942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7965164923503365457, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: startingHealth
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7965164923503365457, guid: a2011c7bac209ad45b949db275103875, type: 3}
       propertyPath: knockBackThrust
