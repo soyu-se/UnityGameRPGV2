@@ -46,7 +46,7 @@ public class GameOverManager : MonoBehaviour
 
         Timer.Instance.ResetTimer();
         Time.timeScale = 1;
-        SceneManager.LoadScene("1.1",LoadSceneMode.Single);		
+		SceneManager.LoadScene(4, LoadSceneMode.Single);
         StartCoroutine(EnsureTimeFlowAfterSceneLoad());
     }
 

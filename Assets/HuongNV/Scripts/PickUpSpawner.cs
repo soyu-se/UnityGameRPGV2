@@ -12,7 +12,7 @@ public class PickupSpawner : MonoBehaviour
 
         float dropChance = Random.Range(0f, 1f);
         
-        if (dropChance <= 0.3f)
+        if (dropChance <= 0.5f)
         {
             int randomNum = Random.Range(1, 4);
 
