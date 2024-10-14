@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour,IWeapon
 {
+    public static Sword Instance;
+    //public bool isAttacking = false;
+    public bool isInSlipperyZone = false;
+
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private WeaponInfo weaponInfo;
@@ -16,7 +20,8 @@ public class Sword : MonoBehaviour,IWeapon
     private GameObject slashAnim;
 
     private void Awake()
-    {        
+    {
+        Instance = this;
         myAnimator = GetComponent<Animator>();        
     }
     private void Start()
@@ -46,12 +51,11 @@ public class Sword : MonoBehaviour,IWeapon
         if (cooldownTimer <= 0)
         {
             weaponInfo.isAttacking = true;
-
+            isAttacking = true;
             if (myAnimator != null && myAnimator.isActiveAndEnabled)
             {
                 myAnimator.SetTrigger("Attack");
             }
-
             if (slashAnimSpawnPoint != null)
             {
                 slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
@@ -65,6 +69,9 @@ public class Sword : MonoBehaviour,IWeapon
         }
     }
 
+
+
+
     public void SwingUpFlipAnimEvent()
     {
         slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
@@ -77,7 +84,11 @@ public class Sword : MonoBehaviour,IWeapon
     public void DoneAttackingAnimEvent()
     {
         weaponCollider.gameObject.SetActive(false);
+        weaponInfo.isAttacking = false;
+        isAttacking = false;
     }
+
+
     public void SwingDownFlipAnimEvent()
     {
         slashAnim.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);

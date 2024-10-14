@@ -7,16 +7,12 @@ using UnityEngine.VFX;
 public class PlayerController3 : Singleton<PlayerController3>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
-
     public VisualEffect vfxRenderer;
-
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private Transform weaponCollider;
     [SerializeField] private float dashSpeed;
     [SerializeField] private TrailRenderer myTrailRenderer;
-
     [SerializeField] public float slipperyZoneMultiplier = 3f;
-
     private PlayerControls playerControls;
     private Vector2 movement;
     private Rigidbody2D rb;
@@ -24,11 +20,14 @@ public class PlayerController3 : Singleton<PlayerController3>
     private SpriteRenderer mySpriteRender;
     private Knockback knockback;
     private bool isDashing;
-    private float startingMoveSpeed;   
-
+    private float startingMoveSpeed;
     private bool facingLeft = false;
-
     private bool isInSlipperyZone = false;
+    private Sword swordInstance;
+
+    private int slipperyZoneCounter = 0;
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -37,14 +36,14 @@ public class PlayerController3 : Singleton<PlayerController3>
         myAnimator = GetComponent<Animator>();
         mySpriteRender = GetComponent<SpriteRenderer>();
         knockback = GetComponent<Knockback>();
-        //vfxRenderer = GetComponent<VisualEffect>();
+        swordInstance = Sword.Instance;
+        // vfxRenderer = GetComponent<VisualEffect>();
     }
+
     private void Start()
     {
         playerControls.Combat.Dash.performed += _ => Dash();
-
         startingMoveSpeed = moveSpeed;
-
         ActiveInventory.Instance.EquipStartingWeapon();
         Timer.Instance.BeginTimer();
     }
@@ -74,14 +73,15 @@ public class PlayerController3 : Singleton<PlayerController3>
             vfxRenderer.SetVector3("ColliderPos", transform.position);
         }
     }
+
     public Transform GetWeaponCollider()
     {
         return weaponCollider;
     }
+
     private void PlayerInput()
     {
         movement = playerControls.Movement.Movement.ReadValue<Vector2>();
-
         myAnimator.SetFloat("moveX", movement.x);
         myAnimator.SetFloat("moveY", movement.y);
     }
@@ -97,11 +97,13 @@ public class PlayerController3 : Singleton<PlayerController3>
         rb.velocity = new Vector2(movement.x * currentMoveSpeed, movement.y * currentMoveSpeed);
     }
 
+
+
+
     private void AdjustPlayerFacingDirection()
     {
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
-
         if (mousePos.x < playerScreenPoint.x)
         {
             mySpriteRender.flipX = true;
@@ -113,23 +115,35 @@ public class PlayerController3 : Singleton<PlayerController3>
             FacingLeft = false;
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("SlipperyZone"))
         {
+            slipperyZoneCounter++;
             isInSlipperyZone = true;
+            Sword.Instance.isInSlipperyZone = true;
             playerControls.Combat.Dash.Disable();
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("SlipperyZone"))
         {
-            isInSlipperyZone = false;
-            playerControls.Combat.Dash.Enable();
+            slipperyZoneCounter--;
+            if (slipperyZoneCounter <= 0)
+            {
+                isInSlipperyZone = false;
+                Sword.Instance.isInSlipperyZone = false;
+                playerControls.Combat.Dash.Enable();
+            }
         }
     }
+
+
+
     private void DisablePlayerMovement()
     {
         myAnimator.enabled = false;

@@ -171,7 +171,7 @@ MonoBehaviour:
   roamChangeDirFloat: 5
   attackRange: 7
   enemyType: {fileID: 3910869401633083128}
-  attackCooldown: 0
+  attackCooldown: 2
   stopMovingWhileAttacking: 0
 --- !u!114 &3910869401633083128
 MonoBehaviour:
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f41140ac876eb49ad8f94747f75840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 2
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 15
   score: 10
