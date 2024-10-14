@@ -9,7 +9,7 @@ public class Timer : Singleton<Timer>
 {
     public TMP_Text timeCounter;
 
-    private TimeSpan playingTime;
+    public TimeSpan playingTime;
     private bool timerGoing;
 
     private float elapseTime;
@@ -36,9 +36,12 @@ public class Timer : Singleton<Timer>
     }
     public void ResetTimer()
     {
+        elapseTime = 0;           // Reset the elapsed time to 0
         playingTime = TimeSpan.Zero;
-        timerGoing = true;
+        timeCounter.text = "Time: 00:00:00";  // Update the text to show 00:00:00
+        timerGoing = true;         // Optionally restart the timer
     }
+
     private IEnumerator UpdateTimer()
     {
         while (timerGoing)

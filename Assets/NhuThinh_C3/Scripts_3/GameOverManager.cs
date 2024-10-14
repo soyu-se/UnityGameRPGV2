@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class GameOverManager : MonoBehaviour
 	public GameObject gameOverMenu;
 	public GameObject chapterMenu;
 	public GameObject sceneMenu;
+	public GameObject pauseMenu;
+	public GameObject winMenu;
 	public string SceneToLoad;
 
     public void EnableGameMenu()
@@ -17,7 +20,7 @@ public class GameOverManager : MonoBehaviour
 		Time.timeScale = 0;
 		Timer.Instance.EndTimer();
 	}
-	private void OnEnable()
+    private void OnEnable()
 	{
 		PlayerHealth.OnPlayerDeath += EnableGameMenu;
 	}
@@ -26,37 +29,32 @@ public class GameOverManager : MonoBehaviour
 		PlayerHealth.OnPlayerDeath -= EnableGameMenu;
 	}
 	public void Restart()
-	{
-		SceneManager.LoadScene(SceneToLoad);
+    {
+        GameObject player = GameObject.FindWithTag("Player");             
+        Destroy(player);
+        SceneManager.LoadScene(SceneToLoad);
 		gameOverMenu.SetActive(false);
+		pauseMenu.SetActive(false);
 		Time.timeScale = 1;
 		Timer.Instance.ResetTimer();
 	}
+	public void ResetPlay()
+	{
+        GameObject player = GameObject.FindWithTag("Player");
+        Destroy(player);       
 
-	public void ChapterMenu()
+		gameOverMenu.SetActive(false);
+		pauseMenu.SetActive(false);        		
+        SceneManager.LoadScene("1.1");
+        winMenu.SetActive(false);
+        Time.timeScale = 1;
+		Timer.Instance.ResetTimer();
+	}
+    public void ChapterMenu()
 	{
 		gameOverMenu.SetActive(false);
 		chapterMenu.SetActive(true);
 	}
-
-	//public void LoadChapter1()
-	//{
-	//	SceneManager.LoadScene("Scenes/Chapter1/1.1");
-	//	chapterMenu.SetActive(false);
-	//}
-
-	//public void LoadChapter2()
-	//{
-	//	SceneManager.LoadScene("Scenes/Chapter1/2.1");
-	//	chapterMenu.SetActive(false);
-	//}
-
-	//public void LoadChapter3()
-	//{
-	//	SceneManager.LoadScene("Scenes/Chapter3/Scene 3.1");
-	//	chapterMenu.SetActive(false);
-	//}
-
 	public void LoadChapter(string buttonName)
 	{
 		switch (buttonName)
