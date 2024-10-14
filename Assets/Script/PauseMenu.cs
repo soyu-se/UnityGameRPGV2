@@ -5,7 +5,7 @@ public class PauseMenu : MonoBehaviour
 {
     private PlayerControls inputActions; // Input actions asset reference
     public GameObject pauseScene; // Reference to the pause menu GameObject
-    private bool isPaused = false; // Flag to track the paused state
+    public bool isPaused = false; // Flag to track the paused state
 
     private void Awake()
     {

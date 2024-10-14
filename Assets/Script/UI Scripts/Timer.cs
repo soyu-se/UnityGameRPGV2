@@ -36,10 +36,12 @@ public class Timer : Singleton<Timer>
     }
     public void ResetTimer()
     {
-        elapseTime = 0;           // Reset the elapsed time to 0
+ 
         playingTime = TimeSpan.Zero;
-        timeCounter.text = "Time: 00:00:00";  // Update the text to show 00:00:00
-        timerGoing = true;         // Optionally restart the timer
+        timeCounter.text = "Time: 00:00:00";  // Update the text to show 00:00:0        
+        Time.timeScale = 1;
+
+        BeginTimer();
     }
 
     private IEnumerator UpdateTimer()

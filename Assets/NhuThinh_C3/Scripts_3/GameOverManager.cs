@@ -42,15 +42,30 @@ public class GameOverManager : MonoBehaviour
 	{
         GameObject player = GameObject.FindWithTag("Player");
         Destroy(player);       
+		Destroy(winMenu);
 
-		gameOverMenu.SetActive(false);
-		pauseMenu.SetActive(false);        		
-        SceneManager.LoadScene("1.1");
-        winMenu.SetActive(false);
+        Timer.Instance.ResetTimer();
         Time.timeScale = 1;
-		Timer.Instance.ResetTimer();
+        SceneManager.LoadScene("1.1",LoadSceneMode.Single);		
+        StartCoroutine(EnsureTimeFlowAfterSceneLoad());
+    }
+
+	private IEnumerator EnsureTimeFlowAfterSceneLoad()
+	{
+		// Wait until the end of the current frame to ensure scene load is complete
+		yield return new WaitForEndOfFrame();
+
+		// Ensure time is flowing after the scene has loaded
+		Time.timeScale = 1;
+
+		// If there’s a PauseMenu component, ensure it’s unpaused
+		PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+		if (pauseMenu != null)
+		{
+			pauseMenu.isPaused = false;  // Unpause the game if necessary
+		}
 	}
-    public void ChapterMenu()
+	public void ChapterMenu()
 	{
 		gameOverMenu.SetActive(false);
 		chapterMenu.SetActive(true);

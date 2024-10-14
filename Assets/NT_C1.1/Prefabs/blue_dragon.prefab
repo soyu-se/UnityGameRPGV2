@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1073074363521801810}
   - component: {fileID: 8096197368357346496}
   - component: {fileID: 4663457610650698423}
+  - component: {fileID: -7057249966031530747}
   m_Layer: 0
   m_Name: blue_dragon
   m_TagString: Untagged
@@ -191,6 +192,7 @@ MonoBehaviour:
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 15
   score: 5
+  currentHealth: 0
 --- !u!114 &3814379599654680926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +246,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
+--- !u!114 &-7057249966031530747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876962472606161927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}

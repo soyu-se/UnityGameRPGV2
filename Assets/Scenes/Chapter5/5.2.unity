@@ -65464,6 +65464,20 @@ MonoBehaviour:
   enemyType: {fileID: 0}
   attackCooldown: 5
   stopMovingWhileAttacking: 0
+--- !u!114 &1987660019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987659999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d24ea348c63b94d988f73e2caf49af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  collisionDelay: 0.1
 --- !u!1 &2011611476
 GameObject:
   m_ObjectHideFlags: 0
@@ -66429,6 +66443,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1987660009}
+    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1987660019}
   m_SourcePrefab: {fileID: 100100000, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

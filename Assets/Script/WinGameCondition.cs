@@ -18,9 +18,12 @@ public class WinGameCondition : MonoBehaviour
     }
     void Update()
     {
-        if (bossHealth.currentHealth <= 0)
+        if (bossHealth != null)
         {
-            WinGame();
+            if (bossHealth.currentHealth <= 0)
+            {
+                WinGame();
+            }
         }
     }
     private void WinGame()

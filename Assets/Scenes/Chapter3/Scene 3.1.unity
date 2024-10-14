@@ -39422,7 +39422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1209677338720953584, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: slipperyZoneMultiplier
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5679694665954423402, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_LocalPosition.x
