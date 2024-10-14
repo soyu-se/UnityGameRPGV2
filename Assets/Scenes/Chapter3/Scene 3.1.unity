@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2077893643330262761, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
+      propertyPath: SceneToLoad
+      value: Scene 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3516273147911337292, guid: af20abbb8d3356d4894aefeb9bf081cb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -806,7 +810,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.529623, y: 15.372907, z: -9.983438}
+  m_LocalPosition: {x: -17.532957, y: 15.373046, z: -9.983438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39418,7 +39422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1209677338720953584, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: slipperyZoneMultiplier
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5679694665954423402, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_LocalPosition.x

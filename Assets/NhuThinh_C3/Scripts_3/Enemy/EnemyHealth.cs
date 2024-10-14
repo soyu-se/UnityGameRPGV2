@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int startingHealth = 3;
+    [SerializeField] public int startingHealth = 3;
     [SerializeField] private GameObject deathVFXPrefab;
     [SerializeField] private float knockBackThrust = 15f;
     [SerializeField] private float score;
 
-    private int currentHealth;
+    public int currentHealth;
     private Knockback knockback;
     private Flash flash;
 
@@ -35,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(flash.GetRestoreMatTime());
         DetectDeath();
     }
-
     public void DetectDeath()
     {
         if (currentHealth <= 0)

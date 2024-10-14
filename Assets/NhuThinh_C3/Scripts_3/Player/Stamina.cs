@@ -38,7 +38,7 @@ public class Stamina : Singleton<Stamina>
     {
         if (CurrentStamina < maxStamina)
         {
-            CurrentStamina += 0;
+            CurrentStamina += 2;
         }
         UpdateStaminaSlider();
     }
@@ -70,7 +70,7 @@ public class Stamina : Singleton<Stamina>
     {
         if (CurrentStamina < maxStamina)
         {
-            CurrentStamina += 10;
+            CurrentStamina += 20;
             UpdateStaminaSlider();
         }
     }

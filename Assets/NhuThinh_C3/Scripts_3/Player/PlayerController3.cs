@@ -162,7 +162,7 @@ public class PlayerController3 : Singleton<PlayerController3>
             Stamina.Instance.UseStamina(10);
             isDashing = true;
             moveSpeed *= dashSpeed;
-            myTrailRenderer.emitting = true;
+            myTrailRenderer.emitting = true;            
             StartCoroutine(EndDashRoutine());
         }
     }

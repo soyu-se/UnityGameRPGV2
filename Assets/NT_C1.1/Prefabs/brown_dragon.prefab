@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2836631104292011726}
   - component: {fileID: 5855680798478460274}
   - component: {fileID: 2094949530001820765}
+  - component: {fileID: 5557187519398060208}
   m_Layer: 0
   m_Name: brown_dragon
   m_TagString: Untagged
@@ -191,6 +192,7 @@ MonoBehaviour:
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 15
   score: 5
+  currentHealth: 0
 --- !u!114 &3045898377374363189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +246,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+--- !u!114 &5557187519398060208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4157468367336463880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f111f73eeb8d3c447b86b34867cfc248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPreFab: {fileID: 47125571221151072, guid: 1135515ebf52a464db396943166fb418, type: 3}
+  staminaPrefab: {fileID: 47125571221151072, guid: 1e249d5d07d01a44789a5abc09303275, type: 3}
