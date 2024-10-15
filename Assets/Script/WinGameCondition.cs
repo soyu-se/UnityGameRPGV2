@@ -1,3 +1,4 @@
+using Assets.Script;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ public class WinGameCondition : MonoBehaviour
     public GameObject WinGameScene;
     public TMP_Text scoreText;
     public TMP_Text timeCounter;
+
+    private bool wonGame = false;
     private void Start()
     {
         WinGameScene.SetActive(false);
@@ -18,7 +21,7 @@ public class WinGameCondition : MonoBehaviour
     }
     void Update()
     {
-        if (bossHealth != null)
+        if (bossHealth != null && !wonGame)
         {
             if (bossHealth.currentHealth <= 0)
             {
@@ -27,12 +30,16 @@ public class WinGameCondition : MonoBehaviour
         }
     }
     private void WinGame()
-    {        
-        float score = ScoreManager.Instance.Score;        
+    {
+        wonGame = true;
+        float score = ScoreManager.Instance.Score;
         TimeSpan finishTime = Timer.Instance.playingTime;
-        
-        scoreText.text = "Score: " + score; 
+
+        scoreText.text = "Score: " + score;
         timeCounter.text = "Finish Time: " + finishTime.ToString("mm':'ss'.'ff");
+        // Save score and finish time to JSON        
+        JsonSave.SaveGame(ScoreManager.Instance.Score, Timer.Instance.playingTime);
+
         Time.timeScale = 0;
         WinGameScene.SetActive(true);
     }
