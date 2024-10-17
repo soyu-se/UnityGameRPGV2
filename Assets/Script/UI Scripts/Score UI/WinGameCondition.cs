@@ -33,6 +33,7 @@ public class WinGameCondition : MonoBehaviour
     {
         wonGame = true;
         float score = ScoreManager.Instance.Score;
+        score += bossHealth.score;
         TimeSpan finishTime = Timer.Instance.playingTime;
 
         scoreText.text = "Score: " + score;
