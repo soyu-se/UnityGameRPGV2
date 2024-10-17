@@ -26,5 +26,9 @@ public class PortalConditioner : MonoBehaviour
                 boxCollider2D.isTrigger = true;
             }
         }
+        else
+        {
+            boxCollider2D.isTrigger = true;
+        }
     }
 }
