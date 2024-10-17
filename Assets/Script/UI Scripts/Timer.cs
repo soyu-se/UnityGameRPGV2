@@ -17,28 +17,53 @@ public class Timer : Singleton<Timer>
     protected override void Awake()
     {
         base.Awake();
-        timeCounter = GameObject.Find("Timer text").GetComponent<TMP_Text>();        
+        timeCounter = GameObject.Find("Timer text").GetComponent<TMP_Text>();
+        if (!Application.isPlaying)
+        {
+            PlayerPrefs.DeleteKey("SavedElapsedTime");
+        }
     }
     private void Start()
     {
-        timeCounter.text = "Time: 00:00:00";
+        // Restore the elapsed time if previously saved
+        if (PlayerPrefs.HasKey("SavedElapsedTime"))
+        {
+            elapseTime = PlayerPrefs.GetFloat("SavedElapsedTime");
+            playingTime = TimeSpan.FromSeconds(elapseTime);
+            timeCounter.text = "Time: " + playingTime.ToString("mm':'ss'.'ff");
+            PlayerPrefs.DeleteKey("SavedElapsedTime");
+        }
+        else
+        {
+            elapseTime = 0;
+            timeCounter.text = "Time: 00:00:00";
+        }
+
         timerGoing = true;
+        StartCoroutine(UpdateTimer());
     }
+
+    public void SaveTimerState()
+    {
+        PlayerPrefs.SetFloat("SavedElapsedTime", elapseTime);
+        PlayerPrefs.Save();
+    }
+
     public void BeginTimer()
     {
-        timerGoing = true;
-        elapseTime = 0;
+        timerGoing = true;        
         StartCoroutine(UpdateTimer());
     }
     public void EndTimer()
     {
         timerGoing = false;
+        SaveTimerState();
     }
     public void ResetTimer()
     {
- 
+        elapseTime = 0;
         playingTime = TimeSpan.Zero;
-        timeCounter.text = "Time: 00:00:00";  // Update the text to show 00:00:0        
+        timeCounter.text = "Time: 00:00:00";     
         Time.timeScale = 1;
 
         BeginTimer();

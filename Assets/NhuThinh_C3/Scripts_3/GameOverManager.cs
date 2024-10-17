@@ -32,18 +32,18 @@ public class GameOverManager : MonoBehaviour
     {
         GameObject player = GameObject.FindWithTag("Player");             
         Destroy(player);
+		Timer.Instance.SaveTimerState();
         SceneManager.LoadScene(SceneToLoad);
 		gameOverMenu.SetActive(false);
-		pauseMenu.SetActive(false);
-		Time.timeScale = 1;
-		Timer.Instance.ResetTimer();
+		pauseMenu.SetActive(false);		
+		Time.timeScale = 1;		
 	}
 	public void ResetPlay()
 	{
         GameObject player = GameObject.FindWithTag("Player");
         Destroy(player);       
 		Destroy(winMenu);
-
+		PlayerPrefs.DeleteAll();
         Timer.Instance.ResetTimer();
         Time.timeScale = 1;
 		SceneManager.LoadScene(4, LoadSceneMode.Single);

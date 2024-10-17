@@ -1011,7 +1011,7 @@ MonoBehaviour:
   sceneMenu: {fileID: 2475241036511024207}
   pauseMenu: {fileID: 52526277511933402}
   winMenu: {fileID: 7245541126871238453}
-  SceneToLoad: 5.1
+  SceneToLoad: 1.1
 --- !u!114 &4258591615497667738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScene: {fileID: 52526277511933402}
+  isPaused: 0
 --- !u!114 &4138032952085117285
 MonoBehaviour:
   m_ObjectHideFlags: 0
