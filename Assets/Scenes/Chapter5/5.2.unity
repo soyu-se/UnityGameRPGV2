@@ -367,6 +367,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.42
@@ -923,22 +927,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 568375761}
     m_Modifications:
-    - target: {fileID: 2202050881524532701, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126836797426826238, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7942276
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126836797426826238, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      propertyPath: m_Size.y
-      value: 2.1277885
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126836797426826238, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.20255661
-      objectReference: {fileID: 0}
     - target: {fileID: 7917818756942541739, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.8
@@ -986,65 +974,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 227844938}
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 227844937}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
 --- !u!4 &227844934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7917818756942541739, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
   m_PrefabInstance: {fileID: 227844933}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &227844935 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-  m_PrefabInstance: {fileID: 227844933}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &227844937
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227844935}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.5
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!114 &227844938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227844935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &256660466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1781,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.8
@@ -2282,17 +2222,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 409961553}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 409961552}
@@ -2334,20 +2276,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &409961553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409961550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &414362339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +2370,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.85
@@ -2631,6 +2563,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.69
@@ -2936,6 +2872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496796247}
   - component: {fileID: 496796248}
+  - component: {fileID: 496796249}
   m_Layer: 3
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -2999,6 +2936,19 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 435136116}
+--- !u!114 &496796249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496796246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f9f90604befe0648b9ba2bccbe6c27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 0}
 --- !u!1 &506789624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,17 +3529,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 532130000}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 532129999}
@@ -3631,20 +3583,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &532130000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532129997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &533055519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3730,6 +3668,10 @@ PrefabInstance:
       propertyPath: score
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.88
@@ -3805,6 +3747,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7
@@ -4305,17 +4251,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_14
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 681445373}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 681445372}
@@ -4357,20 +4305,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &681445373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681445370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &683904164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4383,6 +4317,10 @@ PrefabInstance:
       propertyPath: teleport
       value: 
       objectReference: {fileID: 1566679309}
+    - target: {fileID: 3747095871831043200, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5679694665954423402, guid: cbe4319973aa10e4790323013c1c4e31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.94
@@ -4656,17 +4594,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 732302042}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 732302041}
@@ -4708,20 +4648,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &732302042
+--- !u!114 &746746048 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6267832264855248108, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+  m_PrefabInstance: {fileID: 73010686567476033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732302039}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da93c71478bfd8499a7fe4189bda2c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &754257992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,17 +4753,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 761224431}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 761224430}
@@ -4868,20 +4807,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &761224431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761224428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &776219635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4942,17 +4867,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 776219640}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 776219639}
@@ -4994,20 +4921,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &776219640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776219637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &778750790
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,17 +5149,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 803334860}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 803334859}
@@ -5288,20 +5203,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &803334860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803334857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &877401288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5314,6 +5215,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.4
@@ -5456,17 +5361,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_18
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 914062597}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 914062596}
@@ -5508,20 +5415,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &914062597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914062594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &915830615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5534,6 +5427,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.85
@@ -6299,6 +6196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_2
@@ -6308,7 +6209,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
+      insertIndex: 3
       addedObject: {fileID: 1009712349}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
@@ -15278,6 +15179,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.97
@@ -15420,17 +15325,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1082198357}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1082198356}
@@ -15472,20 +15379,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1082198357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082198354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &1107697008
 GameObject:
   m_ObjectHideFlags: 0
@@ -16238,6 +16131,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.53
@@ -16757,17 +16654,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1307902288}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1307902287}
@@ -16809,20 +16708,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1307902288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307902285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &1310709026
 GameObject:
   m_ObjectHideFlags: 0
@@ -61884,6 +61769,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.9
@@ -63450,17 +63339,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1603585858}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1603585857}
@@ -63502,20 +63393,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1603585858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603585855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &1616493162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64067,17 +63944,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1731917645}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1731917644}
@@ -64119,20 +63998,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1731917645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731917642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &1758317793
 GameObject:
   m_ObjectHideFlags: 0
@@ -64275,17 +64140,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1779079899}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1779079898}
@@ -64327,20 +64194,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1779079899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779079896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1 &1790774986
 GameObject:
   m_ObjectHideFlags: 0
@@ -64805,6 +64658,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -36.56
@@ -65078,17 +64935,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1891761790}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1891761789}
@@ -65130,20 +64989,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1891761790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891761787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &1893371402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65451,23 +65296,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
   m_PrefabInstance: {fileID: 73010686567476033}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1987660009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987659999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9949f532a3460bc41bc5ed9d7fe66774, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roamChangeDirFloat: 2
-  attackRange: 5
-  enemyType: {fileID: 0}
-  attackCooldown: 5
-  stopMovingWhileAttacking: 0
 --- !u!114 &1987660019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65475,7 +65303,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987659999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16d24ea348c63b94d988f73e2caf49af, type: 3}
   m_Name: 
@@ -65633,6 +65461,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 803513841237905282, guid: def5605881151b848aae3822dfed9df0, type: 3}
+    - target: {fileID: 5999002991903917981, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 6797402656351267477, guid: 5349de63b8ceba348ace49469017aa2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.6
@@ -65926,17 +65758,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 2079298766}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2079298765}
@@ -65978,20 +65812,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2079298766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079298763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &2081984995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66052,17 +65872,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold_17
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 2081985000}
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2081984999}
@@ -66104,20 +65926,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2081985000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081984997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f429c462de60d224782dc77b6af14693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  detectionZone: {fileID: 0}
 --- !u!1001 &2085625521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66388,6 +66196,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 568375761}
     m_Modifications:
+    - target: {fileID: 3291150721875128808, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: detectionZone
+      value: 
+      objectReference: {fileID: 746746048}
+    - target: {fileID: 4069138879086707066, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5126836797426826238, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Size.x
       value: 1.7167931
@@ -66436,21 +66252,84 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8082493158227106282, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+      propertyPath: deathVFXPrefab
+      value: 
+      objectReference: {fileID: 4051318276856090908, guid: f8e7a59adf2b0ad419e1e0c13ba07e63, type: 3}
     - target: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       propertyPath: m_Name
       value: Knight_Gold
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4989847935010467, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1987660009}
-    - targetCorrespondingSourceObject: {fileID: 8650478463052836807, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1987660019}
   m_SourcePrefab: {fileID: 100100000, guid: 32d95acbbf366da45a34def805a14f78, type: 3}
+--- !u!1001 &3646696868298134581
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.8125305
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.9379005
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.18160854
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438798250285011300, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764259492180708082, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 496796248}
+    - target: {fileID: 9039015491627729552, guid: 5407f7df25423164e828d492d6302b54, type: 3}
+      propertyPath: m_Name
+      value: ChangeSceneScore
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5407f7df25423164e828d492d6302b54, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -66466,3 +66345,4 @@ SceneRoots:
   - {fileID: 1534013405}
   - {fileID: 1372643326}
   - {fileID: 1431600412}
+  - {fileID: 3646696868298134581}

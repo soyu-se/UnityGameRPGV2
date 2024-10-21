@@ -13,13 +13,25 @@ public class PlayerTeleport : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+void Update()
+{
+    if (teleport != null)
     {
-        if(teleport != null)
-		{
-			transform.position = teleport.GetComponent<Teleport>().GetTelePoint().position;
-		}
+        Teleport teleportComponent = teleport.GetComponent<Teleport>();
+        if (teleportComponent != null)
+        {
+            transform.position = teleportComponent.GetTelePoint().position;
+        }
+        else
+        {
+            return;
+        }
     }
+    else
+    {
+        return;
+    }
+}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

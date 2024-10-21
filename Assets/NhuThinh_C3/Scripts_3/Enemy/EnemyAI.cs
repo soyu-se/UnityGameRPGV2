@@ -59,7 +59,10 @@ public class EnemyAI : MonoBehaviour
     {
         timeRoaming += Time.deltaTime;
 
-        enemyPathfinding.MoveTo(roamPosition);
+        if(enemyPathfinding != null)
+        {
+            enemyPathfinding.MoveTo(roamPosition);
+        }
 
         // Check if the PlayerController3 instance exists before accessing it
         if (PlayerController3.Instance != null &&

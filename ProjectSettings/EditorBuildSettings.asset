@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter5/5.2.unity
     guid: e1403f7413e466f45a6c384fa41c64fd
+  - enabled: 1
+    path: Assets/Scenes/HighScoreMenu.unity
+    guid: 1a687b95cd3ee3444b7b944ae6d031ab
   m_configObjects: {}

@@ -10,7 +10,6 @@ public class Enemies : MonoBehaviour
     //public float knockbackForce = 1f;
     public float moveSpeed = 5f;
     private bool isFacingRight = true;
-
     public DetectionZone detectionZone;
     Rigidbody2D rb;
 
@@ -49,23 +48,5 @@ public class Enemies : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-
-
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     Collider2D collider = collision.collider;
-    //     //IDamageable damageable = collider.GetComponent<IDamageable>();
-
-    //     if(damageable != null)
-    //     {
-    //         Vector2 direction = (collider.transform.position - transform.position).normalized;
-
-    //         Vector2 knockback = (knockbackForce * 10) * direction;
-
-    //         damageable.OnHit(damage, knockback);
-    //     }
-    // }
-
 
 }

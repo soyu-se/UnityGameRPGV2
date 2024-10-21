@@ -28,7 +28,7 @@ public class PlayerController3 : Singleton<PlayerController3>
     private int slipperyZoneCounter = 0;
 
 
-    protected override void Awake()
+    protected override void Awake() 
     {
         base.Awake();
         playerControls = new PlayerControls();
@@ -38,6 +38,7 @@ public class PlayerController3 : Singleton<PlayerController3>
         knockback = GetComponent<Knockback>();
         swordInstance = Sword.Instance;
         // vfxRenderer = GetComponent<VisualEffect>();
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
