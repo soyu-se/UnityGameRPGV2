@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 2567846559870296668, guid: 360c609a7dbc3c640b44087ee3690ccf, type: 3}
-  weaponCooldown: 2
-  weaponDamage: 5
+  weaponCooldown: 1
+  weaponDamage: 500
   weaponRange: 10
   weaponStaminaCost: 10
+  isAttacking: 0
