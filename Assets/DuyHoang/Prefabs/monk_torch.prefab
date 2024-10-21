@@ -188,7 +188,8 @@ MonoBehaviour:
   startingHealth: 7
   deathVFXPrefab: {fileID: 8426143543424103503, guid: d4e023427e91fa84fbd409f36306d110, type: 3}
   knockBackThrust: 15
-  score: 0
+  score: 10
+  currentHealth: 0
 --- !u!114 &2065346982401759477
 MonoBehaviour:
   m_ObjectHideFlags: 0

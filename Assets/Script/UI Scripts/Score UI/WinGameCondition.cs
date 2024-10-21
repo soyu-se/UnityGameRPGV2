@@ -16,13 +16,20 @@ public class WinGameCondition : MonoBehaviour
     private bool wonGame = false;
     private void Start()
     {
-        WinGameScene.SetActive(false);
-        bossHealth = GameObject.Find("Boss Dark").GetComponent<EnemyHealth>();
+        WinGameScene.SetActive(false);        
     }
     void Update()
     {
-        if (bossHealth != null && !wonGame)
+        if (bossHealth == null)
         {
+            GameObject bossObject = GameObject.Find("Boss Dark");
+            if (bossObject != null)
+            {
+                bossHealth = bossObject.GetComponent<EnemyHealth>();
+            }
+        }
+        if (bossHealth != null && !wonGame)
+        {            
             if (bossHealth.currentHealth <= 0)
             {
                 WinGame();
